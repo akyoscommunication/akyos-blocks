@@ -50,8 +50,8 @@ class Content6to7 extends Block
             Tab::make('Options'),
             RadioButton::make('Style du bloc', 'style')
                 ->choices([
-                    '6' => 'Style 6 : ',
-                    '7' => 'Style 7 : ',
+                    '6' => 'Style 6 : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/content-style-6.png" alt="Style 6" />',
+                    '7' => 'Style 7 : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/content-style-7.png" alt="Style 7" />',
                 ])->layout('vertical'),
 
         ];

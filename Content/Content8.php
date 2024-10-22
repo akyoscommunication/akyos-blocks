@@ -11,11 +11,13 @@ use Extended\ACF\Fields\FlexibleContent;
 use Extended\ACF\Fields\Layout;
 use Extended\ACF\Fields\RadioButton;
 use Extended\ACF\Fields\Repeater;
+use Extended\ACF\Fields\Select;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\WYSIWYGEditor;
+use Extended\ACF\Fields\Image;
 
-class Content5 extends Block
+class Content8 extends Block
 {
     public function __construct()
     {
@@ -24,8 +26,8 @@ class Content5 extends Block
     protected static function block(): GutenbergBlock
     {
         return (new GutenbergBlock())
-            ->setName("content5")
-            ->setTitle("Bloc de contenu, style 5")
+            ->setName("content8")
+            ->setTitle("Bloc de contenu, style 8")
             ->setCategory("content")
             ->setIcon("align-pull-left");
     }
@@ -36,18 +38,22 @@ class Content5 extends Block
             Tab::make("Contenu"),
             Title::make('Titre', 'title')
                 ->required(),
-            Repeater::make('Contenus', 'contents')
-                ->fields([
-                    Title::make('Titre', 'title')
-                        ->required(),
-                    Text::make('Texte', 'text')
-                        ->required(),
-                ])->maxRows(3),
+            WYSIWYGEditor::make('Contenu', 'content'),
+            Button::make('Bouton', 'button'),
+            Image::make('Image', 'image')
+                ->format('url')
+                ->required(),
             Tab::make('Options'),
             RadioButton::make('Style du bloc', 'style')
                 ->choices([
-                    '5' => 'Style 5 : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/content-style-5.png" alt="Style 5" />',
+                    '8' => 'Style 8 : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/content-style-8.png" alt="Style 8" />',
                 ])->layout('vertical'),
+            Select::make('Alignement du contenu', 'order')
+                ->choices([
+                    'left' => 'Gauche',
+                    'center' => 'Centre',
+                    'right' => 'Droite',
+                ])->default('left'),
         ];
     }
 
