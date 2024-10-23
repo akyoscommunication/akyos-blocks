@@ -1,0 +1,119 @@
+.s-number {
+  &.s-number--style {
+    &-1 {
+      .s-number {
+        @include flex(column, wrap, center, center);
+        &-layout {
+          @include flex(row, wrap, center, center);
+          gap: rem(16);
+          margin-bottom: rem(32);
+          margin-top: rem(32);
+          &-inner {
+            @include flex(column, nowrap, center, center);
+            max-width: rem(300);
+
+
+            &__number {
+              font-size: 64px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 120%;
+            }
+            &__text {
+              text-align: center;
+            }
+          }
+        }
+        .c-title {
+          margin-bottom: rem(32);
+        }
+        .c-image {
+          img {
+            width: rem(64);
+            height: rem(64);
+          }
+        }
+
+      }
+    }
+
+    &-2 {
+      &-1 {
+        .s-number {
+          @include flex(column, wrap, center, center);
+          &-layout {
+            @include flex(row, wrap, center, center);
+            gap: rem(16);
+            margin-bottom: rem(32);
+            margin-top: rem(32);
+            &-inner {
+              @include flex(row, nowrap, start, center);
+              gap: rem(24);
+
+              @include lessThan($mobile) {
+                flex-direction: column;
+              }
+
+              &__number {
+                font-size: 50px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+              }
+              &__text {
+                max-width: rem(280);
+                text-align: start;
+              }
+            }
+          }
+          .c-title {
+            margin-bottom: rem(32);
+          }
+          .c-image {
+            img {
+              width: rem(64);
+              height: rem(64);
+            }
+          }
+        }
+      }
+      &-2 {
+        .s-number {
+          @include flex(column, wrap, center, center);
+          &-layout {
+            @include flex(row, wrap, center, center);
+            gap: rem(16);
+            margin-bottom: rem(32);
+            margin-top: rem(32);
+            &-inner {
+              @include flex(column, nowrap, start, center);
+              gap: rem(24);
+
+              &__number {
+                font-size: 50px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+              }
+              &__text {
+                max-width: rem(280);
+                text-align: start;
+              }
+            }
+          }
+          .c-title {
+            margin-bottom: rem(32);
+          }
+          .c-image {
+            img {
+              width: rem(64);
+              height: rem(64);
+            }
+          }
+        }
+      }
+
+
+    }
+  }
+}
