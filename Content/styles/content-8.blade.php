@@ -1,22 +1,20 @@
-{{--<div class="s-content-image">--}}
-{{--  <x-image :lg="$image"/>--}}
-{{--</div>--}}
-<div style="background-image: url({{$image}});background-position: center;">
-<div class="container s-content-{{$order}}-container">
+
+<div style="background-image: url({{$content8['image']}});background-position: center;">
+<div class="container s-content-{{$content8['order']}}-container">
   <div class="s-content-layout">
-    <x-title :tag="$title['tag']">
-      {!! $title['value'] !!}
+    <x-title :tag="$content8['title']['tag']">
+      {!! $content8['title']['value'] !!}
     </x-title>
 
     <div class="">
-      {!! $content !!}
+      {!! $content8['content'] !!}
     </div>
 
-    @if($button)
+    @if($content8['button'])
       <div class="">
-        <x-button :appearance="$button['color']"
-                  :href="$button['link']['url']">
-          {{ $button['link']['title'] }}
+        <x-button :appearance="$content8['button']['color']"
+                  :href="$content8['button']['link']['url']">
+          {{ $content8['button']['link']['title'] }}
         </x-button>
       </div>
     @endif

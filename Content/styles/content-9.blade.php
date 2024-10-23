@@ -1,4 +1,4 @@
-@foreach($contents as $key => $content)
+@foreach($content9['contents'] as $key => $content)
   <div class="container s-content-{{$content['order']}}">
 
     <div class="s-content-image">

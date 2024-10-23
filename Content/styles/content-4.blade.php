@@ -1,23 +1,23 @@
-<div class="container s-content-{{$order}}-container">
+<div class="container s-content-{{$content4['order']}}-container">
 
-  <div class="s-content-{{$order}}-header">
-    <div class="s-content-{{$order}}-header__info">
-      {!! $info !!}
+  <div class="s-content-{{$content4['order']}}-header">
+    <div class="s-content-{{$content4['order']}}-header__info">
+      {!! $content4['info'] !!}
     </div>
 
-    <x-title :tag="$title['tag']">
-      {!! $title['value'] !!}
+    <x-title :tag="$content4['title']['tag']">
+      {!! $content4['title']['value'] !!}
     </x-title>
   </div>
-    <div class="s-content-{{$order}}__text">
-      {!! $content !!}
+    <div class="s-content-{{$content4['order']}}__text">
+      {!! $content4['content'] !!}
     </div>
 
-    @if($button)
-      <div class="s-content-{{$order}}__button">
-        <x-button :appearance="$button['color']"
-                  :href="$button['link']['url']">
-          {{ $button['link']['title'] }}
+    @if($content4['button'])
+      <div class="s-content-{{$content4['order']}}__button">
+        <x-button :appearance="$content4['button']['color']"
+                  :href="$content4['button']['link']['url']">
+          {{ $content4['button']['link']['title'] }}
         </x-button>
       </div>
     @endif

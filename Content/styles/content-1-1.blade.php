@@ -1,30 +1,30 @@
-<div class="container s-content-container-{{$order}}">
-{{--  @dump($order)--}}
+<div class="container s-content-container-{{$content1to2['order']}}">
     <div class="s-content-layout">
 
       <div class="s-content-layout__title">
-        <x-title :tag="$title['tag']">
-          {!! $title['value'] !!}
+        <x-title :tag="$content1to2['title']['tag']">
+          {!! $content1to2['title']['value'] !!}
         </x-title>
       </div>
 
       <div class="s-content-layout__text">
-        {!! $content !!}
+        {!! $content1to2['content'] !!}
       </div>
 
-      @if($button)
+      @if($content1to2['button'])
         <div class="s-content-layout__button">
-          <x-button :appearance="$button['color']"
-                    :href="$button['link']['url']">
-            {{ $button['link']['title'] }}
+          <x-button :appearance="$content1to2['button']['color']"
+                    :href="$content1to2['button']['link']['url']">
+            {{ $content1to2['button']['link']['title'] }}
           </x-button>
         </div>
       @endif
     </div>
 
     <div class="s-content-image">
-      <x-image :lg="$image"/>
+      <x-image :lg="$content1to2['image']"/>
     </div>
 
 
 </div>
+
