@@ -59,6 +59,7 @@ class AkyB_Hero extends Block
 
     public function render()
     {
+        View::addNamespace('akyos-blocks', get_template_directory().'/vendor/akyoscommunication/akyos-blocks/ressources/views/');
         return $this->view("blocks.heros.hero");
     }
 }
