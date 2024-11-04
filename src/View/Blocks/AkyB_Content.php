@@ -1,10 +1,11 @@
 <?php
 
-namespace AkyosBlocks\Content;
+namespace app\View\Blocks;
 
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
 use App\Acf\Fields\Content1;
+use App\Acf\Fields\Content3;
 use App\Acf\Fields\Content4;
 use App\Acf\Fields\Content5;
 use App\Acf\Fields\Content6to7;
@@ -13,10 +14,8 @@ use App\Acf\Fields\Content9;
 use Extended\ACF\ConditionalLogic;
 use Extended\ACF\Fields\RadioButton;
 use Extended\ACF\Fields\Tab;
-use function app\View\Blocks\get_template_directory_uri;
-use function app\View\Blocks\view;
 
-class Content extends Block
+class AkyB_Content extends Block
 {
     public function __construct()
     {
@@ -25,7 +24,7 @@ class Content extends Block
     protected static function block(): GutenbergBlock
     {
         return (new GutenbergBlock())
-            ->setName("content")
+            ->setName("akyb_content")
             ->setTitle("Bloc de contenu")
             ->setCategory("content")
             ->setIcon("align-pull-left");
@@ -41,6 +40,7 @@ class Content extends Block
                     '1-2' => 'Style 1-2 : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/content-style-1-2.png" alt="Style 1-2" />',
                     '1-3' => 'Style 1-3 : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/content-style-1-3.png" alt="Style 1-3" />',
                     '1-4' => 'Style 1-4 : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/content-style-1-4.png" alt="Style 1-4" />',
+                    '3' => 'Style 3 : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/content-style-3.png" alt="Style 3" />',
                     '4' => 'Style 4 : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/content-style-4.png" alt="Style 4" />',
                     '5' => 'Style 5 : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/content-style-5.png" alt="Style 5" />',
                     '6' => 'Style 6 : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/content-style-6.png" alt="Style 6" />',
@@ -56,6 +56,11 @@ class Content extends Block
                     ConditionalLogic::where('style', '==', '1-2'),
                     ConditionalLogic::where('style', '==', '1-3'),
                     ConditionalLogic::where('style', '==', '1-4')
+                ]),
+            Content3::make("Contenu 3", "content3")
+                ->layout('block')
+                ->conditionalLogic([
+                    ConditionalLogic::where('style', '==', '3')
                 ]),
             Content4::make("Contenu 4", "content4")
                 ->layout('block')
