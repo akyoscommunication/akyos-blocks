@@ -25,7 +25,7 @@ class AkyB_Content extends Block
     {
         return (new GutenbergBlock())
             ->setName("akyb-content")
-            ->setTitle("Bloc de contenu")
+            ->setTitle(" AKYB Bloc de contenu")
             ->setCategory("content")
             ->setIcon("align-pull-left");
     }

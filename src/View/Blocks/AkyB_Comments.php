@@ -22,7 +22,7 @@ class AkyB_Comments extends Block
     {
         return (new GutenbergBlock())
             ->setName("akyb-comments")
-            ->setTitle("Commentaires")
+            ->setTitle("AKYB Commentaires")
             ->setCategory("content")
             ->setIcon("admin-comments");
     }

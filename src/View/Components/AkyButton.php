@@ -4,7 +4,7 @@ namespace Akyos\Blocks\View\Components;
 
 use Illuminate\View\Component;
 
-class AkyB_Button extends Component
+class AkyButton extends Component
 {
     public $appearance;
     public $icon;
@@ -19,7 +19,7 @@ class AkyB_Button extends Component
     public function __construct($appearance = null, $icon = null, $iconposition = null, $borderradius = null)
     {
         $this->appearance = $appearance;
-        $this->icon =  $icon;
+        $this->icon = $icon;
         $this->iconposition = $iconposition;
         $this->borderradius = $borderradius;
     }
@@ -31,6 +31,6 @@ class AkyB_Button extends Component
      */
     public function render()
     {
-        return view('components.button');
+        return view('akyos-blocks::components.aky-button');
     }
 }

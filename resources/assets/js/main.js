@@ -1,9 +1,5 @@
-import '@css/main.scss'
-
-import {Slider} from '@js/components/Slider'
+import {Slider} from "./components/Slider";
 
 window.onload = () => {
-
   new Slider()
-
 }
