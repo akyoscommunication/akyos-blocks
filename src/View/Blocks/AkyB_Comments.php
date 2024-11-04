@@ -21,7 +21,7 @@ class AkyB_Comments extends Block
     protected static function block(): GutenbergBlock
     {
         return (new GutenbergBlock())
-            ->setName("akyb_comments")
+            ->setName("akyb-comments")
             ->setTitle("Commentaires")
             ->setCategory("content")
             ->setIcon("admin-comments");

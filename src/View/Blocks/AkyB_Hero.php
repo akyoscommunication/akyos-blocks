@@ -25,7 +25,7 @@ class AkyB_Hero extends Block
     protected static function block(): GutenbergBlock
     {
         return (new GutenbergBlock())
-            ->setName("akyb_hero")
+            ->setName("akyb-hero")
             ->setTitle("Entête page d'accueil")
             ->setCategory("header")
             ->setIcon("admin-site");

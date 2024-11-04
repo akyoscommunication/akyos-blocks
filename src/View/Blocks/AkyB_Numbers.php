@@ -19,7 +19,7 @@ class AkyB_Numbers extends Block
     protected static function block(): GutenbergBlock
     {
         return (new GutenbergBlock())
-            ->setName("akyb_numbers")
+            ->setName("akyb-numbers")
             ->setTitle("Liste de nombre")
             ->setCategory("content")
             ->setIcon("editor-ol");

@@ -24,7 +24,7 @@ class AkyB_Content extends Block
     protected static function block(): GutenbergBlock
     {
         return (new GutenbergBlock())
-            ->setName("akyb_content")
+            ->setName("akyb-content")
             ->setTitle("Bloc de contenu")
             ->setCategory("content")
             ->setIcon("align-pull-left");
