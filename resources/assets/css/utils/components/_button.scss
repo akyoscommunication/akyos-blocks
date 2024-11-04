@@ -1,0 +1,107 @@
+.btn {
+
+  @include flex(row, nowrap, space-between, center);
+
+  &--right {
+    @include flex(row-reverse, nowrap, space-between, center);
+  }
+  gap: rem(8);
+  width: fit-content;
+  cursor: pointer;
+  padding: rem(17) rem(30);
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+
+  > span {
+    position: relative;
+  }
+
+  &--rounded {
+    border-radius: rem(32);
+  }
+  &--small_rounded {
+    border-radius: rem(8);
+  }
+  svg {
+    width: rem(20);
+    height: rem(20);
+  }
+
+  &--primary {
+
+    color: color(light);
+    background-color: color(primary);
+    border: 1px solid color(primary);
+
+    svg {
+      path {
+        fill: color(light) !important;
+      }
+    }
+
+    &:hover {
+      border: 1px solid color(primary);
+      color: color(primary);
+      background-color: color(light);
+
+      svg {
+        path {
+          fill: color(primary) !important;
+        }
+      }
+    }
+
+  }
+
+
+  &--secondary {
+      color: color(light);
+      background-color: color(secondary);
+      border: 1px solid color(secondary);
+
+      svg {
+        path {
+          fill: color(light) !important;
+        }
+      }
+
+      &:hover {
+        border: 1px solid color(secondary);
+        color: color(secondary);
+        background-color: color(light);
+
+        svg {
+          path {
+            fill: color(secondary) !important;
+          }
+        }
+      }
+  }
+
+  &--light {
+    color: color(primary);
+    background-color: color(light);
+    border: 1px solid color(light);
+
+    svg {
+      path {
+        fill: color(primary) !important;
+      }
+    }
+
+    &:hover {
+      border: 1px solid color(light);
+      color: color(light);
+      background-color: color(primary);
+
+      svg {
+        path {
+          fill: color(light) !important;
+        }
+      }
+    }
+  }
+
+}

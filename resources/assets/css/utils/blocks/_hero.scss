@@ -1,0 +1,186 @@
+.s-hero {
+  &.s-hero--style {
+
+
+    &-2 {
+      .s-hero {
+        &-layout {
+          @include flex(row, nowrap, start, center);
+          gap: rem(200);
+
+          @include lessThan($tablet) {
+            gap: rem(32);
+            flex-direction: column;
+
+          }
+
+          &__title {
+            //max-width: rem(460);
+
+          }
+
+          &__buttons {
+            @include flex(row, wrap, center, center);
+            gap: rem(24);
+            margin-top: rem(24);
+            @include lessThan($mobile) {
+              flex-direction: column;
+            }
+          }
+
+          &-container {
+            @include flex(row, wrap, start, center);
+            max-width: rem(460);
+            @include lessThan($tablet) {
+              justify-content: center;
+            }
+          }
+
+          &__content {
+            margin-top: rem(24);
+            @include lessThan($tablet) {
+              margin-top: rem(0);
+              text-align: center;
+            }
+          }
+        }
+
+        &-image {
+          margin-top: rem(90);
+
+          img {
+            width: 100%;
+            height: rem(470);
+            object-fit: cover;
+            object-position: center;
+            overflow: hidden;
+          }
+
+          @include lessThan($tablet) {
+            margin-top: rem(32);
+          }
+
+        }
+      }
+    }
+
+    &-3 {
+      @include flex(row, nowrap, space-between, center);
+      gap: rem(48);
+
+      @include lessThan($tablet) {
+        flex-direction: column;
+      }
+
+      .s-hero {
+        &-layout {
+
+          &__title {
+            @include lessThan($tablet) {
+              text-align: center;
+            }
+          }
+          &__buttons {
+            @include flex(row, wrap, start, center);
+            gap: rem(24);
+            margin-top: rem(24);
+            @include lessThan($mobile) {
+              flex-direction: column;
+            }
+            @include lessThan($tablet) {
+              justify-content: center;
+            }
+          }
+
+          &__content {
+            margin-top: rem(24);
+            @include lessThan($tablet) {
+              text-align: center;
+            }
+          }
+        }
+
+        &-image {
+
+          img {
+            height: rem(800);
+            object-fit: cover;
+            object-position: center;
+            overflow: hidden;
+            @include lessThan($tablet) {
+              height: rem(400);
+            }
+          }
+
+        }
+      }
+    }
+
+    &-4 {
+      .s-hero {
+        &-layout {
+          @include flex(row, nowrap, start, center);
+          gap: rem(200);
+
+          @include lessThan($tablet) {
+            gap: rem(32);
+            flex-direction: column;
+
+          }
+
+          &__title {
+            //max-width: rem(460);
+
+          }
+
+          &__buttons {
+            @include flex(row, wrap, center, center);
+            gap: rem(24);
+            margin-top: rem(24);
+            @include lessThan($mobile) {
+              flex-direction: column;
+            }
+          }
+
+          &-container {
+            @include flex(row, wrap, center, center);
+            max-width: rem(460);
+          }
+
+          &__content {
+            margin-top: rem(24);
+            @include lessThan($tablet) {
+              margin-top: rem(0);
+            }
+          }
+        }
+
+        &-image {
+          margin-top: rem(90);
+          padding-left: rem(15);
+          padding-right: rem(15);
+          max-width: $container;
+          margin-left: auto;
+          margin-right: auto;
+
+          @include lessThan($tablet) {
+            padding-left: rem(0);
+            padding-right: rem(0);
+          }
+
+          img {
+            width: 100%;
+            height: rem(470);
+            object-fit: cover;
+            object-position: center;
+            overflow: hidden;
+          }
+
+          @include lessThan($tablet) {
+            margin-top: rem(32);
+          }
+        }
+      }
+    }
+  }
+}

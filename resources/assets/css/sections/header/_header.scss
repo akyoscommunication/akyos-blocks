@@ -1,0 +1,179 @@
+@import "burger";
+@import "transparent";
+@import "search";
+@import "submenu";
+
+.header {
+  &-topbar {
+    background-color: color(primary);
+    color: color(light);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    &--style {
+      &-1 {
+        .header-topbar {
+        }
+      }
+      &-2 {
+          .header-topbar {
+            &-layout {
+              @include flex(row, wrap, space-between, center);
+              &-inner {
+                @include flex(row, wrap, start, center);
+                gap: rem(100);
+                &__row {
+                  @include flex(row, wrap, start, center);
+                  gap: rem(12);
+                }
+              }
+              svg {
+                height: rem(16);
+                width: rem(16);
+                path {
+                  fill: color(light) !important;
+                }
+              }
+
+              &-inner {
+
+              }
+              &__end {
+                @include flex(row, nowrap, end, center);
+                gap: rem(12);
+              }
+            }
+          }
+
+      }
+      &-3 {
+        .header-topbar {
+        }
+      }
+    }
+  }
+  &--style {
+    &-1 {
+      .header {
+
+      }
+    }
+  }
+}
+
+.header-wrap {
+  grid-area: header;
+  position: sticky;
+  top: 0px;
+  background-color: color(light, 1);
+  z-index: 999;
+  transition: $default-transition;
+
+  &.scrolled {
+    box-shadow: 0px 0px 20px color(dark, 0.3);
+  }
+
+  .header {
+    @include flex(row, nowrap, space-between, center);
+
+
+
+    &-brand {
+      max-width: rem(100);
+    }
+
+    &-nav {
+
+      @include flex(row, nowrap, flex-end, center);
+      gap: 16px;
+
+
+      .menu {
+        @include flex(row, nowrap, flex-end, center);
+        @include undoListStyles();
+
+        gap: rem(16);
+
+        > li {
+          padding: rem(25) 0;
+        }
+      }
+
+
+      &__nav.active-underline {
+        ul.menu {
+          > li {
+
+            &.current-menu-item {
+              a {
+                &:after {
+                  width: 100%;
+                }
+              }
+            }
+
+            a {
+              position: relative;
+
+              &:after {
+                @include pseudo();
+
+                height: 2px;
+                bottom: -5px;
+                width: 0%;
+                background-color: color(primary);
+                transition: $default-transition;
+              }
+            }
+
+            &:hover {
+              &:not(.menu-item-has-children) {
+                > a {
+                  &:after {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &__nav.active-color {
+        ul.menu {
+          > li {
+
+            &.current-menu-item {
+              a {
+                color: color(primary);
+              }
+            }
+
+            a {
+              transition: $default-transition;
+
+              &:hover {
+                color: color(primary);
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    &-actions {
+
+      @include flex(row, nowrap, flex-end, center);
+
+      gap: rem(16);
+
+      &-search {
+        cursor: pointer;
+      }
+    }
+
+  }
+
+}

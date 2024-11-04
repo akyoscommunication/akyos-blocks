@@ -1,0 +1,57 @@
+.s-hero--style {
+  &-1 {
+    .s-hero {
+      &-image {
+
+        background-color: color(dark);
+        img {
+          opacity: 0.6;
+          position: relative;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: rem(810);
+          z-index: 0;
+          object-fit: cover;
+          object-position: center;
+          overflow: hidden;
+        }
+
+      }
+
+      &-layout {
+
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .s-hero {
+          &-title {
+            .c-title {
+              text-align: center;
+            }
+          }
+
+          &__content {
+            margin-top: rem(24);
+            text-align: center;
+          }
+
+          &-buttons {
+            @include flex(row, wrap, center, center);
+            gap: rem(16);
+
+            margin-top: rem(32);
+
+            @include lessThan($mobile) {
+              flex-direction: column;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

@@ -14,6 +14,7 @@ use Extended\ACF\Fields\Repeater;
 use Extended\ACF\Fields\Select;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\WYSIWYGEditor;
+use Illuminate\Support\Facades\View;
 
 class AkyB_Hero extends Block
 {
