@@ -2,16 +2,12 @@
 
 namespace App\Acf\Fields;
 
-use App\Acf\CustomFields\IconPicker\IconPickerField;
+use App\Acf\Fields\Colors;
+use App\Acf\Fields\Icons;
 use Extended\ACF\ConditionalLogic;
-use Extended\ACF\Fields\ButtonGroup;
 use Extended\ACF\Fields\Group;
-use Extended\ACF\Fields\IconPicker;
-use Extended\ACF\Fields\Image;
 use Extended\ACF\Fields\Link;
-use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\Select;
-use Extended\ACF\Fields\TrueFalse;
 
 class AkyB_Button
 {
