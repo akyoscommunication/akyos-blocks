@@ -2,22 +2,13 @@
 
 namespace Akyos\Blocks\View\Blocks;
 
+use Akyos\Blocks\Acf\Fields\Numbers1;
+use Akyos\Blocks\Acf\Fields\Numbers2;
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
-use App\Acf\CustomFields\StyleSelector\StyleSelectorField;
-use App\Acf\Fields\Numbers1;
-use App\Acf\Fields\Numbers2;
-use App\Acf\Fields\Title;
-use App\Acf\Fields\Button;
 use Extended\ACF\ConditionalLogic;
-use Extended\ACF\Fields\Image;
-use Extended\ACF\Fields\Number;
 use Extended\ACF\Fields\RadioButton;
-use Extended\ACF\Fields\Repeater;
-use Extended\ACF\Fields\Select;
 use Extended\ACF\Fields\Tab;
-use Extended\ACF\Fields\Text;
-use Extended\ACF\Fields\WYSIWYGEditor;
 
 class AkyB_Numbers extends Block
 {

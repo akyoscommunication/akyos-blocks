@@ -3,7 +3,6 @@
 namespace Akyos\Blocks\Acf\Fields;
 
 use App\Acf\Fields\Colors;
-use App\Acf\Fields\Icons;
 use Extended\ACF\ConditionalLogic;
 use Extended\ACF\Fields\Group;
 use Extended\ACF\Fields\Link;
