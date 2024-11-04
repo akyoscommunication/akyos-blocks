@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Acf\Fields;
+namespace Akyos\Blocks\Acf\Fields;
 
 use Extended\ACF\Fields\ButtonGroup;
 use Extended\ACF\Fields\Group;

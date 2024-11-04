@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Acf\Fields;
+namespace Akyos\Blocks\Acf\Fields;
 
 use App\Acf\Fields\Colors;
 use App\Acf\Fields\Icons;

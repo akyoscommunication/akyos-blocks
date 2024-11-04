@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components;
+namespace Akyos\Blocks\View\Components;
 
 use Illuminate\View\Component;
 
