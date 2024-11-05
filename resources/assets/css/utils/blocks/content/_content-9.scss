@@ -1,0 +1,48 @@
+.s-content--style {
+  &-9 {
+    .s-content {
+      &-image {
+        .c-image {
+          width: rem(360);
+          img {
+            height: 100%;
+            max-height: rem(360);
+            object-fit: cover;
+          }
+          @include lessThan($tablet) {
+            width: rem(360);
+            img {
+              max-height: rem(360);
+            }
+          }
+          @include lessThan($mobileXs) {
+            width: rem(300);
+            img {
+              max-height: rem(300);
+            }
+          }
+        }
+      }
+      &-left {
+        margin-top: rem(8);
+        @include flex(row, nowrap, start, center);
+        gap: rem(22);
+        @include lessThan($tablet) {
+          margin-top: rem(64);
+          @include flex(column, wrap, center, center);
+          gap: rem(16);
+        }
+      }
+      &-right {
+        margin-top: rem(8);
+        @include flex(row-reverse, nowrap, end, center);
+        gap: rem(22);
+        @include lessThan($tablet) {
+          margin-top: rem(64);
+          @include flex(column, wrap, center, center);
+          gap: rem(16);
+        }
+      }
+    }
+  }
+}

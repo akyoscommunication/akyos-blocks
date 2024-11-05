@@ -1,0 +1,74 @@
+.s-comments--style {
+  &-3 {
+    .s-comments {
+      &-layout {
+        .swiper-wrapper {
+          padding-bottom: rem(32);
+        }
+        &-inner {
+          text-align: center !important;
+
+          max-width: rem(300);
+          //min-height: rem(350);
+          background-color: color(light);
+          border-radius: rem(8);
+          padding: rem(24);
+          @include flex(column, nowrap, center, center);
+          gap: rem(24);
+
+          @include lessThan($mobileXs) {
+            @include flex(column, wrap, center, center);
+            padding: rem(24) rem(12);
+          }
+          &__image {
+            max-width: 100%;
+            img {
+              max-width: rem(100);
+              height: rem(100);
+              border-radius: 100%;
+              object-fit: cover;
+            }
+          }
+          &-comment {
+            @include flex(column, wrap, center, center);
+            gap: rem(24);
+            &-info {
+              &__job {
+                font-weight: 700;
+              }
+            }
+            &-star {
+              @include flex(row, nowrap, start, center);
+              svg {
+                path {
+                  fill: color(primary);
+                }
+              }
+              &__empty {
+                margin-left: rem(8);
+                svg {
+                  path {
+                    fill: color(secondary);
+                  }
+                }
+              }
+            }
+          }
+          &__span {
+            width: rem(150);
+            height: rem(6);
+            background-color: color(secondary);
+          }
+        }
+      }
+      &__button {
+        @include flex(row, nowrap, center, center);
+        margin-top: rem(32);
+      }
+      &__text {
+        margin-top: rem(32);
+        margin-bottom: rem(32);
+      }
+    }
+  }
+}

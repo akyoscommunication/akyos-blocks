@@ -1,0 +1,38 @@
+.s-number--style {
+  &-1 {
+    .s-number {
+      @include flex(column, wrap, center, center);
+      &-layout {
+        @include flex(row, wrap, center, center);
+        gap: rem(16);
+        margin-bottom: rem(32);
+        margin-top: rem(32);
+        &-inner {
+          @include flex(column, nowrap, center, center);
+          max-width: rem(300);
+
+
+          &__number {
+            font-size: 64px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%;
+          }
+          &__text {
+            text-align: center;
+          }
+        }
+      }
+      .c-title {
+        margin-bottom: rem(32);
+      }
+      .c-image {
+        img {
+          width: rem(64);
+          height: rem(64);
+        }
+      }
+
+    }
+  }
+}

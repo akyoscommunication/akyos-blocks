@@ -1,0 +1,74 @@
+.s-content--style {
+  &-7 {
+    .s-content {
+      &-container {
+        @include flex(row, wrap, space-between, start);
+
+        @include lessThan($tablet) {
+          @include flex(column, wrap, center, center);
+          gap: rem(32);
+        }
+
+      }
+
+      &-layout {
+        @include flex(row, wrap, space-evenly, center);
+        margin-top: rem(40);
+        gap: rem(24);
+        @include lessThan($tablet) {
+          //flex-direction: column;
+        }
+
+        &-column {
+          max-width: rem(260);
+          display: flex;
+          flex-direction: column;
+          position: relative;
+
+          .c-title {
+            padding: 0;
+            margin: 0;
+          }
+
+          &:first-child {
+            &::before {
+              display: none;
+            }
+
+          }
+
+          &::before {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 100px;
+            background-color: color(primary);
+            position: absolute;
+            transform: translateX(-70px);
+
+            @include lessThan($tablet) {
+              display: none;
+            }
+
+          }
+
+        }
+
+
+      }
+
+      &__content {
+        margin-top: rem(8);
+      }
+
+      &__title {
+        text-align: center;
+      }
+
+      &__button {
+        @include flex(row, wrap, center, center);
+        margin-top: rem(32);
+      }
+    }
+  }
+}
