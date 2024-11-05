@@ -26,10 +26,14 @@
 
   @if($number2['button'])
     <div class="s-number__button">
-      <x-button :appearance="$number2['button']['color']" :icon="$number2['button']['icon']" :iconposition="$number2['button']['iconposition']"
-                :href="$number2['button']['link']['url']">
+      <x-akyos-blocks::aky-button
+              :appearance="$number2['button']['color']"
+              :icon="$number2['button']['icon']"
+              :iconposition="$number2['button']['iconposition']"
+              :href="$number2['button']['link']['url']"
+      >
         {{ $number2['button']['link']['title'] }}
-      </x-button>
+      </x-akyos-blocks::aky-button>
     </div>
   @endif
 </div>

@@ -28,7 +28,7 @@ class AkyBNumbers1
                     Number::make('Nombre', 'number')
                         ->required(),
                     WYSIWYGEditor::make('Description', 'description'),
-                ])->required()->maxRows(4),
+                ])->required(),
         ])->layout($layout);
     }
 }

@@ -4,7 +4,7 @@
       @include flex(column, wrap, center, center);
       &-layout {
         @include flex(row, wrap, center, center);
-        gap: rem(16);
+        gap: rem(32);
         margin-bottom: rem(32);
         margin-top: rem(32);
         &-inner {
@@ -28,8 +28,8 @@
       }
       .c-image {
         img {
-          width: rem(64);
-          height: rem(64);
+          width: 100%;
+          max-height: rem(100);
         }
       }
 
