@@ -2,30 +2,30 @@
 
 namespace Akyos\Blocks\Acf\Fields;
 
-use App\Acf\Fields\Alignement;
-use App\Acf\Fields\Button;
 use App\Acf\Fields\Title;
 use Extended\ACF\Fields\Group;
-use Extended\ACF\Fields\Image;
+use Extended\ACF\Fields\Number;
+use Extended\ACF\Fields\Select;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\WYSIWYGEditor;
 
-class Content1
+class AkyBContent4
 {
     public static function make(string $label, string $id, $layout = 'table')
     {
         return Group::make($label, $id)->fields([
             Tab::make("Contenu"),
+            Number::make('Info', 'info'),
             Title::make('Titre', 'title')
                 ->required(),
-            WYSIWYGEditor::make('Contenu', 'content')
-                ->required(),
-            Button::make('Bouton', 'button'),
-            Image::make('Image', 'image')
-                ->format('id')
-                ->required(),
+            WYSIWYGEditor::make('Contenu', 'content'),
+            AkyB_Button::make('Bouton', 'button'),
             Tab::make('Options'),
-            Alignement::make("Alignement", "order")
+            Select::make('Alignement du contenu', 'order')
+                ->choices([
+                    'left' => 'Gauche',
+                    'right' => 'Droite',
+                ])->default('left'),
         ])->layout($layout);
     }
 }

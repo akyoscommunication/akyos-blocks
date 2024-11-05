@@ -4,13 +4,14 @@ namespace Akyos\Blocks\Acf\Fields;
 
 use App\Acf\Fields\Title;
 use Extended\ACF\Fields\Group;
+use Extended\ACF\Fields\Image;
 use Extended\ACF\Fields\Number;
 use Extended\ACF\Fields\Repeater;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\WYSIWYGEditor;
 
-class Numbers2
+class AkyBNumbers1
 {
     public static function make(string $label, string $id, $layout = 'table')
     {
@@ -22,6 +23,8 @@ class Numbers2
             AkyB_Button::make('Bouton', 'button'),
             Repeater::make('Nombres', 'numbers')
                 ->fields([
+                    Image::make('Icon', 'icon')
+                        ->format('id'),
                     Number::make('Nombre', 'number')
                         ->required(),
                     WYSIWYGEditor::make('Description', 'description'),

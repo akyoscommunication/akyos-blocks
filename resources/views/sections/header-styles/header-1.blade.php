@@ -57,11 +57,8 @@
         @if($social)
           @include('partials.social')
         @endif
-
       </div>
-
     @endif
-
   </div>
 
 </header>

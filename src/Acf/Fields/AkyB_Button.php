@@ -21,7 +21,7 @@ class AkyB_Button
                     'small_rounded' => 'Arrondi petit',
                     'square' => 'Carré',
                 ]),
-            Icons::make('Icon', 'icon'),
+            AkyBIcons::make('Icon', 'icon'),
             Select::make('Icon position', 'iconposition')
                 ->choices([
                     'left' => 'Gauche',

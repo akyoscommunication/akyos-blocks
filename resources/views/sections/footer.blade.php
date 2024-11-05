@@ -1,4 +1,4 @@
-@include('sections.footer-styles.options.option-' . $footer_option_style)
-<footer class="footer footer--style-{{ $footer_style }}">
-  @include('sections.footer-styles.footer-' . $footer_style)
+@include('akyos-blocks::sections.footer-styles.options.option-' . get_field('footer_option_style', 'option'))
+<footer class="footer footer--style-{{ get_field('footer_style', 'option') }}">
+    @include('akyos-blocks::sections.footer-styles.footer-' . get_field('footer_style', 'option'))
 </footer>
