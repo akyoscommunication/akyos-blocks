@@ -10,7 +10,7 @@ use Extended\ACF\Fields\Image;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\WYSIWYGEditor;
 
-class AkyBContent1
+class AkyB_Content1
 {
     public static function make(string $label, string $id, $layout = 'table')
     {

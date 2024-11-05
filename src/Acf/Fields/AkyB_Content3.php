@@ -9,7 +9,7 @@ use Extended\ACF\Fields\Repeater;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\WYSIWYGEditor;
 
-class AkyBContent3
+class AkyB_Content3
 {
     public static function make(string $label, string $id, $layout = 'table')
     {

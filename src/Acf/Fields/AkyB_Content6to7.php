@@ -8,7 +8,7 @@ use Extended\ACF\Fields\Repeater;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\WYSIWYGEditor;
 
-class AkyBContent6To7
+class AkyB_Content6to7
 {
     public static function make(string $label, string $id, $layout = 'table')
     {
@@ -24,7 +24,7 @@ class AkyBContent6To7
                     WYSIWYGEditor::make('Contenu', 'content')
                         ->required(),
                     AkyB_Button::make('Bouton', 'button')
-                ])->maxRows(3),
+                ])->maxRows(3)->collapsed('title')->layout('block'),
             Tab::make('Options'),
         ])->layout($layout);
     }

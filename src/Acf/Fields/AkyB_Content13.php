@@ -7,7 +7,7 @@ use Extended\ACF\Fields\Group;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\WYSIWYGEditor;
 
-class AkyBContent13
+class AkyB_Content13
 {
     public static function make(string $label, string $id, $layout = 'table')
     {

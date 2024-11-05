@@ -11,7 +11,7 @@ use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\WYSIWYGEditor;
 
-class AkyBNumbers1
+class AkyB_Numbers1
 {
     public static function make(string $label, string $id, $layout = 'table')
     {

@@ -8,7 +8,7 @@ use Extended\ACF\Fields\Repeater;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\Text;
 
-class AkyBContent5
+class AkyB_Content5
 {
     public static function make(string $label, string $id, $layout = 'table')
     {
