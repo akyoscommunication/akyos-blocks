@@ -3,9 +3,8 @@
 namespace Akyos\Blocks;
 
 
-use App\Acf\Fields\Button;
+use Akyos\Blocks\Acf\Fields\AkyB_Button;
 use Extended\ACF\ConditionalLogic;
-use Extended\ACF\Fields\Image;
 use Extended\ACF\Fields\RadioButton;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\Text;
@@ -74,7 +73,7 @@ class AkyosBlocksFunctions
                         ->ConditionalLogic([
                             ConditionalLogic::where('footer_option_style', '!=', '1')
                         ]),
-                    Button::make('Bouton footer option', 'footer_option_button')
+                    AkyB_Button::make('Bouton footer option', 'footer_option_button')
                         ->ConditionalLogic([
                             ConditionalLogic::where('footer_option_style', '!=', '1')
                         ]),

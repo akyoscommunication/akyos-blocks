@@ -4,7 +4,7 @@ namespace Akyos\Blocks\Acf\Fields;
 
 use Extended\ACF\Fields\Select;
 
-class AkyBIcons
+class AkyB_Icons
 {
     public static function make(string $label, string $id)
     {

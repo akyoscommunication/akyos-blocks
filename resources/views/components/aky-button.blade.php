@@ -1,8 +1,8 @@
 <a class="btn btn--{{ $appearance }} btn--{{ $iconposition }} btn--{{ $borderradius }}">
 
-    @if($icon !== '')
-        @icon($icon)
-    @endif
+	@if($icon !== 'none')
+		@icon($icon)
+	@endif
 
-    <span>{!! $slot !!}</span>
+	<span>{!! $slot !!}</span>
 </a>

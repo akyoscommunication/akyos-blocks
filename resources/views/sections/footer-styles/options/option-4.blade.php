@@ -3,10 +3,15 @@
 		<h2>
 			{!! $options['footer_option_text'] !!}
 		</h2>
-		<x-button :appearance="$options['footer_option_button']['color']" :icon="$options['footer_option_button']['icon']" :iconposition="$options['footer_option_button']['iconposition']"
-					 :href="$options['footer_option_button']['link']['url']">
+
+		@component('akyos-blocks::components.aky-button', [
+          'appearance' => $options['footer_option_button']['color'],
+          'icon' => $options['footer_option_button']['icon'] ?? '',
+          'iconposition' => $options['footer_option_button']['iconposition'],
+          'href' => $options['footer_option_button']['link']['url'],
+          'borderradius' => $options['footer_option_button']['borderradius'],
+      ])
 			{{ $options['footer_option_button']['link']['title'] }}
-  </x-button>
-  </div>
+            @endcomponent
+    </div>
 </footer>
-∂
