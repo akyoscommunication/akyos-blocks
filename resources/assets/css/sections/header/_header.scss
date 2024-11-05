@@ -1,8 +1,3 @@
-@import "burger";
-@import "transparent";
-@import "search";
-@import "submenu";
-
 .header {
   &-topbar {
     background-color: color(primary);
@@ -11,48 +6,57 @@
     font-style: normal;
     font-weight: 400;
     line-height: 22px;
+
     &--style {
       &-1 {
         .header-topbar {
         }
       }
+
       &-2 {
-          .header-topbar {
-            &-layout {
-              @include flex(row, wrap, space-between, center);
-              &-inner {
+        .header-topbar {
+          &-layout {
+            @include flex(row, wrap, space-between, center);
+
+            &-inner {
+              @include flex(row, wrap, start, center);
+              gap: rem(100);
+
+              &__row {
                 @include flex(row, wrap, start, center);
-                gap: rem(100);
-                &__row {
-                  @include flex(row, wrap, start, center);
-                  gap: rem(12);
-                }
-              }
-              svg {
-                height: rem(16);
-                width: rem(16);
-                path {
-                  fill: color(light) !important;
-                }
-              }
-
-              &-inner {
-
-              }
-              &__end {
-                @include flex(row, nowrap, end, center);
                 gap: rem(12);
               }
             }
+
+            svg {
+              height: rem(16);
+              width: rem(16);
+
+              path {
+                fill: color(light) !important;
+              }
+            }
+
+            &-inner {
+
+            }
+
+            &__end {
+              @include flex(row, nowrap, end, center);
+              gap: rem(12);
+            }
           }
+        }
 
       }
+
       &-3 {
         .header-topbar {
         }
       }
     }
   }
+
   &--style {
     &-1 {
       .header {
@@ -65,18 +69,17 @@
 .header-wrap {
   grid-area: header;
   position: sticky;
-  top: 0px;
+  top: 0;
   background-color: color(light, 1);
   z-index: 999;
   transition: $default-transition;
 
   &.scrolled {
-    box-shadow: 0px 0px 20px color(dark, 0.3);
+    box-shadow: 0 0 20px color(dark, 0.3);
   }
 
   .header {
     @include flex(row, nowrap, space-between, center);
-
 
 
     &-brand {
@@ -121,7 +124,7 @@
 
                 height: 2px;
                 bottom: -5px;
-                width: 0%;
+                width: 0;
                 background-color: color(primary);
                 transition: $default-transition;
               }
@@ -160,7 +163,6 @@
           }
         }
       }
-
     }
 
     &-actions {
@@ -173,7 +175,5 @@
         cursor: pointer;
       }
     }
-
   }
-
 }

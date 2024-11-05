@@ -1,0 +1,53 @@
+.s-hero--style {
+  &-3 {
+    @include flex(row, nowrap, space-between, center);
+    gap: rem(48);
+
+    @include lessThan($tablet) {
+      flex-direction: column;
+    }
+
+    .s-hero {
+      &-layout {
+
+        &__title {
+          @include lessThan($tablet) {
+            text-align: center;
+          }
+        }
+        &__buttons {
+          @include flex(row, wrap, start, center);
+          gap: rem(24);
+          margin-top: rem(24);
+          @include lessThan($mobile) {
+            flex-direction: column;
+          }
+          @include lessThan($tablet) {
+            justify-content: center;
+          }
+        }
+
+        &__content {
+          margin-top: rem(24);
+          @include lessThan($tablet) {
+            text-align: center;
+          }
+        }
+      }
+
+      &-image {
+
+        img {
+          height: rem(800);
+          object-fit: cover;
+          object-position: center;
+          overflow: hidden;
+          @include lessThan($tablet) {
+            height: rem(400);
+          }
+        }
+
+      }
+    }
+  }
+}

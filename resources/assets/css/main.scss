@@ -9,7 +9,9 @@
 @import "../../../../../../resources/assets/css/common/helpers";
 @import "../../../../../../resources/assets/css/common/reset";
 
-//@import "layouts/layout";
 
+@import "sections/header/header";
+@import "sections/footer/footer";
 @import "utils/blocks/blocks";
 @import "utils/components/components";
+

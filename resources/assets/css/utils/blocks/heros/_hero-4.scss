@@ -1,0 +1,68 @@
+.s-hero--style {
+  &-4 {
+    .s-hero {
+      &-layout {
+        @include flex(row, nowrap, start, center);
+        gap: rem(200);
+
+        @include lessThan($tablet) {
+          gap: rem(32);
+          flex-direction: column;
+
+        }
+
+        &__title {
+          //max-width: rem(460);
+
+        }
+
+        &__buttons {
+          @include flex(row, wrap, center, center);
+          gap: rem(24);
+          margin-top: rem(24);
+          @include lessThan($mobile) {
+            flex-direction: column;
+          }
+        }
+
+        &-container {
+          @include flex(row, wrap, center, center);
+          max-width: rem(460);
+        }
+
+        &__content {
+          margin-top: rem(24);
+          @include lessThan($tablet) {
+            margin-top: rem(0);
+          }
+        }
+      }
+
+      &-image {
+        margin-top: rem(90);
+        padding-left: rem(15);
+        padding-right: rem(15);
+        max-width: $container;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include lessThan($tablet) {
+          padding-left: rem(0);
+          padding-right: rem(0);
+        }
+
+        img {
+          width: 100%;
+          height: rem(470);
+          object-fit: cover;
+          object-position: center;
+          overflow: hidden;
+        }
+
+        @include lessThan($tablet) {
+          margin-top: rem(32);
+        }
+      }
+    }
+  }
+}
