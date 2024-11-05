@@ -1,10 +1,10 @@
 .btn {
-
   @include flex(row, nowrap, space-between, center);
 
   &--right {
     @include flex(row-reverse, nowrap, space-between, center);
   }
+
   gap: rem(8);
   width: fit-content;
   cursor: pointer;
@@ -21,9 +21,11 @@
   &--rounded {
     border-radius: rem(32);
   }
+
   &--small_rounded {
     border-radius: rem(8);
   }
+
   svg {
     width: rem(20);
     height: rem(20);

@@ -1,6 +1,6 @@
-<a class="btn btn--{{ $appearance }} btn--{{ $iconposition }} btn--{{ $borderradius }}">
+<a class="btn btn--{{ $appearance }} btn--{{ $iconposition ?? null }} btn--{{ $borderradius ?? null }}">
 
-	@if($icon !== 'none')
+	@if(isset($icon) && $icon !== 'none')
 		@icon($icon)
 	@endif
 

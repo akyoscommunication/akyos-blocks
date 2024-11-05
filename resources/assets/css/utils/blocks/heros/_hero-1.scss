@@ -10,7 +10,7 @@
           top: 0;
           left: 0;
           width: 100%;
-          height: rem(810);
+          height: calc(100vh - 106px);
           z-index: 0;
           object-fit: cover;
           object-position: center;
@@ -22,9 +22,10 @@
 
         position: absolute;
         z-index: 1;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: rem(112);
+        left: 0;
+        right: 0;
+        margin: auto;
 
         .s-hero {
           &-title {

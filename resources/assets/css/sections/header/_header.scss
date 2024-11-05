@@ -1,70 +1,5 @@
-.header {
-  &-topbar {
-    background-color: color(primary);
-    color: color(light);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 22px;
-
-    &--style {
-      &-1 {
-        .header-topbar {
-        }
-      }
-
-      &-2 {
-        .header-topbar {
-          &-layout {
-            @include flex(row, wrap, space-between, center);
-
-            &-inner {
-              @include flex(row, wrap, start, center);
-              gap: rem(100);
-
-              &__row {
-                @include flex(row, wrap, start, center);
-                gap: rem(12);
-              }
-            }
-
-            svg {
-              height: rem(16);
-              width: rem(16);
-
-              path {
-                fill: color(light) !important;
-              }
-            }
-
-            &-inner {
-
-            }
-
-            &__end {
-              @include flex(row, nowrap, end, center);
-              gap: rem(12);
-            }
-          }
-        }
-
-      }
-
-      &-3 {
-        .header-topbar {
-        }
-      }
-    }
-  }
-
-  &--style {
-    &-1 {
-      .header {
-
-      }
-    }
-  }
-}
+@import "top-bar";
+@import "nav-bar";
 
 .header-wrap {
   grid-area: header;
@@ -81,13 +16,11 @@
   .header {
     @include flex(row, nowrap, space-between, center);
 
-
     &-brand {
       max-width: rem(100);
     }
 
     &-nav {
-
       @include flex(row, nowrap, flex-end, center);
       gap: 16px;
 
@@ -162,17 +95,6 @@
             }
           }
         }
-      }
-    }
-
-    &-actions {
-
-      @include flex(row, nowrap, flex-end, center);
-
-      gap: rem(16);
-
-      &-search {
-        cursor: pointer;
       }
     }
   }

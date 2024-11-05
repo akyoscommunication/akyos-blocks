@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
 /**
  * Swiper 11.1.14
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -878,18 +879,18 @@ body.hidden-scroll{overflow:hidden}.sl-overlay{position:fixed;left:0;right:0;top
   --aky-color-grey-200: #E8E4DF;
   --aky-color-grey-300: #E1E1E1;
   --aky-color-grey-500: #888;
-  --aky-color-light: #FFFFFF;
+  --aky-color-light: #FAFAFA;
   --aky-color-dark: #121212;
-  --aky-color-text-color: #0F2452;
+  --aky-color-text-color: #121212;
   --aky-color-danger: #e74c3c;
   --aky-color-primary--rgb: 0, 113, 45;
   --aky-color-secondary--rgb: 97, 130, 100;
   --aky-color-grey-200--rgb: 232, 228, 223;
   --aky-color-grey-300--rgb: 225, 225, 225;
   --aky-color-grey-500--rgb: 136, 136, 136;
-  --aky-color-light--rgb: 255, 255, 255;
+  --aky-color-light--rgb: 250, 250, 250;
   --aky-color-dark--rgb: 18, 18, 18;
-  --aky-color-text-color--rgb: 15, 36, 82;
+  --aky-color-text-color--rgb: 18, 18, 18;
   --aky-color-danger--rgb: 231, 76, 60;
 }
 
@@ -1219,7 +1220,7 @@ body.hidden-scroll{overflow:hidden}.sl-overlay{position:fixed;left:0;right:0;top
 
 :root {
   font-size: 16px;
-  font-family: "", sans-serif;
+  font-family: "Bitter", sans-serif;
 }
 
 body {
@@ -1333,14 +1334,6 @@ button {
   padding: 0;
 }
 
-.header-topbar {
-  background-color: rgba(var(--aky-color-primary--rgb), 1);
-  color: rgba(var(--aky-color-light--rgb), 1);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 22px;
-}
 .header-topbar--style-2 .header-topbar-layout {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1411,6 +1404,23 @@ button {
           align-items: center;
   gap: 0.75rem;
 }
+
+.header-topbar {
+  background-color: rgba(var(--aky-color-primary--rgb), 1);
+  color: rgba(var(--aky-color-light--rgb), 1);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.header--style-3 .header-nav ul li a {
+  color: rgba(var(--aky-color-primary--rgb), 1);
+}
+.header--style-3 .header-nav ul li.current-menu-item {
+  font-weight: bold;
+}
+
 .header-wrap {
   grid-area: header;
   position: sticky;
@@ -1510,25 +1520,6 @@ button {
 }
 .header-wrap .header-nav__nav.active-color ul.menu > li a:hover {
   color: rgba(var(--aky-color-primary--rgb), 1);
-}
-.header-wrap .header-actions {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 1rem;
-}
-.header-wrap .header-actions-search {
-  cursor: pointer;
 }
 
 .footer {
@@ -2374,7 +2365,7 @@ button {
   top: 0;
   left: 0;
   width: 100%;
-  height: 50.625rem;
+  height: calc(100vh - 106px);
   z-index: 0;
   -o-object-fit: cover;
      object-fit: cover;
@@ -2385,10 +2376,10 @@ button {
 .s-hero--style-1 .s-hero-layout {
   position: absolute;
   z-index: 1;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  top: 7rem;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 .s-hero--style-1 .s-hero-layout .s-hero-title .c-title {
   text-align: center;
@@ -2684,7 +2675,7 @@ button {
   margin-top: 5.625rem;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
-  max-width: 1210px;
+  max-width: 1277px;
   margin-left: auto;
   margin-right: auto;
 }
