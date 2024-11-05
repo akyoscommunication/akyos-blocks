@@ -3,6 +3,7 @@
 namespace Akyos\Blocks\View\Blocks;
 
 use Akyos\Blocks\Acf\Fields\AkyBContent1;
+use Akyos\Blocks\Acf\Fields\AkyBContent13;
 use Akyos\Blocks\Acf\Fields\AkyBContent3;
 use Akyos\Blocks\Acf\Fields\AkyBContent4;
 use Akyos\Blocks\Acf\Fields\AkyBContent5;
@@ -47,6 +48,7 @@ class AkyB_Content extends Block
                     '7' => 'Style 7 : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/content-style-7.png" alt="Style 7" />',
                     '8' => 'Style 8 : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/content-style-8.png" alt="Style 8" />',
                     '9' => 'Style 9 : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/content-style-9.png" alt="Style 9" />',
+                    '13' => 'Style 13 : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/content-style-13.png" alt="Style 13" />',
                 ])->default('1-1'),
 
             AkyBContent1::make("Contenu 1", "content1to2")
@@ -87,6 +89,11 @@ class AkyB_Content extends Block
                 ->layout('block')
                 ->conditionalLogic([
                     ConditionalLogic::where('style', '==', '9')
+                ]),
+            AkyBContent13::make("Contenu 13", "content13")
+                ->layout('block')
+                ->conditionalLogic([
+                    ConditionalLogic::where('style', '==', '13')
                 ]),
         ];
     }

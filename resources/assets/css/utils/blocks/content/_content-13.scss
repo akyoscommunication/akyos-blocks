@@ -1,0 +1,22 @@
+.s-content--style {
+  &-13 {
+    .s-content {
+      @include flex(row, wrap, space-between, start);
+      gap: rem(32);
+      @include lessThan($tablet) {
+        @include flex(column, wrap, center, center);
+        gap: rem(32);
+      }
+
+      p + p {
+        margin-top: rem(24);
+      }
+      &-layout {
+        max-width: rem(500);
+      }
+      &__text {
+        margin-top: rem(32);
+      }
+    }
+  }
+}
