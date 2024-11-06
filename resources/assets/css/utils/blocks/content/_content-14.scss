@@ -1,0 +1,36 @@
+.s-content--style {
+  &-14 {
+    .s-content {
+      .c-title {
+        text-align: center;
+      }
+      &__text {
+        text-align: center;
+        @extend %fs-26;
+        margin-top: rem(32);
+      }
+      &-layout {
+        @include flex(row, wrap, space-evenly, start);
+        gap: rem(20);
+        margin-top: rem(58);
+        &-inner {
+          @include flex(column, nowrap, start, center);
+          gap: rem(32);
+          max-width: rem(280);
+
+          background-color: color(grey-200);
+          border-radius: rem(24);
+          padding: rem(64) rem(32);
+          .c-image {
+            height: rem(100);
+            width: rem(100);
+          }
+          &__text {
+            min-height: rem(70);
+            color: color(primary);
+          }
+        }
+      }
+    }
+  }
+}
