@@ -57,7 +57,7 @@
           opacity: 1;
           transition: opacity 0.3s ease;
 
-          &-prev {
+          &-prev, &.third-slide-before {
             opacity: 0;
             pointer-events: none;
           }
