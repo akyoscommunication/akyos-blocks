@@ -13,14 +13,14 @@
 
         <div class="header-nav">
             @menu('main_navigation')
-            @if(!empty($options['header_button']['url']))
-                <x-akyos-blocks::aky-button
-                    appearance="primary"
-                    :href="$options['header_button']['url']"
-                >
-                    {{ $options['header_button']['title'] }}
-                </x-akyos-blocks::aky-button>
-            @endif
+            {{--            @if(!empty($options['header_button']['url']))--}}
+            {{--                <x-akyos-blocks::aky-button--}}
+            {{--                    appearance="primary"--}}
+            {{--                    :href="$options['header_button']['url']"--}}
+            {{--                >--}}
+            {{--                    {{ $options['header_button']['title'] }}--}}
+            {{--                </x-akyos-blocks::aky-button>--}}
+            {{--            @endif--}}
         </div>
     </div>
 </header>
