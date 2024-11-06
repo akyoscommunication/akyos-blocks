@@ -6,6 +6,7 @@ use Akyos\Blocks\Acf\Fields\AkyB_Content1;
 use Akyos\Blocks\Acf\Fields\AkyB_Content13;
 use Akyos\Blocks\Acf\Fields\AkyB_Content14;
 use Akyos\Blocks\Acf\Fields\AkyB_Content15;
+use Akyos\Blocks\Acf\Fields\AkyB_Content16;
 use Akyos\Blocks\Acf\Fields\AkyB_Content3;
 use Akyos\Blocks\Acf\Fields\AkyB_Content4;
 use Akyos\Blocks\Acf\Fields\AkyB_Content5;
@@ -53,6 +54,7 @@ class AkyB_Content extends Block
                     '13' => 'Style 13',
                     '14' => 'Style 14',
                     '15' => 'Style 15',
+                    '16' => 'Style 16',
                 ])->default('1-1'),
 
             AkyB_Content1::make("Contenu 1", "content1to2")
@@ -108,6 +110,11 @@ class AkyB_Content extends Block
                 ->layout('block')
                 ->conditionalLogic([
                     ConditionalLogic::where('style', '==', '15')
+                ]),
+            AkyB_Content16::make("Contenu 16", "content16")
+                ->layout('block')
+                ->conditionalLogic([
+                    ConditionalLogic::where('style', '==', '16')
                 ]),
         ];
     }

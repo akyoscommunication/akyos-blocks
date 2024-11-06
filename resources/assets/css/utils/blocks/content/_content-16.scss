@@ -1,0 +1,25 @@
+.s-content--style {
+  &-16 {
+    .s-content {
+      p + p {
+        margin-top: rem(24);
+      }
+      .c-title {
+        text-align: center;
+      }
+      &__text {
+        text-align: center;
+        margin-top: rem(32);
+      }
+      &-layout {
+        margin-top: rem(40);
+        @include flex(row, wrap, center, start);
+        row-gap: rem(40);
+        column-gap: rem(100);
+        &-inner {
+          max-width: rem(540);
+        }
+      }
+    }
+  }
+}
