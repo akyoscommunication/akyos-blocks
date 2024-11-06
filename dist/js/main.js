@@ -124,6 +124,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Slider */ "./resources/assets/js/components/Slider.js");
 
 window.onload = function () {
+  console.log('oui');
   new _components_Slider__WEBPACK_IMPORTED_MODULE_0__.Slider();
 };
 

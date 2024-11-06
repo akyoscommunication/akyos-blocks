@@ -6,38 +6,42 @@
 
       svg {
         cursor: pointer;
+
         path {
           fill: color(primary);
         }
       }
+
       &-svg {
         svg {
           transform: rotate(180deg);
         }
       }
     }
+
     .s-content {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       grid-template-rows: 1fr;
       grid-column-gap: 50px;
-      grid-row-gap: 0px;
+      grid-row-gap: 0;
 
       @include lessThan($tablet) {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
+        grid-column-gap: 0;
+        grid-row-gap: 0;
       }
 
 
       &-content {
         grid-area: 1 / 1 / 2 / 5;
+
         @include flex(column, wrap, center, start);
         gap: rem(32);
         z-index: 3;
-        //background-color: color(light);
+
         @include lessThan($tablet) {
           grid-area: 1 / 1 / 2 / 2;
           align-items: center;
@@ -45,43 +49,34 @@
           padding-bottom: rem(16);
         }
       }
+
       &-slider {
         grid-area: 1 / 5 / 2 / 13;
-        //overflow: visible !important;
-        @include lessThan($tablet) {
-          grid-area: 2 / 1 / 3 / 2;
-          max-width: rem(700);
-        }
-        @include lessThan($mobileXs) {
-          max-width: rem(300);
-        }
-        &:before {
-          content: '';
-          position: absolute;
-          width: 38%;
-          height: rem(500);
-          background-color: color(light);
-          z-index: 2;
-          left: 0;
-          @include lessThan(1500px) {
-            display: none;
+
+        .swiper-slide {
+          opacity: 1;
+          transition: opacity 0.3s ease;
+
+          &-prev {
+            opacity: 0;
+            pointer-events: none;
           }
         }
+
         .swiper-wrapper {
           padding-bottom: rem(8);
         }
-        .slider--content3 {
-          overflow: visible !important;
-          z-index: 1;
-          @include lessThan(1500px) {
-            overflow: hidden !important;
-          }
 
+        .slider--content3 {
+          z-index: 1;
+          overflow: visible !important;
         }
       }
+
       &__image {
         .c-image {
           max-width: rem(400);
+
           img {
             height: rem(470);
             object-fit: cover;
@@ -96,18 +91,22 @@
           }
         }
       }
+
       .swiper-buttons {
         display: none;
       }
+
       &-swiper {
         width: auto;
         padding: 0 rem(16);
+
         .swiper-pagination-bullet {
           width: rem(10);
           height: rem(10);
           background-color: color(grey-300);
           opacity: 1;
         }
+
         .swiper-pagination-bullet-active {
           background-color: color(primary);
         }

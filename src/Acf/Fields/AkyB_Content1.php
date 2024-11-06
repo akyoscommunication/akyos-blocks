@@ -20,7 +20,7 @@ class AkyB_Content1
                 ->required(),
             WYSIWYGEditor::make('Contenu', 'content')
                 ->required(),
-            Button::make('Bouton', 'button'),
+            AkyB_Button::make('Bouton', 'button'),
             Image::make('Image', 'image')
                 ->format('id')
                 ->required(),

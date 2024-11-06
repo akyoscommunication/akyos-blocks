@@ -11,12 +11,12 @@
         {!! $content1to2['content'] !!}
       </div>
 
-      @if($content1to2['button'])
+      @if($content1to2['button'] && $content1to2['button']['link'])
         <div class="s-content-layout__button">
-          <x-button :appearance="$content1to2['button']['color']" :icon="$content1to2['button']['icon']" :iconposition="$content1to2['button']['iconposition']"
+          <x-akyos-blocks::aky-button :appearance="$content1to2['button']['color']" :icon="$content1to2['button']['icon']" :iconposition="$content1to2['button']['iconposition']"
                     :href="$content1to2['button']['link']['url']">
             {{ $content1to2['button']['link']['title'] }}
-          </x-button>
+          </x-akyos-blocks::aky-button>
         </div>
       @endif
     </div>
