@@ -16,6 +16,7 @@ class AkyB_Content9
     {
         return Group::make($label, $id)->fields([
             Tab::make("Contenu"),
+            Title::make('Titre', 'title'),
             Repeater::make('Contenu', 'contents')
                 ->fields([
                     Title::make('Titre', 'title'),

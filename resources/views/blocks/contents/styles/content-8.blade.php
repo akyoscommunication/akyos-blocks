@@ -1,4 +1,3 @@
-
 <div style="background-image: url({{$content8['image']}});background-position: center;">
 <div class="container s-content-{{$content8['order']}}-container">
   <div class="s-content-layout">

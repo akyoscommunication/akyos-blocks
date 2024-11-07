@@ -26,17 +26,20 @@
 
         &-layout {
           @include flex(column, wrap, space-evenly, start);
+
           gap: rem(22);
+          flex: 1;
         }
 
         &-image {
+          flex: 1;
+
           .c-image {
-            width: rem(630);
 
             img {
               height: 100%;
               max-height: rem(460);
-
+              width: 100%;
               object-fit: cover;
             }
 
@@ -96,7 +99,6 @@
           flex: 1;
 
           .c-image {
-            width: rem(630);
 
             img {
               height: 100%;
@@ -165,11 +167,10 @@
           }
 
           .c-image {
-            width: rem(630);
-
             img {
               height: 100%;
               max-height: rem(460);
+              width: 100%;
 
               object-fit: cover;
             }
@@ -223,9 +224,10 @@
         }
 
         &-layout {
+          @include flex(column, wrap, space-evenly, start);
+
           position: relative;
           z-index: 2;
-          @include flex(column, wrap, space-evenly, start);
           gap: rem(22);
           background-color: color(primary);
           color: color(light);
@@ -249,11 +251,11 @@
           }
 
           .c-image {
-            width: rem(630);
 
             img {
               height: 100%;
               max-height: rem(460);
+              width: 100%;
 
               object-fit: cover;
             }
