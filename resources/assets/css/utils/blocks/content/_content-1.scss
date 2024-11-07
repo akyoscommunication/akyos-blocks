@@ -87,10 +87,13 @@
         &-layout {
           @include flex(column, wrap, space-evenly, start);
           gap: rem(22);
+
+          flex: 1;
         }
 
         &-image {
           box-shadow: 22px -22px 0px 2px color(primary);
+          flex: 1;
 
           .c-image {
             width: rem(630);

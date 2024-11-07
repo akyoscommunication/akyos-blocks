@@ -6,15 +6,19 @@ use Akyos\Blocks\Acf\Fields\AkyB_Button;
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
 use App\Acf\Fields\Title;
-use Extended\ACF\Fields\Message;
+use Extended\ACF\Fields\DatePicker;
+use Extended\ACF\Fields\Image;
 use Extended\ACF\Fields\RadioButton;
+use Extended\ACF\Fields\Range;
+use Extended\ACF\Fields\Repeater;
+use Extended\ACF\Fields\Text;
+use Extended\ACF\Fields\Textarea;
 use Extended\ACF\Fields\WysiwygEditor;
 
 class AkyB_Comments extends Block
 {
 
-    public function __construct(
-    )
+    public function __construct()
     {
     }
 
@@ -32,20 +36,28 @@ class AkyB_Comments extends Block
         return [
             RadioButton::make('Style du bloc', 'style')
                 ->choices([
-                    '1' => 'Style 1 : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/comments-style-1.png" alt="Style 1" />',
-                    '2' => 'Style 2 : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/comments-style-2.png" alt="Style 2" />',
-                    '3' => 'Style 3  : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/comments-style-3.png" alt="Style 3" />',
-                    '4' => 'Style 4  : <img style="max-width:300px;" src="' . get_template_directory_uri() . '/resources/assets/images/comments-style-4.png" alt="Style 4" />',
+                    '1' => 'Style 1',
+                    '2' => 'Style 2',
+                    '3' => 'Style 3',
+                    '4' => 'Style 4',
                 ])->layout('vertical')->default('1'),
             Title::make('Titre', 'title'),
             WysiwygEditor::make("Petit Texte", "text"),
             AkyB_Button::make("Bouton", "button"),
-            Message::make(("Note : Les commentaires sont automatiquement affichés"), "note"),
+            Repeater::make("Commentaires", "comments")
+                ->fields([
+                    Text::make("Nom", "name"),
+                    Image::make("Photo", "photo")->Format("id"),
+                    Textarea::make("Description", "description"),
+                    Text::make("Métier", "job"),
+                    Range::make('étoiles', 'etoiles')->min(0)->max(5)->step(1),
+                    DatePicker::make('Date', 'date'),
+                ])->layout('block')->collapsed('name')
         ];
     }
 
     public function render()
     {
-        return view('blocks.comments.comment');
+        return view('akyos-blocks::blocks.comments.comment');
     }
 }
