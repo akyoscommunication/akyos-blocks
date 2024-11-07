@@ -22,7 +22,7 @@ class AkyB_Numbers2
             AkyB_Button::make('Bouton', 'button'),
             Repeater::make('Nombres', 'numbers')
                 ->fields([
-                    Number::make('Nombre', 'number')
+                    Text::make('Nombre', 'number')
                         ->required(),
                     WYSIWYGEditor::make('Description', 'description'),
                 ])->required()->maxRows(4),

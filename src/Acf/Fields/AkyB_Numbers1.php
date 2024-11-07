@@ -25,7 +25,7 @@ class AkyB_Numbers1
                 ->fields([
                     Image::make('Icon', 'icon')
                         ->format('id'),
-                    Number::make('Nombre', 'number')
+                    Text::make('Nombre', 'number')
                         ->required(),
                     WYSIWYGEditor::make('Description', 'description'),
                 ])->required(),
