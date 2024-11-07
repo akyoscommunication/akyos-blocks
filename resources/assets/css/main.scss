@@ -9,9 +9,12 @@
 @import "../../../../../../resources/assets/css/common/helpers";
 @import "../../../../../../resources/assets/css/common/reset";
 
-
 @import "sections/header/header";
 @import "sections/footer/footer";
-@import "utils/blocks/blocks";
-@import "utils/components/components";
+
+@import "utils/blocks/*.scss";
+@import "utils/components/*.scss";
+@import "utils/blocks/**/*.scss";
+@import "utils/components/**/*.scss";
+
 
