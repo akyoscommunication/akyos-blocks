@@ -31,9 +31,9 @@ class AkyB_Numbers extends Block
             Tab::make("Contenu"),
             RadioButton::make('Style du bloc', 'style')
                 ->choices([
-                    '1' => 'Style 1 : <img style="max-width:300px;" src="'.get_template_directory_uri().'/resources/assets/images/numbers-style-1.png" alt="Style 1" />',
-                    '2-1' => 'Style 2-1 : <img style="max-width:300px;" src="'.get_template_directory_uri().'/resources/assets/images/numbers-style-2-1.png" alt="Style 2-1" />',
-                    '2-2' => 'Style 2-2 : <img style="max-width:300px;" src="'.get_template_directory_uri().'/resources/assets/images/numbers-style-2-2.png" alt="Style 2-2" />',
+                    '1' => 'Style 1',
+                    '2-1' => 'Style 2-1',
+                    '2-2' => 'Style 2-2',
                 ])->default('1'),
             AkyB_Numbers1::make('Nombre', 'number1')
                 ->layout('block')
@@ -46,7 +46,6 @@ class AkyB_Numbers extends Block
                     ConditionalLogic::where('style', '==', '2-1'),
                     ConditionalLogic::where('style', '==', '2-2'),
                 ]),
-
         ];
     }
 

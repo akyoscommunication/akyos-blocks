@@ -30,14 +30,13 @@
         <div class="s-hero-buttons">
             @foreach($buttons as $key => $button)
                 @component('akyos-blocks::components.aky-button', [
-            'appearance' => $button['button']['color'],
-            'icon' => $button['button']['icon'],
-            'iconposition' => $button['button']['iconposition'],
-            'href' => $button['button']['link']['url'],
-            'borderradius' => $button['button']['borderradius'],
-            'slot' => $button['button']['link']['title'],
-            ])
-
+        'appearance' => $button['button']['color'],
+        'icon' => $button['button']['icon'],
+        'iconposition' => $button['button']['iconposition'],
+        'href' => $button['button']['link']['url'],
+        'borderradius' => $button['button']['borderradius'],
+        ])
+                    {{ $button['button']['link']['title'] }}
                 @endcomponent
             @endforeach
         </div>

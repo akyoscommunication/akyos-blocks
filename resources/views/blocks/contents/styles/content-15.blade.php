@@ -1,5 +1,5 @@
 <div class="container s-content">
-    @if($content15['title']['value'])
+    @if($content15['title'] &&  $content15['title']['value'])
     <x-title :tag="$content15['title']['tag']">
         {!! $content15['title']['value'] !!}
     </x-title>

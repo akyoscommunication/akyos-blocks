@@ -4,6 +4,7 @@ namespace Akyos\Blocks\Acf\Fields;
 
 use App\Acf\Fields\Title;
 use Extended\ACF\Fields\Group;
+use Extended\ACF\Fields\Image;
 use Extended\ACF\Fields\Number;
 use Extended\ACF\Fields\Repeater;
 use Extended\ACF\Fields\Tab;
@@ -16,16 +17,16 @@ class AkyB_Numbers2
     {
         return Group::make($label, $id)->fields([
             Tab::make('Contenu'),
-            Title::make('Titre', 'title')
-                ->required(),
+            Title::make('Titre', 'title')->required(),
             Text::make('Contenu', 'content'),
             AkyB_Button::make('Bouton', 'button'),
             Repeater::make('Nombres', 'numbers')
                 ->fields([
-                    Text::make('Nombre', 'number')
+                    Text::make('Titre', 'number')
                         ->required(),
                     WYSIWYGEditor::make('Description', 'description'),
-                ])->required()->maxRows(4),
+                    Image::make('Icône', 'icon')->format('id')
+                ])->required(),
         ])->layout($layout);
     }
 }
