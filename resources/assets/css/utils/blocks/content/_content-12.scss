@@ -2,14 +2,17 @@
   &-12 {
     .s-content {
       z-index: 1;
+
       .c-title {
         text-align: center;
         margin-bottom: rem(40);
       }
+
       &-tab-filters {
         @include undoListStyles;
         @include flex(row, wrap, center, center);
         gap: rem(22);
+
         li {
           cursor: pointer;
           padding: rem(10) rem(64);
@@ -19,20 +22,23 @@
           transition: all 0.3s;
           border: 5px solid color(primary);
           @extend %fs-26;
-          @include lessThan($mobileXs){
+          @include lessThan($mobileXs) {
             padding: rem(10) rem(32);
             font-size: rem(20);
           }
         }
+
         li.active {
           background-color: color(primary);
           color: color(light);
         }
 
       }
+
       &-layout {
         @include flex(column, wrap, center, center);
         gap: rem(47);
+
         &__text {
           text-align: center;
           margin-top: rem(47);
@@ -40,25 +46,45 @@
           margin-left: auto;
           margin-right: auto;
         }
+
         &-inner {
-          @include flex(row, nowrap, start, center);
-          gap: rem(30);
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+
+          gap: rem(22);
           background-color: color(primary);
           color: color(light);
           border-radius: rem(24);
-          padding: rem(24)  rem(34);
+          padding: rem(24) rem(34);
           margin-bottom: rem(32);
+
           @include lessThan($mobile) {
             @include flex(column, nowrap, start, center);
+
             padding: rem(24) rem(16);
           }
+
+          > .c-title {
+            grid-column: 1/4;
+            margin-bottom: rem(24);
+          }
+
+          .s-content {
+            &-slider {
+              grid-column: 1/2;
+            }
+          }
+
           .btn {
             margin-top: rem(56);
           }
+
           &__img {
             width: rem(470);
+
             .c-image {
             }
+
             img {
 
               border-radius: rem(10);
@@ -66,6 +92,7 @@
               object-fit: cover;
 
             }
+
             @include lessThan($mobile) {
               width: rem(300);
               img {
@@ -74,14 +101,18 @@
             }
 
           }
-          &__text {
-            max-width: rem(490);
-          }
 
+          &__text {
+            grid-column: 2/4;
+            margin-block: auto;
+          }
         }
       }
+
       .swiper {
-        &-wrapper {}
+        &-wrapper {
+        }
+
         &-buttons {
           position: absolute;
           gap: rem(90);
@@ -89,12 +120,14 @@
           top: 90%;
           left: 50%;
           transform: translate(-50%, -50%);
+
           svg {
             path {
               fill: color(light);
             }
           }
         }
+
         &-pagination {
           &-bullet {
             width: rem(10);
@@ -109,6 +142,7 @@
           }
         }
       }
+
       &-slider {
         z-index: 1;
         position: relative;
