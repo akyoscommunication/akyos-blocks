@@ -1,0 +1,56 @@
+.swiper {
+
+  overflow: hidden;
+  &-wrapper {
+    margin-bottom: rem(8);
+  }
+
+
+
+  &-buttons {
+
+    @include flex(row, nowrap, center, start);
+    gap: rem(64);
+
+    &-prev {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+    &-next {
+    }
+
+    svg {
+      cursor: pointer;
+
+      path {
+        fill: color(primary);
+      }
+    }
+
+  }
+
+  &-pagination {
+    z-index: 3;
+    width: auto;
+    padding: 0 rem(16);
+
+    &-horizontal {
+      bottom: auto !important;
+      width: auto !important;
+      left: auto !important;
+    }
+
+    &-bullet {
+      width: rem(10);
+      height: rem(10);
+      background-color: color(grey-300);
+      opacity: 1;
+    }
+
+    &-bullet-active {
+      background-color: color(primary);
+    }
+  }
+
+}
