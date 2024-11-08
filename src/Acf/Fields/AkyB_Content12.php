@@ -22,7 +22,8 @@ class AkyB_Content12
                     WYSIWYGEditor::make('Contenu de l\'onglet', 'content'),
                     Repeater::make('Contenu de l\'onglet', 'content-tab')
                         ->fields([
-                            Text::make('Description', 'description'),
+                            Title::make('Titre', 'title'),
+                            WYSIWYGEditor::make('Description', 'description'),
                             Repeater::make('Images', 'images')
                                 ->fields([
                                     Image::make('Image', 'image')

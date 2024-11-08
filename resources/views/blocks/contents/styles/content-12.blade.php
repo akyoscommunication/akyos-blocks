@@ -16,20 +16,22 @@
             </div>
             <div class="s-content-layout-column" data-filtered="tab-{{ $key }}">
                 @foreach($tab['content-tab'] as $key2 =>  $tab_inner)
+                    <x-title :tag="$tab_inner['title']['tag']">
+                        {!! $tab_inner['title']['value'] !!}
+                    </x-title>
                     <div class="s-content-layout-inner" data-filtered="tab-{{ $key }}">
                         <div class="s-content-slider">
-
-                            <x-slider name="slider--content12{{$block['id'] . $key2 . $key}}" navigation="arrow"
+                            <x-akyos-blocks:aky-slider name="slider--content12{{$block['id'] . $key2 . $key}}" navigation="arrow"
                                       pagination="1" scrollbar="1" per="1" permd="1"
                                       persm="1"
                                       perxs="1"
-                                      slider_id="{{$block['id'] . $key2 . $key}}" class="s-content-layout-inner__img">
+                                      autoheight="true" gap="0"    sliderid="{{$block['id'] . $key2 . $key}}" class="s-content-layout-inner__img">
                                 @foreach($tab_inner['images'] as $key3 => $image)
                                     <div class="s-content__image swiper-slide" data-filtered="tab-{{ $key }}">
                                         <x-image :lg="$image['image']"/>
                                     </div>
                                 @endforeach
-                            </x-slider>
+                            </x-akyos-blocks:aky-slider>
 
                         </div>
                         <div>
