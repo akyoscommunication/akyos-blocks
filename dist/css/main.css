@@ -1299,7 +1299,7 @@ p {
 h2.c-title {
   font-size: 2.3125rem;
 }
-.s-content--style-14 .s-content__text, .s-content--style-12 .s-content-tab-filters li {
+.s-content--style-14 .s-content__text {
   font-size: 1.625rem;
 }
 body {

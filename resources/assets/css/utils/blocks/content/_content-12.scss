@@ -21,7 +21,7 @@
           background-color: color(light);
           transition: all 0.3s;
           border: 5px solid color(primary);
-          @extend %fs-26;
+
           @include lessThan($mobileXs) {
             padding: rem(10) rem(32);
             font-size: rem(20);
