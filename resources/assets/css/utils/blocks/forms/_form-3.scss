@@ -1,0 +1,40 @@
+.s-form--style {
+  &-3 {
+    .s-form {
+      .c-title {
+        text-align: center;
+      }
+
+      &__text {
+        margin: rem(34) 0;
+        text-align: center;
+
+      }
+
+      iframe {
+        width: 100%;
+        height: rem(600);
+        @include lessThan($tablet) {
+          height: rem(400);
+        }
+      }
+
+      &__image {
+        width: 100%;
+
+        img {
+          height: rem(600);
+          object-fit: cover;
+          @include lessThan($tablet) {
+            height: rem(400);
+          }
+        }
+      }
+
+      .btn {
+        margin-top: rem(34);
+        justify-self: center;
+      }
+    }
+  }
+}
