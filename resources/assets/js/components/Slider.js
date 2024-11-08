@@ -22,9 +22,9 @@ export class Slider {
     const per_view_xs = slider.getAttribute('per-view-xs');
     const autoheight = parseInt(slider.getAttribute('autoheight'));
     const nav = slider.getAttribute('navigation');
-    const paginationAttr = slider.getAttribute('pagination'); // Nouvelle ligne
+    const paginationAttr = slider.getAttribute('pagination');
     const sco = slider.getAttribute('scrollbar');
-    const space = slider.getAttribute('data-spacing') ?? 20;
+    const space = slider.getAttribute('gap') ?? 20;
     const autoplayAttr = slider.getAttribute('data-autoplay') ?? 0;
 
     const modules = [Pagination];
@@ -99,7 +99,6 @@ export class Slider {
       currentIndex = e.activeIndex;
 
       arraySlideIndex.forEach(function (item) {
-        console.log(currentIndex - item)
         slides[currentIndex - item]?.classList.add('third-slide-before');
       })
     })

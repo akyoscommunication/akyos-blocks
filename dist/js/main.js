@@ -45,9 +45,9 @@ var Slider = /*#__PURE__*/function () {
       var per_view_xs = slider.getAttribute('per-view-xs');
       var autoheight = parseInt(slider.getAttribute('autoheight'));
       var nav = slider.getAttribute('navigation');
-      var paginationAttr = slider.getAttribute('pagination'); // Nouvelle ligne
+      var paginationAttr = slider.getAttribute('pagination');
       var sco = slider.getAttribute('scrollbar');
-      var space = (_slider$getAttribute = slider.getAttribute('data-spacing')) !== null && _slider$getAttribute !== void 0 ? _slider$getAttribute : 20;
+      var space = (_slider$getAttribute = slider.getAttribute('gap')) !== null && _slider$getAttribute !== void 0 ? _slider$getAttribute : 20;
       var autoplayAttr = (_slider$getAttribute2 = slider.getAttribute('data-autoplay')) !== null && _slider$getAttribute2 !== void 0 ? _slider$getAttribute2 : 0;
       var modules = [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Pagination];
       var navigation = {};
@@ -118,7 +118,6 @@ var Slider = /*#__PURE__*/function () {
         currentIndex = e.activeIndex;
         arraySlideIndex.forEach(function (item) {
           var _slides;
-          console.log(currentIndex - item);
           (_slides = slides[currentIndex - item]) === null || _slides === void 0 || _slides.classList.add('third-slide-before');
         });
       });

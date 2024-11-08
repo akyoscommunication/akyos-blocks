@@ -49,7 +49,7 @@
 
         &-inner {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(5, 1fr);
 
           gap: rem(22);
           background-color: color(primary);
@@ -65,8 +65,7 @@
           }
 
           > .c-title {
-            grid-column: 1/4;
-            margin-bottom: rem(24);
+            grid-column: 1/6;
           }
 
           .s-content {
@@ -80,10 +79,7 @@
           }
 
           &__img {
-            width: rem(470);
-
-            .c-image {
-            }
+            max-width: rem(329);
 
             img {
 
@@ -99,11 +95,10 @@
                 height: rem(300);
               }
             }
-
           }
 
           &__text {
-            grid-column: 2/4;
+            grid-column: 2/7;
             margin-block: auto;
           }
         }
@@ -115,11 +110,14 @@
 
         &-buttons {
           position: absolute;
-          gap: rem(90);
+          gap: rem(10);
           z-index: 10;
-          top: 90%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+          bottom: rem(16);
+          left: 0;
+          right: 0;
+          width: fit-content;
+          margin: auto;
+          align-items: center;
 
           svg {
             path {
@@ -129,6 +127,8 @@
         }
 
         &-pagination {
+          @include flex(row, nowrap, center, center);
+
           &-bullet {
             width: rem(10);
             height: rem(10);
