@@ -1,5 +1,4 @@
 .swiper {
-
   overflow: hidden;
   &-wrapper {
     margin-bottom: rem(8);
@@ -34,12 +33,7 @@
     z-index: 3;
     width: auto;
     padding: 0 rem(16);
-
-    &-horizontal {
-      bottom: auto !important;
-      width: auto !important;
-      left: auto !important;
-    }
+    position: initial !important;
 
     &-bullet {
       width: rem(10);
@@ -52,5 +46,4 @@
       background-color: color(primary);
     }
   }
-
 }

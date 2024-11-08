@@ -9,31 +9,33 @@ class AkySlider extends Component
 {
     public $name;
     public $per;
-    public $per_xs;
-    public $per_sm;
-    public $per_md;
+    public $perxs;
+    public ?string $persm;
+    public $permd;
     public $navigation;
 
     public ?string $pagination;
     public $autoheight;
     public $gap;
+    public $sliderid;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $per, $persm, $permd, $perxs, $navigation, $pagination = null, $autoheight = false, $gap = 20)
+    public function __construct($name, $per, $persm, $permd, $perxs, $navigation, $sliderid, $pagination = null, $autoheight = false, $gap = 20)
     {
         $this->name = $name;
         $this->per = $per;
         $this->navigation = $navigation;
-        $this->per_sm = $persm;
-        $this->per_md = $permd;
-        $this->per_xs = $perxs;
+        $this->persm = $persm;
+        $this->permd = $permd;
+        $this->perxs = $perxs;
         $this->autoheight = $autoheight;
         $this->gap = $gap;
         $this->pagination = $pagination;
+        $this->slider_id = $slider_id;
     }
 
     /**

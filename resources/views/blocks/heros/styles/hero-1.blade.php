@@ -1,13 +1,11 @@
 @if(count($images) > 1)
-    <x-slider name="slider--hero1" navigation="arrow" pagination="1" scrollbar="1" per="1" permd="1" persm="1"
-              perxs="1"
-              slider-id="slider--hero1">
+    <x-akyos-blocks::aky-slider name="slider--hero1" autoheight="true" gap="0" navigation="arrow" pagination="1" scrollbar="1" per="1" permd="1" persm="1" perxs="1" sliderid="slider--hero1">
         @foreach($images as $image)
             <div class="swiper-slide s-hero-image">
                 <x-image :lg="$image"/>
             </div>
         @endforeach
-    </x-slider>
+    </x-akyos-blocks::aky-slider>
 @else
     @foreach($images as $image)
         <div class="s-hero-image">

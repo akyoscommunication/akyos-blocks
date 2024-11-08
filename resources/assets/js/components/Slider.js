@@ -15,7 +15,7 @@ export class Slider {
   registerSlider(slider)
   {
     const name = slider.getAttribute('data-slider');
-    const slider_id = slider.getAttribute('slider_id');
+    const slider_id = slider.getAttribute('sliderid');
     const per_view = slider.getAttribute('per-view');
     const per_view_sm = slider.getAttribute('per-view-sm');
     const per_view_md = slider.getAttribute('per-view-md');
@@ -88,5 +88,20 @@ export class Slider {
         }
       }
     });
+
+    let arraySlideIndex = [2]
+
+    let currentIndex = swiper.activeIndex;
+    const slides = document.querySelectorAll('.swiper-slide');
+
+    swiper.on('slideChange', function (e) {
+      slides.forEach(item => item.classList.remove('third-slide-before'));
+      currentIndex = e.activeIndex;
+
+      arraySlideIndex.forEach(function (item) {
+        console.log(currentIndex - item)
+        slides[currentIndex - item]?.classList.add('third-slide-before');
+      })
+    })
   }
 }

@@ -38,7 +38,7 @@ var Slider = /*#__PURE__*/function () {
     value: function registerSlider(slider) {
       var _slider$getAttribute, _slider$getAttribute2;
       var name = slider.getAttribute('data-slider');
-      var slider_id = slider.getAttribute('slider-id');
+      var slider_id = slider.getAttribute('sliderid');
       var per_view = slider.getAttribute('per-view');
       var per_view_sm = slider.getAttribute('per-view-sm');
       var per_view_md = slider.getAttribute('per-view-md');

@@ -8,8 +8,8 @@
         {!! $text !!}
     </div>
     <div class="s-comments-layout">
-        <x-slider name="slider--review" navigation="" pagination="1" scrollbar="1" per="3" permd="1.1" persm="1.1"
-                  perxs="1.1" slider-id="{{$block['id']}}">
+        <x-akyos-blocks::aky-slider name="slider--review" autoheight="true" gap="16" navigation="" pagination="1" scrollbar="1" per="3" permd="1.1" persm="1.1"
+                                    perxs="1.1" sliderid="{{$block['id']}}">
             @foreach($comments as $comment)
                 <div class="s-comments-layout-inner swiper-slide">
                     <div class="s-comments-layout-inner__image">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
             @endforeach
-        </x-slider>
+        </x-akyos-blocks::aky-slider>
         <div class=" s-comments-swiper swiper-pagination-{{$block['id']}}"></div>
         @if($button && $button['link'])
             <div class="s-comments__button">
