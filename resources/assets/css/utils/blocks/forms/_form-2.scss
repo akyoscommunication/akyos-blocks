@@ -3,6 +3,11 @@
     .s-form {
       @include flex(row, wrap, space-between, start);
       gap: rem(36);
+
+      @include lessThan($tablet) {
+        flex-direction: column;
+        align-items: center;
+      }
       .c-title {
         margin-bottom: rem(48);
       }
@@ -21,12 +26,22 @@
       &__image {
         .c-image {
           width: 100%;
-          max-height: rem(840);
+          height: rem(840);
           img {
             object-fit: cover;
           }
           @include lessThan($tablet) {
-            max-height: rem(400);
+            height: rem(400);
+          }
+        }
+      }
+      &__iframe {
+        width: 100%;
+        iframe {
+          width: 100%;
+          height: rem(840);
+          @include lessThan($tablet) {
+            height: rem(400);
           }
         }
       }

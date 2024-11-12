@@ -1,3 +1,114 @@
 .s-form {
+}
 
+.forminator {
+  &-input {
+    background-color: color(light) !important;
+    border-color: color(grey-500) !important;
+    border-radius: rem(4) !important;
+    &::placeholder {
+      color: color(grey-300) !important;
+    }
+  }
+  &-textarea {
+    background-color: transparent !important;
+    border-color: color(grey-500) !important;
+    border-radius: rem(4) !important;
+    &::placeholder {
+      color: color(grey-300) !important;
+    }
+  }
+  &-select {
+    &-dropdown {
+      background-color: color(white) !important;
+      border-color: color(grey-500) !important;
+      border-radius: rem(4) !important;
+      &--default {
+        background-color: color(white) !important;
+        border-color: color(grey-500) !important;
+        border-radius: rem(4) !important;
+      }
+      &::placeholder {
+        color: color(grey-300) !important;
+      }
+    }
+  }
+
+  &-icon-chevron-down {
+    color: color(primary) !important;
+  }
+  &-checkbox-box {
+    background-color: color(light) !important;
+    border-color: color(grey-500) !important;
+    border-radius: rem(4) !important;
+    color: color(primary) !important
+  }
+  &-field {
+    position: relative !important;
+  }
+  &-label {
+    color: color(primary) !important;
+    margin-left: rem(25) !important;
+    display: inline-block !important;
+    background-color: color(light) !important;
+    position: absolute !important;
+    top: rem(-10)  !important;
+    padding: 0 rem(10) !important;
+    z-index: 3 !important;
+  }
+  &-button-submit {
+    width: fit-content !important;
+    cursor: pointer !important;
+    padding: rem(17) rem(30) !important;
+    text-decoration: none !important;
+    overflow: hidden !important;
+    position: relative !important;
+    transition: all 0.2s ease-in-out !important;
+    z-index: 3 !important;
+    color: color(light) !important;
+    background-color: color(primary) !important;
+    border: 1px solid color(primary) !important;
+
+    svg {
+      path {
+        fill: color(light) !important;
+      }
+    }
+
+    &:hover {
+      border: 1px solid color(primary) !important;
+      color: color(primary) !important;
+      background-color: color(light) !important;
+
+      svg {
+        path {
+          fill: color(primary) !important;
+        }
+      }
+    }
+  }
+  &-dropdown {
+    &--default {
+      background-color: color(light) !important;
+      border-color: color(grey-500) !important;
+      border-radius: rem(4) !important;
+      z-index: 9 !important;
+    }
+  }
+
+}
+.select2 {
+  &-selection {
+    background-color: color(light) !important;
+    border-color: color(grey-500) !important;
+    border-radius: rem(4) !important;
+    &__rendered {
+      color: color(grey-300) !important;
+    }
+
+  }
+  &-results__option--selected {
+    background-color: color(primary) !important;
+    color: color(light) !important;
+  }
 }
