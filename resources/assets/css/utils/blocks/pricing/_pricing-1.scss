@@ -1,0 +1,44 @@
+.s-pricing--style {
+  &-1 {
+    .s-pricing {
+      .c-title {
+        margin-bottom: rem(32);
+        text-align: center;
+      }
+      &__text {
+        margin-bottom: rem(32);
+        text-align: center;
+      }
+      &-layout{
+        @include flex(row, wrap, center, start);
+        gap: rem(20);
+        &-inner {
+          border-radius: rem(8);
+          box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.14);
+          min-width: rem(280);
+          &__color {
+            height: rem(21);
+            width: 100%;
+            border-radius: rem(8) rem(8) 0 0;
+          }
+          &-content {
+            @include flex(column, nowrap, center, start);
+            gap: rem(20);
+            padding : rem(32) rem(32);
+            &__text {
+              color: color(grey-300);
+            }
+            &__check {
+              @include flex(row, wrap, start, center);
+              gap: rem(8);
+            }
+            &__btn {
+              margin-inline: auto;
+              margin-top: rem(12);
+            }
+          }
+        }
+      }
+    }
+  }
+}
