@@ -2,8 +2,6 @@
 
 namespace Akyos\Blocks\Acf\Fields;
 
-use App\Acf\Fields\Alignement;
-use App\Acf\Fields\Button;
 use App\Acf\Fields\Title;
 use Extended\ACF\ConditionalLogic;
 use Extended\ACF\Fields\Group;
@@ -12,7 +10,6 @@ use Extended\ACF\Fields\PostObject;
 use Extended\ACF\Fields\Select;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\Text;
-use Extended\ACF\Fields\WYSIWYGEditor;
 
 class AkyB_Form2
 {

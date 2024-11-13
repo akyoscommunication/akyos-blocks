@@ -1,0 +1,36 @@
+.s-partenaire--style {
+  &-1 {
+    .s-partenaire {
+      .c-title {
+        margin-bottom: rem(34);
+        text-align: center;
+      }
+      &__text {
+        margin-bottom: rem(34);
+        margin-inline: auto;
+        text-align: center;
+        max-width: rem(385);
+      }
+
+      &-list {
+        @include flex(row, wrap, center, center);
+        gap: rem(8);
+        &__item {
+          .c-image {
+            //width: rem(310);
+            img {
+              width: 100%;
+              max-height: rem(180);
+              //object-fit: cover;
+            }
+          }
+        }
+      }
+      &__btn {
+        @include flex(row, wrap, center, center);
+        margin-top: rem(34);
+      }
+
+    }
+  }
+}

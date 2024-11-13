@@ -53,6 +53,6 @@ class AkyB_Form extends Block
 
     public function render()
     {
-        return view('blocks.forms.form');
+        return view('akyos-blocks::blocks.forms.form');
     }
 }

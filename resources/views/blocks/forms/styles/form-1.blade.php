@@ -39,12 +39,12 @@
         Mail : <span>{!! $options['email'] !!}</span>
       </div>
     </div>
-    @if($form1['button'])
-      <x-button :appearance="$form1['button']['color']" :icon="$form1['button']['icon']"
+    @if($form1['button'] && $form1['button']['link'])
+      <x-akyos-blocks::aky-button :appearance="$form1['button']['color']" :icon="$form1['button']['icon']"
                 :iconposition="$form1['button']['iconposition']"
                 :href="$form1['button']['link']['url']" :borderradius="$form1['button']['borderradius']">
         {{ $form1['button']['link']['title'] }}
-      </x-button>
+      </x-akyos-blocks::aky-button>
     @endif
   </div>
 </div>

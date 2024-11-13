@@ -41,10 +41,10 @@
     <div class=" s-comments-swiper swiper-pagination-{{$block['id']}}"></div>
     @if($button)
       <div class="s-comments__button">
-        <x-button :appearance="$button['color']" :icon="$button['icon']" :iconposition="$button['iconposition']"
+        <x-akyos-blocks::aky-button :appearance="$button['color']" :icon="$button['icon']" :iconposition="$button['iconposition']"
                   :href="$button['link']['url']" :borderradius="$button['borderradius']">
           {{ $button['link']['title'] }}
-        </x-button>
+        </x-akyos-blocks::aky-button>
       </div>
     @endif
   </div>

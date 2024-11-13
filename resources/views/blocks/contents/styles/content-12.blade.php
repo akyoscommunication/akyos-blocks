@@ -19,11 +19,14 @@
                             {!! $tab_inner['title']['value'] !!}
                         </x-title>
                         <div class="s-content-slider">
-                            <x-akyos-blocks::aky-slider name="slider--content12{{$block['id'] . $key2 . $key}}" navigation="arrow"
+                            <x-akyos-blocks::aky-slider name="slider--content12{{$block['id'] . $key2 . $key}}"
+                                                        navigation="arrow"
                                                         pagination="1" scrollbar="1" per="1" permd="1"
                                                         persm="1"
                                                         perxs="1"
-                                                        autoheight="true" gap="0" sliderid="{{$block['id'] . $key2 . $key}}" class="s-content-layout-inner__img">
+                                                        autoheight="true" gap="0"
+                                                        sliderid="{{$block['id'] . $key2 . $key}}"
+                                                        class="s-content-layout-inner__img">
                                 @if($tab_inner['images'])
                                     @foreach($tab_inner['images'] as $key3 => $image)
                                         <div class="s-content__image swiper-slide" data-filtered="tab-{{ $key }}">

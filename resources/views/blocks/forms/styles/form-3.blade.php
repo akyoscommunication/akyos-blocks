@@ -1,5 +1,4 @@
 <div class="container s-form">
-  {{--    @shortcode('[forminator_form id="'.$form.'"]')--}}
   @if($form3['title'])
     <x-title :tag="$form3['title']['tag']">
       {!! $form3['title']['value'] !!}
