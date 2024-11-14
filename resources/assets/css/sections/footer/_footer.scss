@@ -379,6 +379,9 @@
             padding: rem(32) rem(64);
             background-color: color(primary);
             border-radius: rem(20);
+            @include lessThan($mobile) {
+              padding: rem(16) rem(32);
+            }
           }
         }
       }
