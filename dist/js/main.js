@@ -6348,7 +6348,7 @@ var Header = /*#__PURE__*/function () {
         var burgerSubSubmenus = document.querySelectorAll('.sub-menu > .menu-item-has-children');
         burgerSubmenus.forEach(function (t) {
           var trigger = t.querySelectorAll('a')[0].offsetHeight;
-          var height = t.querySelector('.sub-menu').offsetHeight + trigger + 10;
+          var height = t.querySelector('.sub-menu').offsetHeight + trigger + 30;
           t.style.setProperty('--max-height', height + 'px');
           t.style.setProperty('--init-height', trigger + 'px');
           t.addEventListener('click', function (e) {
