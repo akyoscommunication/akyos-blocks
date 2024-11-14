@@ -20,7 +20,7 @@ class AkyB_Pricing extends Block
 	{
 		return (new GutenbergBlock())
             ->setName("pricing")
-            ->setTitle("Prix")
+            ->setTitle("AKYB Prix")
             ->setCategory("content")
             ->setIcon("cart");
 	}

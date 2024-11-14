@@ -7,12 +7,17 @@
         @endif
         <div class="s-form-formulaire">
             <div class="s-form-info">
-                {!! $options['address'] !!}
-                <div>
+                <div class="s-form-info__address">
+                    {!! $options['address'] !!}
+                </div>
+                <div class="s-form-info__phone">
                     @icon('phone'){!! $options['phone']!!}
                 </div>
-                <div>
+                <div class="s-form-info__email">
                     @icon('email'){!! $options['email'] !!}
+                </div>
+                <div class="s-form-info__description">
+                    {!! $form2['description'] !!}
                 </div>
             </div>
             @shortcode('[forminator_form id="'.$form2['form'].'"]')

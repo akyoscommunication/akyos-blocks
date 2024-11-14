@@ -10,6 +10,7 @@ use Extended\ACF\Fields\PostObject;
 use Extended\ACF\Fields\Select;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\Text;
+use Extended\ACF\Fields\Textarea;
 
 class AkyB_Form2
 {
@@ -19,6 +20,7 @@ class AkyB_Form2
             Tab::make("Contenu"),
             Title::make('Titre', 'title')
                 ->required(),
+            Textarea::make('Description', 'description')->newLines('br'),
             PostObject::make('Formulaire', 'form')->postTypes(['forminator_forms'])->format('id'),
             Select::make('Image ou Carte', 'image_or_map')
                 ->choices([

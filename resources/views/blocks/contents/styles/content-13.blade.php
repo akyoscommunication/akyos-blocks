@@ -8,7 +8,7 @@
             {!! $content13['content'] !!}
         </div>
     </div>
-    <div>
+    <div class="s-content-text">
         {!! $content13['right-content'] !!}
     </div>
 </div>

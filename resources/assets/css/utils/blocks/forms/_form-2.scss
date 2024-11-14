@@ -8,35 +8,45 @@
         flex-direction: column;
         align-items: center;
       }
+
       .c-title {
         margin-bottom: rem(48);
       }
+
       &-layout {
         flex: 1;
       }
+
       &-info {
-        @include flex(row,wrap, start, start);
-        column-gap: rem(56);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: rem(80);
+        margin-bottom: rem(64);
         row-gap: rem(16);
       }
 
       &-pic {
         flex: 1;
       }
+
       &__image {
         .c-image {
           width: 100%;
           height: rem(840);
+
           img {
             object-fit: cover;
           }
+
           @include lessThan($tablet) {
             height: rem(400);
           }
         }
       }
+
       &__iframe {
         width: 100%;
+
         iframe {
           width: 100%;
           height: rem(840);

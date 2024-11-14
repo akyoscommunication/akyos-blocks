@@ -32,7 +32,7 @@ class AkyB_Pricing1
                             Text::make('Caractéristique', 'feature')
                         ])->collapsed('features'),
                     AkyB_Button::make('Bouton', 'price_button'),
-                ])->layout('block')->collapsed('prices'),
+                ])->layout('block')->collapsed('color'),
             AkyB_Button::make('Bouton', 'button'),
         ])->layout($layout);
     }

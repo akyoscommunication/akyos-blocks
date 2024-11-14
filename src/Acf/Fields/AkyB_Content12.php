@@ -16,6 +16,7 @@ class AkyB_Content12
     {
         return Group::make($label, $id)->fields([
             Title::make('Titre', 'title'),
+            WYSIWYGEditor::make('Description', 'description'),
             Repeater::make('Onglets', 'tabs')
                 ->fields([
                     Text::make('Titre de l\'onglet', 'title'),

@@ -25,7 +25,7 @@
                         </div>
                     @endif
 
-                    <div>
+                    <div class="s-pricing-layout-inner-content__prices">
                         @if($price['price'])
                             <span class="s-pricing-layout-inner-content__price">{!! $price['price'] !!}</span>
                         @endif @if($price['price_per'])
@@ -45,13 +45,13 @@
                     </div>
                     @if($price['price_button'] && $price['price_button']['link'])
                         <div class="s-pricing-layout-inner-content__btn">
-                            <x-akyos-blocks::button :appearance="$price['price_button']['color']"
-                                                    :icon="$price['price_button']['icon']"
-                                                    :iconposition="$price['price_button']['iconposition']"
-                                                    :href="$price['price_button']['link']['url']"
-                                                    :borderradius="$price['price_button']['borderradius']">
+                            <x-akyos-blocks::aky-button :appearance="$price['price_button']['color']"
+                                                        :icon="$price['price_button']['icon']"
+                                                        :iconposition="$price['price_button']['iconposition']"
+                                                        :href="$price['price_button']['link']['url']"
+                                                        :borderradius="$price['price_button']['borderradius']">
                                 {{ $price['price_button']['link']['title'] }}
-                            </x-akyos-blocks::button>
+                            </x-akyos-blocks::aky-button>
                         </div>
                     @endif
                 </div>
