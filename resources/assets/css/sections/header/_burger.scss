@@ -98,12 +98,18 @@
 
             &.menu-item-has-children {
 
-              max-height: var(--init-height);
+              .sub-menu {
+                display: none;
+              }
               overflow: hidden;
-              transition: max-height 0.2s ease-in;
+              transition: 0.2s ease-in;
 
               &.open {
-                max-height: var(--max-height);
+                transition:  0.2s ease-in;
+                .sub-menu {
+
+                  display: block !important;
+                }
               }
 
               .sub-menu {
