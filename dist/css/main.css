@@ -1707,13 +1707,19 @@ button {
   font-size: 1.875rem;
 }
 .header-wrap .header-nav__burger ul .menu-item.menu-item-has-children {
-  max-height: var(--init-height);
   overflow: hidden;
-  -webkit-transition: max-height 0.2s ease-in;
-  transition: max-height 0.2s ease-in;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+.header-wrap .header-nav__burger ul .menu-item.menu-item-has-children .sub-menu {
+  display: none;
 }
 .header-wrap .header-nav__burger ul .menu-item.menu-item-has-children.open {
-  max-height: var(--max-height);
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+.header-wrap .header-nav__burger ul .menu-item.menu-item-has-children.open .sub-menu {
+  display: block !important;
 }
 .header-wrap .header-nav__burger ul .menu-item.menu-item-has-children .sub-menu {
   padding-top: 20px;
