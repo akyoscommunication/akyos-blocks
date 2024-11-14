@@ -5398,9 +5398,6 @@ button {
   height: 1rem;
   width: 1rem;
 }
-.s-form--style-2 .s-form svg path {
-  fill: rgba(var(--aky-color-primary--rgb), 1) !important;
-}
 
 .s-form--style-3 .s-form .c-title {
   text-align: center;
