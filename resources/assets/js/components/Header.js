@@ -50,7 +50,7 @@ export class Header {
       burgerSubmenus.forEach(t => {
 
         let trigger = t.querySelectorAll('a')[0].offsetHeight
-        let height = t.querySelector('.sub-menu').offsetHeight + trigger + 10
+        let height = t.querySelector('.sub-menu').offsetHeight + trigger + 30
 
         t.style.setProperty('--max-height', height + 'px')
         t.style.setProperty('--init-height', trigger + 'px')
