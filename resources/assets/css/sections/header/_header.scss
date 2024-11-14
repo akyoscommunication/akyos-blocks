@@ -1,5 +1,7 @@
 @import "top-bar";
 @import "nav-bar";
+@import "burger";
+@import "submenu";
 
 .header-wrap {
   grid-area: header;
@@ -24,11 +26,9 @@
       @include flex(row, nowrap, flex-end, center);
       gap: 16px;
 
-
       .menu {
         @include flex(row, nowrap, flex-end, center);
         @include undoListStyles();
-
         gap: rem(16);
 
         > li {
@@ -36,17 +36,11 @@
         }
       }
 
-
       &__nav.active-underline {
         ul.menu {
           > li {
-
-            &.current-menu-item {
-              a {
-                &:after {
-                  width: 100%;
-                }
-              }
+            &.current-menu-item a:after {
+              width: 100%;
             }
 
             a {
@@ -54,7 +48,6 @@
 
               &:after {
                 @include pseudo();
-
                 height: 2px;
                 bottom: -5px;
                 width: 0;
@@ -63,14 +56,8 @@
               }
             }
 
-            &:hover {
-              &:not(.menu-item-has-children) {
-                > a {
-                  &:after {
-                    width: 100%;
-                  }
-                }
-              }
+            &:hover:not(.menu-item-has-children) > a:after {
+              width: 100%;
             }
           }
         }
@@ -79,11 +66,8 @@
       &__nav.active-color {
         ul.menu {
           > li {
-
-            &.current-menu-item {
-              a {
-                color: color(primary);
-              }
+            &.current-menu-item a {
+              color: color(primary);
             }
 
             a {
@@ -96,6 +80,28 @@
           }
         }
       }
+
+      &__nav {
+        @include lessThan($tablet) {
+          display: none !important;
+        }
+      }
+      &__burger {
+        overflow-y: hidden;
+        .menu {
+            @include flex(column, nowrap, center, start);
+            padding: rem(0) rem(20);
+
+            li {
+              padding:  0;
+              font-size: rem(20);
+            }
+
+        }
+
+      }
+
     }
   }
 }
+

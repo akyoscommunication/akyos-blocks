@@ -1,13 +1,16 @@
 .header {
   &--style-3 {
     .header {
+      &-brand {
+        padding-top: rem(14);
+        padding-bottom: rem(14);
+      }
       &-nav {
         ul {
           li {
             a {
               color: color(primary);
             }
-
             &.current-menu-item {
               font-weight: bold;
 

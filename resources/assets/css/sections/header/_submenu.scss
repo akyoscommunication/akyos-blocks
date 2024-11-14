@@ -1,0 +1,68 @@
+.header-nav {
+
+  .menu-item-has-children {
+    padding-right: rem(20) !important;
+    position: relative;
+
+    @include lessThan($tablet) {
+      &.open {
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &::after {
+      content: url('/app/themes/akyos-sage/resources/assets/icons/submenu.svg');
+      position: absolute;
+      display: block;
+      right: rem(-7);
+      top: 50%;
+      transform: translateY(-35%);
+      width: rem(20);
+      transition: $default-transition;
+
+      @include lessThan($tablet) {
+        display: none;
+      }
+    }
+
+    &:hover {
+      .sub-menu {
+        display: block;
+      }
+    }
+
+    .sub-menu {
+      @include undoListStyles();
+      position: absolute;
+      top: rem(65);
+      background-color: color(light,1);
+      color: color(dark);
+      padding: rem(20);
+      min-width: 200px;
+      display: none;
+
+      @include lessThan($tablet) {
+        position: static;
+        display: block;
+      }
+
+      li {
+        padding: rem(10);
+        &:first-of-type {
+          padding-top: 0;
+        }
+        &:last-of-type {
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+        a:hover {
+          color: color(primary);
+        }
+      }
+    }
+
+  }
+
+}

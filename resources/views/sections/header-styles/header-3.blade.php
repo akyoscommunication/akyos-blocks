@@ -1,6 +1,5 @@
 <header class="header-wrap">
     <div class="container header">
-
         <!-- LOGO -->
         <div class="header-brand">
             @if ($options['logo'])
@@ -9,18 +8,17 @@
                 </a>
             @endif
         </div>
-        <!----  --->
-
+        <!---- Navigation --->
         <div class="header-nav">
-            @menu('main_navigation')
-            {{--            @if(!empty($options['header_button']['url']))--}}
-            {{--                <x-akyos-blocks::aky-button--}}
-            {{--                    appearance="primary"--}}
-            {{--                    :href="$options['header_button']['url']"--}}
-            {{--                >--}}
-            {{--                    {{ $options['header_button']['title'] }}--}}
-            {{--                </x-akyos-blocks::aky-button>--}}
-            {{--            @endif--}}
+            <nav class="header-nav__nav">
+                @menu('main_navigation')
+            </nav>
+            <div class="hidden" id="burger">
+                <span></span>
+            </div>
+            <nav class="header-nav__burger">
+                @menu('main_navigation')
+            </nav>
         </div>
     </div>
 </header>
