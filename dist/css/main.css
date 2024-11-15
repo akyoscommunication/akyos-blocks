@@ -2522,6 +2522,9 @@ button {
 .footer--style-4 .footer-layout-inner svg path {
   fill: rgba(var(--aky-color-primary--rgb), 1);
 }
+.footer--style-4 .footer-layout-inner__address {
+  color: rgba(var(--aky-color-primary--rgb), 1);
+}
 .footer--style-4 .footer-layout-inner__follow {
   color: rgba(var(--aky-color-primary--rgb), 1);
 }
@@ -2560,9 +2563,6 @@ button {
     gap: 1.1428571429rem;
     text-align: center;
   }
-}
-.footer--style-4 .footer-layout-info__address {
-  color: rgba(var(--aky-color-primary--rgb), 1);
 }
 .footer--style-4 .footer-layout-info__text {
   color: rgba(var(--aky-color-primary--rgb), 1);
