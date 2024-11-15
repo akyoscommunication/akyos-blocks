@@ -345,7 +345,10 @@
           @include flex(row, wrap, space-between, center);
           gap: rem(16);
           @include lessThan($mobile) {
-            display: none;
+            p {
+              text-align: center !important;
+            }
+            margin-top: rem(16);
           }
         }
 
@@ -353,6 +356,9 @@
           background-color: color(grey-300);
           width: 2px;
           height: rem(100);
+          @include lessThan($tablet) {
+            display: none;
+          }
         }
       }
     }
@@ -395,6 +401,9 @@
             }
             &__text {
               color: color(light);
+              @include lessThan($mobile) {
+                text-align: center;
+              }
             }
 
           }

@@ -1299,6 +1299,11 @@ p {
 h2.c-title {
   font-size: 2.3125rem;
 }
+@media screen and (max-width: 767px) {
+  h2.c-title {
+    font-size: 1.625rem;
+  }
+}
 body {
   font-size: 1rem;
 }
@@ -2730,13 +2735,21 @@ button {
 }
 @media screen and (max-width: 767px) {
   .footer--style-4 .footer-right {
-    display: none;
+    margin-top: 1rem;
+  }
+  .footer--style-4 .footer-right p {
+    text-align: center !important;
   }
 }
 .footer--style-4 .footer-bar {
   background-color: rgba(var(--aky-color-grey-300--rgb), 1);
   width: 2px;
   height: 6.25rem;
+}
+@media screen and (max-width: 1025px) {
+  .footer--style-4 .footer-bar {
+    display: none;
+  }
 }
 .footer-option {
   margin-bottom: -60px;
@@ -2791,6 +2804,11 @@ button {
 }
 .footer-option--style-4 .footer-option__text {
   color: rgba(var(--aky-color-light--rgb), 1);
+}
+@media screen and (max-width: 767px) {
+  .footer-option--style-4 .footer-option__text {
+    text-align: center;
+  }
 }
 
 .forminator-input {
@@ -5250,6 +5268,14 @@ button {
     gap: 1rem;
   }
 }
+@media screen and (max-width: 767px) {
+  .s-content--style-9 .s-content-right-layout .c-title {
+    text-align: left !important;
+  }
+  .s-content--style-9 .s-content-right-layout p {
+    text-align: left !important;
+  }
+}
 
 .s-form--style-1 .s-form {
   display: -webkit-box;
@@ -5372,6 +5398,11 @@ button {
   grid-column-gap: 5rem;
   margin-bottom: 4rem;
   row-gap: 1rem;
+}
+@media screen and (max-width: 767px) {
+  .s-form--style-2 .s-form-info {
+    display: block;
+  }
 }
 .s-form--style-2 .s-form-pic {
   -webkit-box-flex: 1;
@@ -5836,7 +5867,6 @@ button {
   max-width: 18.75rem;
 }
 .s-number--style-1 .s-number-layout-inner__number {
-  font-size: 64px;
   font-style: normal;
   font-weight: 700;
   line-height: 120%;

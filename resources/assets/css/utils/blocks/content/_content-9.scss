@@ -41,7 +41,22 @@
           margin-top: rem(64);
           @include flex(column, wrap, center, center);
           gap: rem(16);
+
+
         }
+        &-layout {
+          @include lessThan($mobile) {
+            .c-title {
+              text-align: left !important;
+            }
+
+            p {
+              text-align: left !important;
+            }
+          }
+        }
+
+
       }
     }
   }
