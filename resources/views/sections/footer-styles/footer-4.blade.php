@@ -6,6 +6,9 @@
                     <x-image :lg="empty($options['footer_logo']) ? $options['logo'] : $options['footer_logo']"></x-image>
                 </a>
             </div>
+            <div class="footer-layout-inner__address">
+                <p>{!! $options['footer_address'] !!}</p>
+            </div>
             <p class="footer-layout-inner__follow">Suivez-nous</p>
             <div>
                 @if($options['facebook'])
@@ -28,9 +31,6 @@
         <div class="footer-right">
             <span class="footer-bar"></span>
             <div class="footer-layout-info">
-                <div class="footer-layout-info__address">
-                    <p>{!! $options['footer_address'] !!}</p>
-                </div>
                 <div class="footer-layout-info__text">
                     {!! $options['footer_text'] !!}
                 </div>

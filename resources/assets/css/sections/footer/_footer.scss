@@ -293,6 +293,9 @@
                 fill: color(primary);
               }
             }
+            &__address {
+              color: color(primary);
+            }
             &__follow {
               color: color(primary);
             }
@@ -307,9 +310,7 @@
               gap: rem(16);
               text-align: center;
             }
-            &__address {
-              color: color(primary);
-            }
+
 
             &__text {
               color: color(primary);
