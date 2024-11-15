@@ -3,19 +3,23 @@
     .s-comments {
       &-swiper {
         text-align: center;
+
         .swiper-pagination-bullet {
           width: rem(10);
           height: rem(10);
           background-color: color(light);
           opacity: 1;
         }
+
         .swiper-pagination-bullet-active {
           background-color: #333;
         }
       }
+
       .swiper-wrapper {
         padding-bottom: rem(32);
       }
+
       &-layout {
         &-inner {
           max-width: rem(620);
@@ -30,8 +34,10 @@
             @include flex(column, wrap, center, start);
             padding: rem(24) rem(12);
           }
+
           &__image {
             max-width: 100%;
+
             img {
               max-width: rem(100);
               height: rem(100);
@@ -39,25 +45,32 @@
               object-fit: cover;
             }
           }
+
           &-comment {
             @include flex(column, wrap, center, start);
             gap: rem(24);
+
             &-info {
               &__name {
               }
+
               &__job {
                 font-weight: 700;
               }
             }
+
             &-star {
               @include flex(row, nowrap, start, center);
+
               svg {
                 path {
                   fill: color(primary);
                 }
               }
+
               &__empty {
                 margin-left: rem(8);
+
                 svg {
                   path {
                     fill: color(secondary);
@@ -65,20 +78,23 @@
                 }
               }
             }
+
             &__desc {
               max-width: rem(380);
             }
+
             &__date {
 
             }
-
           }
         }
       }
+
       &__button {
         @include flex(row, nowrap, center, center);
         margin-top: rem(32);
       }
+
       &__text {
         margin-top: rem(32);
         margin-bottom: rem(32);
