@@ -384,10 +384,6 @@
             }
             &__text {
               color: color(light);
-              font-size: rem(37);
-              @include lessThan($mobile) {
-                font-size: rem(24);
-              }
             }
           }
         }

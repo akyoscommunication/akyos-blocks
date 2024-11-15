@@ -7,7 +7,7 @@
 
           &-inner {
             @include flex(row, wrap, start, center);
-            gap: rem(100);
+            column-gap: rem(100);
 
             &__row {
               @include flex(row, wrap, start, center);
