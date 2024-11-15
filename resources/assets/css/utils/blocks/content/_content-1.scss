@@ -44,17 +44,9 @@
             }
 
             @include lessThan($tablet) {
-              width: rem(460);
+              width: 100%;
               img {
                 max-height: rem(360);
-              }
-            }
-
-            @include lessThan($mobileXs) {
-              width: rem(360);
-              img {
-                max-height: rem(360);
-
               }
             }
           }

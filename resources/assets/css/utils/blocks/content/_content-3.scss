@@ -77,20 +77,12 @@
 
       &__image {
         .c-image {
-          max-width: rem(400);
 
           img {
             height: rem(470);
             object-fit: cover;
             border-radius: rem(10);
           }
-
-          //@include lessThan($tablet) {
-          //  max-width: rem(300);
-          //  img {
-          //    height: rem(300);
-          //  }
-          //}
         }
       }
 

@@ -3938,15 +3938,7 @@ button {
 }
 @media screen and (max-width: 1025px) {
   .s-content--style-1-1 .s-content-image .c-image {
-    width: 28.75rem;
-  }
-  .s-content--style-1-1 .s-content-image .c-image img {
-    max-height: 22.5rem;
-  }
-}
-@media screen and (max-width: 480px) {
-  .s-content--style-1-1 .s-content-image .c-image {
-    width: 22.5rem;
+    width: 100%;
   }
   .s-content--style-1-1 .s-content-image .c-image img {
     max-height: 22.5rem;
@@ -4761,9 +4753,6 @@ button {
 .s-content--style-3 .s-content-slider .slider--content3 {
   z-index: 1;
   overflow: visible !important;
-}
-.s-content--style-3 .s-content__image .c-image {
-  max-width: 25rem;
 }
 .s-content--style-3 .s-content__image .c-image img {
   height: 29.375rem;
