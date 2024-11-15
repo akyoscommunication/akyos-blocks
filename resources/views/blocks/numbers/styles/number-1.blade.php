@@ -25,7 +25,7 @@
   @endforeach
 </div>
 
-  @if($number1['button'])
+  @if($number1['button'] && $number1['button']['link'])
     <div class="s-number__button">
         <x-akyos-blocks::aky-button
             :appearance="$number1['button']['color']"
