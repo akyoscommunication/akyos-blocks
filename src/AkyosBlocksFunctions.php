@@ -8,6 +8,7 @@ use Extended\ACF\ConditionalLogic;
 use Extended\ACF\Fields\RadioButton;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\Text;
+use Extended\ACF\Fields\WYSIWYGEditor;
 use Extended\ACF\Location;
 
 class AkyosBlocksFunctions
@@ -61,7 +62,8 @@ class AkyosBlocksFunctions
                             '3' => 'Style 3',
                             '4' => 'Style 4',
                         ])->default('1'),
-                    Text::make("Texte footer", 'footer_text'),
+                    WYSIWYGEditor::make("Texte footer", 'footer_text'),
+                    WYSIWYGEditor::make("Adresse footer", 'footer_address'),
                     RadioButton::make("Style de l'option", 'footer_option_style')
                         ->choices([
                             '1' => 'Sans option',

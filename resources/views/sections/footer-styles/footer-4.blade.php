@@ -6,7 +6,7 @@
                     <x-image :lg="empty($options['footer_logo']) ? $options['logo'] : $options['footer_logo']"></x-image>
                 </a>
             </div>
-            <p>Follow Us</p>
+            <p class="footer-layout-inner__follow">Suivez-nous</p>
             <div>
                 @if($options['facebook'])
                     <a href="{{ $options['facebook']}}" target="_blank">@icon("facebook")</a>
