@@ -28,8 +28,8 @@
         <div class="footer-right">
             <span class="footer-bar"></span>
             <div class="footer-layout-info">
-                <div class="">
-                    <p>{!! $options['address'] !!}</p>
+                <div class="footer-layout-info__address">
+                    <p>{!! $options['footer_address'] !!}</p>
                 </div>
                 <div class="footer-layout-info__text">
                     {!! $options['footer_text'] !!}

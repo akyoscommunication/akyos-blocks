@@ -2522,6 +2522,9 @@ button {
 .footer--style-4 .footer-layout-inner svg path {
   fill: rgba(var(--aky-color-primary--rgb), 1);
 }
+.footer--style-4 .footer-layout-inner__follow {
+  color: rgba(var(--aky-color-primary--rgb), 1);
+}
 .footer--style-4 .footer-layout-info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2558,8 +2561,15 @@ button {
     text-align: center;
   }
 }
+.footer--style-4 .footer-layout-info__address {
+  color: rgba(var(--aky-color-primary--rgb), 1);
+}
 .footer--style-4 .footer-layout-info__text {
+  color: rgba(var(--aky-color-primary--rgb), 1);
   max-width: 28.5714285714rem;
+}
+.footer--style-4 .footer-layout-info__text p + p {
+  margin-top: 1.7142857143rem;
 }
 .footer--style-4 .footer-link {
   display: -webkit-box;

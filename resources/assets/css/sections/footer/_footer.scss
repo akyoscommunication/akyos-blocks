@@ -293,6 +293,9 @@
                 fill: color(primary);
               }
             }
+            &__follow {
+              color: color(primary);
+            }
           }
 
           &-info {
@@ -304,9 +307,16 @@
               gap: rem(16);
               text-align: center;
             }
+            &__address {
+              color: color(primary);
+            }
 
             &__text {
+              color: color(primary);
               max-width: rem(400);
+              p + p {
+                margin-top: rem(24);
+              }
             }
           }
         }
@@ -385,6 +395,7 @@
             &__text {
               color: color(light);
             }
+
           }
         }
       }
