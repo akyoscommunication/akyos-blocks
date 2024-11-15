@@ -52,7 +52,9 @@
 
       &-slider {
         grid-area: 1 / 5 / 2 / 13;
-
+        @include lessThan($tablet) {
+          grid-area: 2 / 1 / 3 / 2;
+        }
         .swiper-slide {
           opacity: 1;
           transition: opacity 0.3s ease;
@@ -83,12 +85,12 @@
             border-radius: rem(10);
           }
 
-          @include lessThan($tablet) {
-            max-width: rem(300);
-            img {
-              height: rem(300);
-            }
-          }
+          //@include lessThan($tablet) {
+          //  max-width: rem(300);
+          //  img {
+          //    height: rem(300);
+          //  }
+          //}
         }
       }
 

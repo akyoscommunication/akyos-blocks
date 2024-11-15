@@ -4741,6 +4741,11 @@ button {
 .s-content--style-3 .s-content-slider {
   grid-area: 1/5/2/13;
 }
+@media screen and (max-width: 1025px) {
+  .s-content--style-3 .s-content-slider {
+    grid-area: 2/1/3/2;
+  }
+}
 .s-content--style-3 .s-content-slider .swiper-slide {
   opacity: 1;
   -webkit-transition: opacity 0.3s ease;
@@ -4765,14 +4770,6 @@ button {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 0.625rem;
-}
-@media screen and (max-width: 1025px) {
-  .s-content--style-3 .s-content__image .c-image {
-    max-width: 18.75rem;
-  }
-  .s-content--style-3 .s-content__image .c-image img {
-    height: 18.75rem;
-  }
 }
 .s-content--style-3 .s-content-swiper {
   width: auto;
