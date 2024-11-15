@@ -1,6 +1,6 @@
 <footer class="container  footer-option--style-{{ $options['footer_option_style'] }}">
     <div class="footer-option">
-        <h2>
+        <h2 class="footer-option__text">
             {!! $options['footer_option_text'] !!}
         </h2>
 

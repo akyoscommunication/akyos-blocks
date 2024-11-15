@@ -382,6 +382,16 @@
             @include lessThan($mobile) {
               padding: rem(16) rem(32);
             }
+            &__text {
+              color: color(light);
+              font-size: rem(37);
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+              @include lessThan($mobile) {
+                font-size: rem(24);
+              }
+            }
           }
         }
       }
