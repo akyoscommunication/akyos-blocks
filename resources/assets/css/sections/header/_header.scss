@@ -18,9 +18,8 @@
   .header {
     @include flex(row, nowrap, space-between, center);
 
-    &-brand {
-      max-width: rem(100);
-    }
+    padding-top: rem(14);
+    padding-bottom: rem(14);
 
     &-nav {
       @include flex(row, nowrap, flex-end, center);
@@ -86,16 +85,18 @@
           display: none !important;
         }
       }
+
       &__burger {
         overflow-y: hidden;
-        .menu {
-            @include flex(column, nowrap, center, start);
-            padding: rem(0) rem(20);
 
-            li {
-              padding:  0;
-              font-size: rem(20);
-            }
+        .menu {
+          @include flex(column, nowrap, center, start);
+          padding: rem(0) rem(20);
+
+          li {
+            padding: 0;
+            font-size: rem(20);
+          }
 
         }
 

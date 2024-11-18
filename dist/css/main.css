@@ -1848,9 +1848,8 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-.header-wrap .header-brand {
-  max-width: 6.25rem;
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
 }
 .header-wrap .header-nav {
   display: -webkit-box;
