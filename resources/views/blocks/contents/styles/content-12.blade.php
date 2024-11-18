@@ -17,9 +17,11 @@
             <div class="s-content-layout-column" data-filtered="tab-{{ $key }}">
                 @foreach($tab['content-tab'] as $key2 =>  $tab_inner)
                     <div class="s-content-layout-inner" data-filtered="tab-{{ $key }}">
-                        <x-title :tag="$tab_inner['title']['tag']">
-                            {!! $tab_inner['title']['value'] !!}
-                        </x-title>
+                        @if($tab_inner['title'] && $tab_inner['title']['value'])
+                            <x-title :tag="$tab_inner['title']['tag']">
+                                {!! $tab_inner['title']['value'] !!}
+                            </x-title>
+                        @endif
                         <div class="s-content-slider">
                             <x-akyos-blocks::aky-slider name="slider--content12{{$block['id'] . $key2 . $key}}"
                                                         navigation="arrow"
