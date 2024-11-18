@@ -394,29 +394,29 @@
         @include flex(column, wrap, center, center);
 
         .footer {
-
           &-option {
             @include flex(column, wrap, center, center);
+
             gap: rem(32);
             padding: rem(32) rem(64);
             background-color: color(primary);
             border-radius: rem(20);
+
             @include lessThan($mobile) {
               padding: rem(16) rem(32);
             }
 
             &__text {
               color: color(light);
+
               @include lessThan($mobile) {
                 text-align: center;
               }
             }
-
           }
         }
       }
     }
   }
-
 }
 
