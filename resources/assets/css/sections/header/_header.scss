@@ -22,7 +22,7 @@
     padding-bottom: rem(14);
 
     &-nav {
-      @include flex(row, nowrap, flex-end, center);
+      width: 100%;
       gap: 16px;
 
       .menu {
@@ -101,7 +101,6 @@
         }
 
       }
-
     }
   }
 }
