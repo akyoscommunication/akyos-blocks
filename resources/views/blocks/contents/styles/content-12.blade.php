@@ -38,15 +38,16 @@
 						</div>
 						<div class="s-content-layout-inner__text">
 							{!! $tab_inner['description'] !!}
+
+                            @if($tab_inner['button'] && $tab_inner['button']['link'])
+                                <x-akyos-blocks::aky-button :appearance="$tab_inner['button']['color']"
+                                                            :icon="$tab_inner['button']['icon']"
+                                                            :iconposition="$tab_inner['button']['iconposition']"
+                                                            :href="$tab_inner['button']['link']['url']">
+                                    {{ $tab_inner['button']['link']['title'] }}
+                                </x-akyos-blocks::aky-button>
+                            @endif
 						</div>
-						@if($tab_inner['button'] && $tab_inner['button']['link'])
-							<x-akyos-blocks::aky-button :appearance="$tab_inner['button']['color']"
-																 :icon="$tab_inner['button']['icon']"
-																 :iconposition="$tab_inner['button']['iconposition']"
-																 :href="$tab_inner['button']['link']['url']">
-								{{ $tab_inner['button']['link']['title'] }}
-							</x-akyos-blocks::aky-button>
-						@endif
 					</div>
 				@endforeach
 			</div>
