@@ -1,7 +1,9 @@
 <div class="container s-partenaire">
-    <x-title :tag="$partenaire1['title']['tag']">
-        {!! $partenaire1['title']['value'] !!}
-    </x-title>
+    @if($partenaire1['title'] && $partenaire1['title']['value'])
+        <x-title :tag="$partenaire1['title']['tag']">
+            {!! $partenaire1['title']['value'] !!}
+        </x-title>
+    @endif
     <div class="s-partenaire__text">
         {!! $partenaire1['text'] !!}
     </div>
@@ -12,14 +14,14 @@
             </div>
         @endforeach
     </div>
-    @if($partenaire1['button'] && $partenaire1['button']['link']['url'])
+    @if($partenaire1['button'] && $partenaire1['button']['link'])
         <div class="s-partenaire__btn">
-            <x-akyos-blocks::button :appearance="$partenaire1['button']['color']" :icon="$partenaire1['button']['icon']"
-                                    :iconposition="$partenaire1['button']['iconposition']"
-                                    :href="$partenaire1['button']['link']['url']"
-                                    :borderradius="$partenaire1['button']['borderradius']">
+            <x-akyos-blocks::aky-button :appearance="$partenaire1['button']['color']" :icon="$partenaire1['button']['icon']"
+                                        :iconposition="$partenaire1['button']['iconposition']"
+                                        :href="$partenaire1['button']['link']['url']"
+                                        :borderradius="$partenaire1['button']['borderradius']">
                 {{ $partenaire1['button']['link']['title'] }}
-            </x-akyos-blocks::button>
+            </x-akyos-blocks::aky-button>
         </div>
     @endif
 </div>
