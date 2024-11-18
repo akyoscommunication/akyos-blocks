@@ -262,6 +262,7 @@
 
     &-4 {
       background-color: color(grey-200);
+
       .footer {
         list-style: none;
 
@@ -293,9 +294,11 @@
                 fill: color(primary);
               }
             }
+
             &__address {
               color: color(primary);
             }
+
             &__follow {
               color: color(primary);
             }
@@ -315,6 +318,7 @@
             &__text {
               color: color(primary);
               max-width: rem(400);
+
               p + p {
                 margin-top: rem(24);
               }
@@ -369,6 +373,7 @@
     @include lessThan($mobile) {
       margin-bottom: -20px;
     }
+
     &--style {
 
       &-1 {
@@ -384,7 +389,7 @@
       }
 
       &-4 {
-        padding-top: rem(32);
+        padding-top: rem(61);
 
         @include flex(column, wrap, center, center);
 
@@ -399,6 +404,7 @@
             @include lessThan($mobile) {
               padding: rem(16) rem(32);
             }
+
             &__text {
               color: color(light);
               @include lessThan($mobile) {
