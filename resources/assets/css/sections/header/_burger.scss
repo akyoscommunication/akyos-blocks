@@ -34,6 +34,7 @@
 
       @include lessThan(1050px) {
         display: flex !important;
+        justify-content: end !important;
       }
 
       &.active {
@@ -73,7 +74,6 @@
         overflow: hidden;
 
 
-
         #close {
           cursor: pointer;
         }
@@ -101,11 +101,13 @@
               .sub-menu {
                 display: none;
               }
+
               overflow: hidden;
               transition: 0.2s ease-in;
 
               &.open {
-                transition:  0.2s ease-in;
+                transition: 0.2s ease-in;
+
                 .sub-menu {
 
                   display: block !important;
