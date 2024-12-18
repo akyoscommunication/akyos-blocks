@@ -4,6 +4,7 @@ namespace Akyos\Blocks\Acf\Fields;
 
 use App\Acf\Fields\Title;
 use Extended\ACF\Fields\Group;
+use Extended\ACF\Fields\Image;
 use Extended\ACF\Fields\Repeater;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\WYSIWYGEditor;
@@ -21,6 +22,7 @@ class AkyB_Content6to7
                 ->fields([
                     Title::make('Titre', 'title')
                         ->required(),
+                    Image::make('Image', 'image')->format('id'),
                     WYSIWYGEditor::make('Contenu', 'content')
                         ->required(),
                     AkyB_Button::make('Bouton', 'button')

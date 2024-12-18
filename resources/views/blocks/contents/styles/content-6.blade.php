@@ -9,6 +9,9 @@
         <div class="s-content-layout">
             @foreach($content6to7['contents'] as $key => $content)
                 <div class="s-content-layout-column">
+                    @if($content['image'])
+                        <x-image :lg="$content['image']"/>
+                    @endif
                     <x-title :tag="$content['title']['tag']">
                         {!! $content['title']['value'] !!}
                     </x-title>

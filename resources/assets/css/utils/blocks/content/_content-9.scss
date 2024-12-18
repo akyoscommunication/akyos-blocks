@@ -2,13 +2,17 @@
   &-9 {
     .s-content {
       &-image {
+        max-width: rem(360);
+
         .c-image {
           width: rem(360);
+
           img {
             height: 100%;
             max-height: rem(360);
             object-fit: cover;
           }
+
           @include lessThan($tablet) {
             width: rem(360);
             img {
@@ -23,6 +27,7 @@
           }
         }
       }
+
       &-left {
         margin-top: rem(8);
         @include flex(row, nowrap, start, center);
@@ -33,6 +38,7 @@
           gap: rem(16);
         }
       }
+
       &-right {
         margin-top: rem(8);
         @include flex(row-reverse, nowrap, end, center);
@@ -44,6 +50,7 @@
 
 
         }
+
         &-layout {
           @include lessThan($mobile) {
             .c-title {

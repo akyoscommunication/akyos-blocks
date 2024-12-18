@@ -34,7 +34,9 @@
                                 @if($tab_inner['images'])
                                     @foreach($tab_inner['images'] as $key3 => $image)
                                         <div class="s-content__image swiper-slide" data-filtered="tab-{{ $key }}">
-                                            <x-image :lg="$image['image']"/>
+                                            <a href="{{ wp_get_attachment_image_url($image['image'], 'full') }}" class="glightbox">
+                                                <x-image :lg="$image['image']"/>
+                                            </a>
                                         </div>
                                     @endforeach
                                 @endif
@@ -47,7 +49,9 @@
                                 <x-akyos-blocks::aky-button :appearance="$tab_inner['button']['color']"
                                                             :icon="$tab_inner['button']['icon']"
                                                             :iconposition="$tab_inner['button']['iconposition']"
-                                                            :href="$tab_inner['button']['link']['url']">
+                                                            :href="$tab_inner['button']['link']['url']"
+                                                            :target="$tab_inner['button']['link']['target']"
+                                >
                                     {{ $tab_inner['button']['link']['title'] }}
                                 </x-akyos-blocks::aky-button>
                             @endif

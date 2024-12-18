@@ -59,7 +59,7 @@
     display: inline-block !important;
     background-color: color(light) !important;
     position: absolute !important;
-    top: rem(-10) !important;
+    top: rem(-15) !important;
     padding: 0 rem(10) !important;
     z-index: 3 !important;
   }
@@ -67,11 +67,12 @@
   &-button-submit {
     width: fit-content !important;
     cursor: pointer !important;
-    padding: rem(17) rem(30) !important;
+    padding: rem(17) rem(64) !important;
     text-decoration: none !important;
     overflow: hidden !important;
     position: relative !important;
     transition: all 0.2s ease-in-out !important;
+    border-radius: rem(6) !important;
     z-index: 3 !important;
     color: color(light) !important;
     background-color: color(primary) !important;

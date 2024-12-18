@@ -3,6 +3,7 @@
 namespace Akyos\Blocks\Acf\Fields;
 
 use App\Acf\Fields\Title;
+use Extended\ACF\Fields\Gallery;
 use Extended\ACF\Fields\Group;
 use Extended\ACF\Fields\Image;
 use Extended\ACF\Fields\Repeater;
@@ -21,8 +22,8 @@ class AkyB_Content9
                 ->fields([
                     Title::make('Titre', 'title'),
                     WYSIWYGEditor::make('Contenu', 'content'),
-                    Image::make('Image', 'image')
-                        ->format('id'),
+                    Gallery::make('Images', 'images')
+                        ->format('id')->maxFiles(2),
                     Select::make('Position', 'order')
                         ->choices([
                             'left' => 'Gauche',
