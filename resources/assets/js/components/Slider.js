@@ -3,17 +3,16 @@ import {Pagination} from "swiper/modules";
 import {Scrollbar} from "swiper/modules";
 import {Navigation} from "swiper/modules";
 import {Autoplay} from "swiper/modules";
+import $ from "jquery";
 
 export class Slider {
-  constructor()
-  {
+  constructor() {
     document.querySelectorAll('*[slider]').forEach(slider => {
       this.registerSlider(slider)
     })
   }
 
-  registerSlider(slider)
-  {
+  registerSlider(slider) {
     const name = slider.getAttribute('data-slider');
     const slider_id = slider.getAttribute('sliderid');
     const per_view = slider.getAttribute('per-view');
@@ -62,7 +61,8 @@ export class Slider {
       modules.push(Pagination);
     }
 
-    const swiper = new Swiper('.' + name , {
+    let swiper = null;
+    swiper = new Swiper('.' + name, {
       modules: modules,
       slidesPerView: per_view,
       loop: false,
@@ -94,13 +94,16 @@ export class Slider {
     let currentIndex = swiper.activeIndex;
     const slides = document.querySelectorAll('.swiper-slide');
 
-    swiper.on('slideChange', function (e) {
-      slides.forEach(item => item.classList.remove('third-slide-before'));
-      currentIndex = e.activeIndex;
+    console.log(swiper)
+    if (swiper) {
+      swiper.on('slideChange', function (e) {
+        slides.forEach(item => item.classList.remove('third-slide-before'));
+        currentIndex = e.activeIndex;
 
-      arraySlideIndex.forEach(function (item) {
-        slides[currentIndex - item]?.classList.add('third-slide-before');
+        arraySlideIndex.forEach(function (item) {
+          slides[currentIndex - item]?.classList.add('third-slide-before');
+        })
       })
-    })
+    }
   }
 }
