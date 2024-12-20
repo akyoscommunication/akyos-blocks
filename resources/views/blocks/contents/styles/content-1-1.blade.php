@@ -1,10 +1,12 @@
 <div class="container s-content-container-{{$content1to2['order']}}">
     <div class="s-content-layout">
-        <div class="s-content-layout__title">
-            <x-title :tag="$content1to2['title']['tag']">
-                {!! $content1to2['title']['value'] !!}
-            </x-title>
-        </div>
+        @if($content1to2['title'])
+            <div class="s-content-layout__title">
+                <x-title :tag="$content1to2['title']['tag']">
+                    {!! $content1to2['title']['value'] !!}
+                </x-title>
+            </div>
+        @endif
 
         <div class="s-content-layout__text">
             {!! $content1to2['content'] !!}
