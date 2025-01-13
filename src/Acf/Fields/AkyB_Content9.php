@@ -23,7 +23,7 @@ class AkyB_Content9
                     Title::make('Titre', 'title'),
                     WYSIWYGEditor::make('Contenu', 'content'),
                     Gallery::make('Images', 'images')
-                        ->format('id')->maxFiles(2),
+                        ->format('id'),
                     Select::make('Position', 'order')
                         ->choices([
                             'left' => 'Gauche',
