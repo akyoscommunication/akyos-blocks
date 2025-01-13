@@ -6,7 +6,7 @@
     <div class="container s-content-{{$content['order']}}">
         <div class="s-content-image">
             @if($content['images'])
-                <x-akyos-blocks::aky-slider name="slider--review-{{ $key }}" autoheight="true" gap="0" navigation="" pagination="1" scrollbar="1" per="1" permd="1" persm="1" perxs="1" sliderid="{{$block['id']}}">
+                <x-akyos-blocks::aky-slider name="slider--review-{{ $key }}" autoheight="true" gap="0" navigation="arrow" pagination="1" scrollbar="1" per="1" permd="1" persm="1" perxs="1" sliderid="{{$block['id']}}">
                     @foreach($content['images'] as $image)
                         <div class="swiper-slide">
                             <x-image :lg="$image"/>
