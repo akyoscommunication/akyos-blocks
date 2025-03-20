@@ -56,6 +56,6 @@ class content11 extends Block
 
     public function render()
     {
-        return view('blocks.content11');
+        return view('akyos-blocks::blocks.content11');
     }
 }

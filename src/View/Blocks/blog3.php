@@ -76,6 +76,6 @@ class blog3 extends Block
 
     public function render()
     {
-        return view('blocks.blog3');
+        return view('akyos-blocks::blocks.blog3');
     }
 }

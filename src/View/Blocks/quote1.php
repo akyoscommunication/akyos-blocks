@@ -54,6 +54,6 @@ class quote1 extends Block
 
     public function render()
     {
-        return view('blocks.quote1');
+        return view('akyos-blocks::blocks.quote1');
     }
 }

@@ -52,6 +52,6 @@ class partners3 extends Block
 
     public function render()
     {
-        return view('blocks.partners3');
+        return view('akyos-blocks::blocks.partners3');
     }
 }

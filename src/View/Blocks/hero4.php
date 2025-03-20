@@ -52,6 +52,6 @@ class hero4 extends Block
 
     public function render()
     {
-        return view('blocks.hero4');
+        return view('akyos-blocks::blocks.hero4');
     }
 }

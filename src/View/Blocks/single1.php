@@ -50,6 +50,6 @@ class single1 extends Block
 
     public function render()
     {
-        return view('blocks.single1');
+        return view('akyos-blocks::blocks.single1');
     }
 }

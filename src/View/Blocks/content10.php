@@ -56,6 +56,6 @@ class content10 extends Block
 
     public function render()
     {
-        return view('blocks.content10');
+        return view('akyos-blocks::blocks.content10');
     }
 }

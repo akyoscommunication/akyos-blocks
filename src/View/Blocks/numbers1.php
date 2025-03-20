@@ -61,6 +61,6 @@ class numbers1 extends Block
 
     public function render()
     {
-        return view('blocks.numbers1');
+        return view('akyos-blocks::blocks.numbers1');
     }
 }

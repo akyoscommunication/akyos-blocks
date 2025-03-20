@@ -52,6 +52,6 @@ class slider2 extends Block
 
     public function render()
     {
-        return view('blocks.slider2');
+        return view('akyos-blocks::blocks.slider2');
     }
 }

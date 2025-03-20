@@ -61,6 +61,6 @@ class accordion2 extends Block
 
     public function render()
     {
-        return view('blocks.accordion2');
+        return view('akyos-blocks::blocks.accordion2');
     }
 }

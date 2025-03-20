@@ -59,6 +59,6 @@ class map2 extends Block
 
     public function render()
     {
-        return view('blocks.map2');
+        return view('akyos-blocks::blocks.map2');
     }
 }

@@ -70,6 +70,6 @@ class map1 extends Block
 
     public function render()
     {
-        return view('blocks.map1');
+        return view('akyos-blocks::blocks.map1');
     }
 }

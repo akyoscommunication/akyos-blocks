@@ -53,6 +53,6 @@ class services3 extends Block
 
     public function render()
     {
-        return view('blocks.services3');
+        return view('akyos-blocks::blocks.services3');
     }
 }

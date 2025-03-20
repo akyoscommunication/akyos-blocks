@@ -72,6 +72,6 @@ class team1 extends Block
 
     public function render()
     {
-        return view('blocks.team1');
+        return view('akyos-blocks::blocks.team1');
     }
 }

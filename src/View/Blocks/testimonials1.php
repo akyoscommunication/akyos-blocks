@@ -67,6 +67,6 @@ class testimonials1 extends Block
 
     public function render()
     {
-        return view('blocks.testimonials1');
+        return view('akyos-blocks::blocks.testimonials1');
     }
 }

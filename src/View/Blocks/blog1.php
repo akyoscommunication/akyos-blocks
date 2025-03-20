@@ -80,6 +80,6 @@ class blog1 extends Block
 
     public function render()
     {
-        return view('blocks.blog1');
+        return view('akyos-blocks::blocks.blog1');
     }
 }

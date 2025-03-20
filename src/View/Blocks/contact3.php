@@ -53,6 +53,6 @@ class contact3 extends Block
 
     public function render()
     {
-        return view('blocks.contact3');
+        return view('akyos-blocks::blocks.contact3');
     }
 }

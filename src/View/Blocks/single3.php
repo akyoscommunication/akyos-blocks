@@ -51,6 +51,6 @@ class single3 extends Block
 
     public function render()
     {
-        return view('blocks.single3');
+        return view('akyos-blocks::blocks.single3');
     }
 }

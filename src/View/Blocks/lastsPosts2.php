@@ -64,6 +64,6 @@ class lastsPosts2 extends Block
 
     public function render()
     {
-        return view('blocks.lasts-posts2');
+        return view('akyos-blocks::blocks.lasts-posts2');
     }
 }

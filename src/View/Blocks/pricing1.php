@@ -69,6 +69,6 @@ class pricing1 extends Block
 
     public function render()
     {
-        return view('blocks.pricing1');
+        return view('akyos-blocks::blocks.pricing1');
     }
 }
