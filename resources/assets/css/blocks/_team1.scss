@@ -1,0 +1,112 @@
+.s-team1 {
+  padding: rem(60) 0;
+
+  > .container {
+    @include column();
+
+    gap: rem(24);
+
+    .c-title, > p {
+      text-align: center;
+    }
+
+    > p {
+      max-width: rem(630);
+    }
+  }
+
+  .members {
+    width: 100%;
+    gap: rem(24);
+
+    .member {
+      @include column();
+
+      .c-image {
+        width: auto;
+        img {
+          border-radius: 50%;
+          max-width: rem(184);
+          width: 100%;
+        }
+      }
+
+      &-content {
+        padding-top: rem(24);
+        text-align: center;
+
+        &__job {
+          font-size: rem(12);
+          opacity: 0.5;
+        }
+
+        &-links {
+          @include flex(row, nowrap, center, center);
+
+          gap: rem(8);
+          padding-top: rem(16);
+
+          a, svg {
+            height: rem(14);
+            width: rem(16);
+          }
+
+          &__contact {
+            border-right: rem(1) solid color(dark);
+            padding-right: rem(8);
+          }
+
+          &__socials, &__contact {
+            @include flex(row, nowrap, start, center);
+            gap: rem(4);
+          }
+        }
+      }
+    }
+
+    .swiper-buttons {
+      @include flex(row, nowrap, center, center);
+
+      z-index: 11;
+      padding-block: clamp-calc(20px, 50px);
+      gap: rem(24);
+
+      .swiper-button-prev, .swiper-button-next {
+        --swiper-navigation-size: rem(50);
+        position: static;
+
+        &:after {
+          content: none;
+        }
+
+      }
+
+      > div {
+        cursor: pointer;
+      }
+    }
+
+    .swiper-pagination {
+      width: auto;
+      position: static;
+
+      .swiper-pagination-bullet {
+        --swiper-pagination-bullet-width: 8px;
+        --swiper-pagination-bullet-height: 8px;
+        --swiper-pagination-bullet-inactive-color: #fff;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        --swiper-pagination-bullet-border-radius: 50px;
+
+        border: 1px solid color(dark);
+        transition: $default-transition;
+      }
+
+      .swiper-pagination-bullet-active {
+        --swiper-pagination-color: #000;
+        border-color: color(dark);
+      }
+
+    }
+  }
+
+}

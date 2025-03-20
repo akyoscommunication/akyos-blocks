@@ -1,0 +1,106 @@
+.s-pricing1 {
+  padding: rem(60) 0;
+
+  > .container {
+    @include column();
+
+    gap: rem(32);
+
+    > .c-title, > p {
+      text-align: center;
+    }
+
+    > p {
+      max-width: rem(630);
+    }
+  }
+
+  .prices {
+    max-width: rem(1064);
+    display: grid;
+    grid-template-columns: 3fr 4fr 3fr;
+    gap: rem(24);
+    padding: rem(32) 0;
+
+    @include lessThan(1000px) {
+      width: rem(1064);
+    }
+
+    @include lessThan($mobileXs) {
+      width: min-content;
+      grid-template-columns: repeat(auto-fit, 240px);
+    }
+
+    &-wrapper {
+      @include lessThan(1000px) {
+        padding: 0 rem(12);
+        max-width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+      }
+    }
+
+    .price {
+      @include column(nowrap, start, start);
+
+      overflow: hidden;
+      border-radius: rem(8);
+      box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.14);
+
+      &__top {
+        @extend %fs-13;
+
+        width: 100%;
+        text-align: center;
+        height: rem(21);
+        color: color(light);
+        p {
+          margin: 0;
+        }
+      }
+
+      &-content {
+        @include column(nowrap, start, start);
+
+        height: 100%;
+        padding: rem(32);
+
+        &__desc {
+          padding: rem(16) 0;
+          color: color(dark, 0.5);
+        }
+
+        &__value {
+          @extend %fs-30;
+
+          p {
+            display: flex;
+            align-items: center;
+          }
+          span {
+            @extend %fs-16;
+          }
+        }
+
+        &-items {
+          padding: rem(16) 0 rem(32) 0;
+          &__item {
+            @include flex(row, nowrap, start, center);
+
+            gap: rem(8);
+
+            svg {
+              flex: 0 0 rem(24);
+            }
+          }
+        }
+
+        .btn {
+          justify-content: center;
+          width: 100%;
+          margin-top: auto;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.s-map2 {
+  padding: rem(60) 0;
+
+  > .container {
+    @include column();
+
+    gap: rem(16);
+
+    > .c-title, > p {
+      text-align: center;
+    }
+    > p {
+      max-width: rem(630);
+    }
+  }
+
+  .map {
+    width: 100%;
+    [data-markers] {
+      height: rem(443);
+      width: 100%;
+    }
+  }
+}

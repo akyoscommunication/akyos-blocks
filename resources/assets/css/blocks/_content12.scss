@@ -1,0 +1,118 @@
+.s-content12 {
+  padding: rem(60) 0;
+  overflow-x: hidden;
+
+  > .container {
+    display: grid;
+    grid-template-columns: 6fr 1fr 5fr;
+    grid-template-areas: "left blank right";
+    grid-gap: rem(20);
+
+    /**
+     * If the container has only one child (no images),
+     * the grid is not necessary
+     */
+    &:has(> div:only-child) {
+      display: block;
+    }
+
+    /***************************************/
+    /************* REVERSE *****************/
+    /***************************************/
+
+    &.reverse {
+      grid-template-columns: 5fr 1fr 6fr;
+
+      .s-content12-content {
+        grid-area: right;
+      }
+
+      .s-content12-image {
+        grid-area: left;
+
+        .c-image {
+          @include moreThan($mobile) {
+            &:first-child {
+              img {
+                position: absolute;
+                right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /***************************************/
+    /***************************************/
+    /***************************************/
+
+    @include lessThan($mobile) {
+      @include flex(column, nowrap, center, stretch);
+    }
+  }
+
+  &-content {
+    @include flex(column, nowrap, center, start);
+
+    grid-area: left;
+    gap: rem(24);
+
+    .c-image {
+      margin-top: clamp-calc(20px, 50px);
+
+      img {
+        height: clamp-calc(300px, 360px);
+        object-fit: cover;
+      }
+    }
+  }
+
+  &-image {
+    grid-area: right;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: rem(20);
+    overflow: visible;
+
+    /*
+     * If the container has only one image,
+     */
+
+    &:has(> .c-image:only-child) {
+      grid-template-columns: 1fr;
+    }
+
+    /*******************************/
+
+    .c-image {
+      height: clamp-calc(500px, 856px);
+      display: block;
+
+      /*
+      * If the container has two images,
+      */
+      &:first-child {
+        @include moreThan($mobile) {
+          position: relative;
+          overflow: visible;
+          max-width: rem(550);
+          min-height: rem(700);
+          height: 100%;
+          img {
+            width: calc(50vw - 10px);
+            max-width: unset;
+            max-height: rem(856);
+          }
+        }
+      }
+
+      /******************************/
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

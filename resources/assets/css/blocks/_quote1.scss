@@ -1,0 +1,17 @@
+.s-quote1 {
+  padding: rem(60) 0;
+
+  .quote {
+    text-align: center;
+    font-size: clamp-calc(44px, 64px);
+    line-height: clamp-calc(64px, 100px);
+
+    img {
+      border-radius: rem(3);
+      height: rem(45);
+      width: rem(91);
+      object-fit: cover;
+      vertical-align: middle;
+    }
+  }
+}

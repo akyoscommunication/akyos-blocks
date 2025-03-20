@@ -1,0 +1,22 @@
+.s-hero1 {
+  @include flex(column, nowrap, center, start);
+
+  background: var(--bg) no-repeat center center / cover;
+  height: rem(818);
+
+  @include lessThan($mobileXs) {
+    height: 80vh;
+  }
+
+  > .container {
+    @include column(nowrap);
+
+    gap: rem(24);
+
+    .buttons {
+      @include row(nowrap, center, center);
+
+      gap: rem(16);
+    }
+  }
+}

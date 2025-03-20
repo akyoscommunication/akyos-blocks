@@ -1,0 +1,40 @@
+.s-blog5 {
+  .filters {
+    &-list {
+      @include flex(row, wrap, start, center);
+
+      column-gap: rem(45);
+      row-gap: rem(32);
+
+      .filter {
+        @extend %fs-20;
+
+        padding: 0;
+        border-bottom: none;
+        font-weight: 400;
+        text-transform: initial;
+        position: relative;
+        overflow: initial;
+        color: #8B8B8B;
+
+        span {
+          span {
+            @extend %fs-13;
+
+            position: absolute;
+            left: 100%;
+            white-space: nowrap;
+            margin-left: rem(5);
+            top: 0;
+            font-family: $font-family;
+          }
+        }
+
+        &:hover, &.btn--active {
+          color: color(dark);
+        }
+
+      }
+    }
+  }
+}

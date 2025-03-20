@@ -1,0 +1,120 @@
+.s-content4 {
+  padding: rem(60) 0;
+  overflow: hidden;
+
+  > .container {
+    display: grid;
+    grid-template-columns: 4fr 1fr 8fr;
+    grid-template-areas: "left blank right";
+    grid-gap: rem(20);
+
+    &:has(> div:only-child) {
+      display: block;
+    }
+
+    &.reverse {
+      grid-template-columns: 8fr 1fr 4fr;
+
+      .s-content4-content {
+        grid-area: right;
+      }
+
+      .s-content4-image {
+        grid-area: left;
+
+        .swiper {
+          &::before {
+            left: 100%;
+          }
+        }
+      }
+    }
+
+    @include lessThan($mobile) {
+      @include flex(column, nowrap, center, stretch);
+    }
+  }
+
+  &-content {
+    @include flex(column, nowrap, center, start);
+
+    position: relative;
+    z-index: 3;
+    grid-area: left;
+    gap: rem(24);
+  }
+
+  &-image {
+    grid-area: right;
+    min-width: 0;
+
+    .swiper {
+      padding: rem(10) 0;
+      overflow: visible;
+
+      &::before {
+        content: "";
+        background-color: color(light);
+        position: absolute;
+        right: 100%;
+        top: 0;
+        height: 100%;
+        width: 100vw;
+        z-index: 2;
+      }
+    }
+
+    .c-image {
+      height: clamp-calc(400px, 500px);
+      display: block;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .swiper-buttons {
+      @include flex(row, nowrap, center, center);
+
+      z-index: 11;
+      padding-block: rem(30);
+      gap: rem(50);
+
+      .swiper-button-prev, .swiper-button-next {
+        --swiper-navigation-size: rem(50);
+        position: static;
+
+        &:after {
+          content: none;
+        }
+      }
+
+      > div {
+        cursor: pointer;
+      }
+    }
+
+    .swiper-pagination {
+      width: auto;
+      position: static;
+
+      .swiper-pagination-bullet {
+        --swiper-pagination-bullet-width: 8px;
+        --swiper-pagination-bullet-height: 8px;
+        --swiper-pagination-bullet-inactive-color: #fff;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        --swiper-pagination-bullet-border-radius: 50px;
+
+        border: 1px solid color(dark);
+        transition: $default-transition;
+      }
+
+      .swiper-pagination-bullet-active {
+        --swiper-pagination-color: #000;
+        border-color: color(dark);
+      }
+
+    }
+  }
+}

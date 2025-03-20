@@ -1,0 +1,32 @@
+.post-2 {
+  position: relative;
+
+  .c-image {
+    &::before {
+      @extend %imageOverlay;
+
+      background-color: color(dark, 0.4);
+    }
+    img {
+      height: rem(400);
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &-content {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    padding: rem(24);
+    color: color(light);
+  }
+
+  &__category {
+    display: inline-block;
+    padding: rem(5) rem(20);
+    border: 1px solid color(light);
+    border-radius: rem(24);
+    margin-bottom: rem(24);
+  }
+}

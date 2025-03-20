@@ -1,0 +1,58 @@
+.s-blog4 {
+  padding: rem(60) 0;
+
+  .filters {
+    &-list {
+      @include flex(row, nowrap, start, center);
+
+      gap: rem(20);
+
+      @include moreThan($mobileXs) {
+        border-bottom: 1px solid color(dark);
+      }
+
+      @include lessThan($mobileXs) {
+        flex-direction: column;
+      }
+
+      .btn {
+        @extend %fs-16;
+
+        max-width: initial;
+        position: relative;
+
+        @include moreThan($mobileXs) {
+          padding: rem(16) rem(20) rem(16) rem(0);
+        }
+
+        span {
+          span {
+            font-weight: normal;
+            margin-left: rem(5);
+            padding: rem(5) rem(15);
+            border: 1px solid color(dark);
+            border-radius: rem(14);
+          }
+        }
+
+        &--active {
+          overflow: visible;
+
+          &:before {
+            content: none;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: rem(-2);
+            left: 0;
+            width: 100%;
+            height: rem(2);
+            background-color: color(dark);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,140 @@
+.s-pricing2 {
+  padding: rem(60) 0;
+
+  > .container {
+    @include column();
+
+    gap: rem(16);
+
+    > .c-title, > p {
+      text-align: center;
+    }
+
+    > p {
+      max-width: rem(630);
+    }
+  }
+
+  .prices {
+    padding-top: rem(32);
+    width: 100%;
+
+    .swiper-wrapper {
+      align-items: stretch;
+      .swiper-slide {
+        height: auto;
+
+        @include moreThan($tablet) {
+          padding: 0 rem(32);
+        }
+      }
+    }
+
+    .price {
+      @include column(nowrap, start, center);
+
+      height: 100%;
+      text-align: center;
+      overflow: hidden;
+      border: 1px solid color(dark);
+      border-radius: rem(8);
+
+      &__top {
+        @extend %fs-13;
+
+        width: 100%;
+        text-align: center;
+        padding: rem(16) 0;
+      }
+
+      &-content {
+        @include column(nowrap, start, center);
+
+        height: 100%;
+        padding: 0 rem(32) rem(32);
+        gap: rem(16);
+
+        &__desc {
+          color: color(dark, 0.5);
+        }
+
+        &__value {
+          font-size: rem(32);
+
+          p {
+            display: flex;
+            align-items: center;
+          }
+          span {
+            @extend %fs-16;
+          }
+        }
+
+        &-items {
+          padding: rem(16) 0 rem(32) 0;
+          &__item {
+            @include flex(row, nowrap, start, center);
+
+            gap: rem(8);
+            text-align: left;
+
+            svg {
+              flex: 0 0 rem(24);
+            }
+          }
+        }
+
+        .btn {
+          justify-content: center;
+          width: 100%;
+        }
+      }
+    }
+
+    .swiper-buttons {
+      @include flex(row, nowrap, center, center);
+
+      z-index: 11;
+      padding-block: rem(30);
+      gap: rem(24);
+
+      .swiper-button-prev, .swiper-button-next {
+        --swiper-navigation-size: rem(50);
+        position: static;
+
+        &:after {
+          content: none;
+        }
+
+      }
+
+      > div {
+        cursor: pointer;
+      }
+
+    }
+
+    .swiper-pagination {
+      width: auto;
+      position: static;
+
+      .swiper-pagination-bullet {
+        --swiper-pagination-bullet-width: 8px;
+        --swiper-pagination-bullet-height: 8px;
+        --swiper-pagination-bullet-inactive-color: #fff;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        --swiper-pagination-bullet-border-radius: 50px;
+
+        border: 1px solid color(dark);
+        transition: $default-transition;
+      }
+
+      .swiper-pagination-bullet-active {
+        --swiper-pagination-color: #000;
+        border-color: color(dark);
+      }
+
+    }
+
+  }
+}

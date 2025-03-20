@@ -1,0 +1,64 @@
+.s-lasts-posts2 {
+  padding: rem(60) 0;
+
+  > .container {
+    @include column(nowrap, start, start);
+
+    gap: rem(24);
+
+    > p {
+      max-width: rem(630);
+    }
+  }
+
+  .lasts-posts {
+    width: 100%;
+
+    .swiper-buttons {
+      @include flex(row, nowrap, center, center);
+
+      z-index: 11;
+      padding-block: clamp-calc(20px, 50px);
+      gap: rem(24);
+
+      .swiper-button-prev, .swiper-button-next {
+        --swiper-navigation-size: rem(50);
+        position: static;
+
+        &:after {
+          content: none;
+        }
+
+      }
+
+      > div {
+        cursor: pointer;
+      }
+
+    }
+
+    .swiper-pagination {
+      width: auto;
+      position: static;
+
+      .swiper-pagination-bullet {
+        --swiper-pagination-bullet-width: 8px;
+        --swiper-pagination-bullet-height: 8px;
+        --swiper-pagination-bullet-inactive-color: #fff;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        --swiper-pagination-bullet-border-radius: 50px;
+
+        border: 1px solid color(dark);
+        transition: $default-transition;
+      }
+
+      .swiper-pagination-bullet-active {
+        --swiper-pagination-color: #000;
+        border-color: color(dark);
+      }
+
+    }
+
+  }
+
+}

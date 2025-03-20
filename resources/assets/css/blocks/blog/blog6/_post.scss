@@ -1,0 +1,30 @@
+.post-6 {
+  position: relative;
+
+  .c-title {
+    padding-top: rem(20);
+  }
+
+  .c-image {
+    border: 1px solid color(dark);
+
+    img {
+      width: 100%;
+      max-height: rem(400);
+      object-fit: cover;
+    }
+  }
+
+  &__category {
+    position: absolute;
+    top: rem(10);
+    left: rem(10);
+    display: inline-block;
+    padding: rem(5) rem(20);
+    background-color: color(dark);
+    color: color(light);
+    border-radius: rem(24);
+    margin-bottom: rem(10);
+  }
+
+}

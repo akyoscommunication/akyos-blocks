@@ -1,0 +1,47 @@
+.s-partners1 {
+  padding: rem(60) 0;
+
+  > .container {
+    @include column();
+
+    gap: rem(34);
+
+    .c-title, > p {
+      text-align: center;
+    }
+
+    > p {
+      max-width: rem(385);
+    }
+  }
+
+  .partners-logos {
+    @include row(wrap, center, center);
+
+    gap: rem(24);
+
+    @include lessThan($mobile) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .c-image {
+      max-width: clamp-calc(200px, 220px);
+      place-items: center;
+
+      @include lessThan($mobileXs) {
+        max-width: unset;
+        flex: 0 0 45%;
+      }
+
+      img {
+        max-height: clamp-calc(50px, 80px);
+        max-width: clamp-calc(100px, 140px);
+        object-fit: contain;
+        filter: grayscale(100%);
+      }
+    }
+  }
+
+
+}

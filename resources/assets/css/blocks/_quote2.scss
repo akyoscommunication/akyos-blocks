@@ -1,0 +1,14 @@
+.s-quote2 {
+  padding: rem(60) 0;
+
+  .quote {
+    text-align: center;
+    font-size: clamp-calc(44px, 64px);
+    line-height: clamp-calc(64px, 100px);
+
+    span {
+      font-family: "Brush Script MT";
+      font-size: clamp-calc(90px, 120px);
+    }
+  }
+}

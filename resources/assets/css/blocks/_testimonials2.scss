@@ -1,0 +1,132 @@
+.s-testimonials2 {
+  padding: rem(60) 0;
+
+  > .container {
+    @include column();
+
+    gap: rem(24);
+
+    .c-title, > p {
+      text-align: center;
+    }
+
+    > p {
+      max-width: rem(630);
+    }
+  }
+
+  .testimonials {
+    width: 100%;
+
+    .swiper {
+      padding: rem(20) rem(10);
+
+      &-wrapper {
+        align-items: stretch;
+
+        .swiper-slide {
+          height: auto;
+        }
+      }
+    }
+
+    .testimonial {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      align-items: center;
+      height: 100%;
+
+      gap: rem(24);
+
+      @include lessThan($mobile) {
+        @include column();
+
+        width: min-content;
+        min-width: clamp-calc(260px, 750px);
+        margin: 0 auto;
+      }
+
+      .c-image {
+        width: auto;
+        img {
+          width: rem(100);
+          border-radius: 50%;
+        }
+      }
+
+      &-content {
+        background-color: #F6F6F6;
+        height: 100%;
+        padding: rem(32);
+
+        &__name {
+          @include flex(row, nowrap, start, start);
+
+          gap: rem(12);
+
+          p {
+            margin: 0;
+          }
+        }
+
+        &__rating {
+          @include flex(row, nowrap, start, center);
+
+          gap: clamp-calc(6px, 12px);
+          padding-block: clamp-calc(5px, 16px);
+
+          svg {
+            width: clamp-calc(18px, 24px);
+          }
+
+        }
+      }
+    }
+
+    .swiper-buttons {
+      @include flex(row, nowrap, center, center);
+
+      z-index: 11;
+      padding-block: clamp-calc(20px, 30px);
+      gap: rem(50);
+
+      .swiper-button-prev, .swiper-button-next {
+        --swiper-navigation-size: rem(50);
+        position: static;
+
+        &:after {
+          content: none;
+        }
+
+      }
+
+      > div {
+        cursor: pointer;
+      }
+
+    }
+
+    .swiper-pagination {
+      width: auto;
+      position: static;
+
+      .swiper-pagination-bullet {
+        --swiper-pagination-bullet-width: 8px;
+        --swiper-pagination-bullet-height: 8px;
+        --swiper-pagination-bullet-inactive-color: $c-primary;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        --swiper-pagination-bullet-border-radius: 50px;
+
+        border: 1px solid color(dark);
+        transition: $default-transition;
+      }
+
+      .swiper-pagination-bullet-active {
+        --swiper-pagination-color: #000;
+      }
+
+    }
+
+  }
+
+}

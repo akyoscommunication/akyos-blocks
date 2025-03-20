@@ -1,0 +1,103 @@
+.s-numbers1 {
+  padding: rem(60) 0;
+
+  > .container {
+    @include column();
+
+    > .c-title, > p {
+      text-align: center;
+    }
+
+    > p {
+      max-width: rem(630);
+    }
+  }
+
+  .swiper-wrapper {
+    align-items: stretch;
+    .swiper-slide {
+      height: auto;
+      padding: 0 rem(32);
+      & + .swiper-slide {
+        border-left: rem(1) solid color(light);
+      }
+    }
+  }
+
+  .numbers {
+    width: 100%;
+    gap: rem(24);
+    padding-top: rem(72);
+
+    .number {
+      @include column();
+
+      gap: rem(12);
+      height: 100%;
+      text-align: center;
+
+      .c-image {
+        img {
+          max-width: rem(92);
+          margin: auto;
+        }
+      }
+
+      &__value {
+        font-size: rem(58);
+        font-weight: bold;
+      }
+
+    }
+
+    .swiper-buttons {
+      @include flex(row, nowrap, center, center);
+
+      z-index: 11;
+      padding-block: rem(30);
+      gap: rem(24);
+
+      .swiper-button-prev, .swiper-button-next {
+        --swiper-navigation-size: rem(50);
+        position: static;
+
+        svg path {
+          fill: color(light);
+        }
+
+        &:after {
+          content: none;
+        }
+
+      }
+
+      > div {
+        cursor: pointer;
+      }
+
+    }
+
+    .swiper-pagination {
+      width: auto;
+      position: static;
+
+      .swiper-pagination-bullet {
+        --swiper-pagination-bullet-width: 8px;
+        --swiper-pagination-bullet-height: 8px;
+        --swiper-pagination-bullet-inactive-color: transparent;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        --swiper-pagination-bullet-border-radius: 50px;
+
+        border: 1px solid color(light);
+        transition: $default-transition;
+      }
+
+      .swiper-pagination-bullet-active {
+        --swiper-pagination-color: #fff;
+        border-color: color(light);
+      }
+
+    }
+  }
+
+}

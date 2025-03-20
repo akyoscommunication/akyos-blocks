@@ -1,0 +1,13 @@
+.s-quote4 {
+  padding: rem(60) 0;
+
+  .quote {
+    text-align: left;
+    font-size: clamp-calc(44px, 64px);
+    line-height: clamp-calc(64px, 100px);
+
+    .underline {
+      text-decoration: underline;
+    }
+  }
+}

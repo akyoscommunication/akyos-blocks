@@ -1,0 +1,103 @@
+.s-partners3 {
+  padding: rem(60) 0;
+
+  > .container {
+    @include moreThan($mobile) {
+      display: grid;
+      align-items: center;
+      gap: rem(24);
+      grid-template-columns: 6fr 1fr 5fr;
+      grid-template-areas: "content blank slider";
+    }
+
+    .partners-content {
+      @include column(nowrap, start, start);
+
+      gap: rem(24);
+      grid-area: content;
+
+      @include lessThan($mobile) {
+        align-items: center;
+        text-align: center;
+      }
+
+    }
+
+    .slider {
+      grid-area: slider;
+      position: relative;
+      min-width: 0;
+      width: 100%;
+
+
+      .swiper-wrapper {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        row-gap: rem(50);
+
+        @include lessThan($mobile) {
+          padding-top: rem(50);
+        }
+
+        .swiper-slide {
+          margin-top: 0 !important;
+
+          img {
+            max-width: rem(100);
+            margin: 0 auto;
+            object-fit: cover;
+            filter: grayscale(100%);
+          }
+        }
+      }
+
+      .swiper-buttons {
+        @include flex(row, nowrap, center, center);
+
+        z-index: 11;
+        padding-top: rem(50);
+        gap: rem(50);
+
+        .swiper-button-prev, .swiper-button-next {
+          --swiper-navigation-size: rem(50);
+          position: static;
+
+          &:after {
+            content: none;
+          }
+
+        }
+
+        > div {
+          cursor: pointer;
+        }
+
+      }
+
+      .swiper-pagination {
+        --swiper-pagination-top: 93%;
+
+        width: auto;
+        position: static;
+
+        .swiper-pagination-bullet {
+          --swiper-pagination-bullet-width: 8px;
+          --swiper-pagination-bullet-height: 8px;
+          --swiper-pagination-bullet-inactive-color: $c-primary;
+          --swiper-pagination-bullet-inactive-opacity: 1;
+          --swiper-pagination-bullet-border-radius: 50px;
+
+          border: 1px solid color(dark);
+          transition: $default-transition;
+        }
+
+        .swiper-pagination-bullet-active {
+          --swiper-pagination-color: #000;
+        }
+
+      }
+
+    }
+  }
+}

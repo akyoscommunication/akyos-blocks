@@ -1,0 +1,84 @@
+.s-lasts-posts4 {
+  padding: rem(60) 0;
+
+  > .container {
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    align-items: center;
+    gap: rem(24);
+
+    @include lessThan($mobileXs) {
+      @include flex(column-reverse, nowrap, center, center);
+    }
+
+    > .c-title, > p {
+      text-align: center;
+    }
+
+    > p {
+      max-width: rem(385);
+    }
+  }
+
+  .lasts-posts {
+    width: 100%;
+    min-width: 0;
+    gap: rem(24);
+
+    &-title {
+      @include column(nowrap, start, start);
+      gap: rem(24);
+      margin-top: rem(-48);
+    }
+
+    .swiper-buttons {
+      @include flex(row, nowrap, start, center);
+
+      z-index: 11;
+      padding-block: clamp-calc(20px, 30px);
+      gap: rem(24);
+
+      @include lessThan($mobileXs) {
+        justify-content: center;
+      }
+
+      .swiper-button-prev, .swiper-button-next {
+        --swiper-navigation-size: rem(50);
+        position: static;
+
+        &:after {
+          content: none;
+        }
+
+      }
+
+      > div {
+        cursor: pointer;
+      }
+
+    }
+
+    .swiper-pagination {
+      width: auto;
+      position: static;
+
+      .swiper-pagination-bullet {
+        --swiper-pagination-bullet-width: 8px;
+        --swiper-pagination-bullet-height: 8px;
+        --swiper-pagination-bullet-inactive-color: #fff;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        --swiper-pagination-bullet-border-radius: 50px;
+
+        border: 1px solid color(dark);
+        transition: $default-transition;
+      }
+
+      .swiper-pagination-bullet-active {
+        --swiper-pagination-color: #000;
+        border-color: color(dark);
+      }
+
+    }
+  }
+
+}

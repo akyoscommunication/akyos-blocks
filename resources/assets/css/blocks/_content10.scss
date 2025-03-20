@@ -1,0 +1,102 @@
+.s-content10 {
+  padding: rem(60) 0;
+
+  > .container {
+    display: grid;
+    grid-template-columns: 6fr 1fr 5fr;
+    grid-template-areas: "left blank right";
+    grid-gap: rem(20);
+
+    /**
+     * If the container has only one child (no images),
+     * the grid is not necessary
+     */
+    &:has(> div:only-child) {
+      display: block;
+    }
+
+    /***************************************/
+    /************* REVERSE *****************/
+    /***************************************/
+
+    &.reverse {
+      grid-template-columns: 5fr 1fr 6fr;
+
+      .s-content10-content {
+        grid-area: right;
+
+        .c-image {
+          margin-left: auto;
+        }
+      }
+
+      .s-content10-image {
+        grid-area: left;
+      }
+    }
+
+    /***************************************/
+    /***************************************/
+    /***************************************/
+
+    @include lessThan($mobile) {
+      @include flex(column, nowrap, center, stretch);
+    }
+  }
+
+  &-content {
+    @include flex(column, nowrap, center, start);
+
+    grid-area: left;
+    gap: rem(24);
+
+    .c-image {
+      @include moreThan($mobileXs) {
+        max-width: 50%;
+      }
+      img {
+        height: clamp-calc(300px, 360px);
+        object-fit: cover;
+      }
+    }
+  }
+
+  &-image {
+    grid-area: right;
+    align-items: end;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: rem(20);
+
+    /*
+     * If the container has only one image,
+     */
+
+    &:has(> .c-image:only-child) {
+      grid-template-columns: 1fr;
+
+      .c-image {
+        height: clamp-calc(350px, 624px);
+      }
+    }
+
+    /*******************************/
+
+    .c-image {
+      height: clamp-calc(250px, 624px);
+      display: block;
+
+      /*
+      * If the container has two images,
+      */
+
+
+      /******************************/
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

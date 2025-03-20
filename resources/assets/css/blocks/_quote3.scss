@@ -1,0 +1,20 @@
+.s-quote3 {
+  padding: rem(60) 0;
+
+  .quote {
+    text-align: center;
+    font-size: clamp-calc(22px, 32px);
+    line-height: clamp-calc(32px, 58px);
+
+    .color-primary {
+      font-style: italic;
+    }
+
+    img {
+      margin: 0 clamp-calc(5px, 10px);
+      width: clamp-calc(25px, 40px);
+      height: clamp-calc(25px, 40px);
+      vertical-align: middle;
+    }
+  }
+}

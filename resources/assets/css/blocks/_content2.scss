@@ -1,0 +1,72 @@
+.s-content2 {
+  padding: rem(60) 0;
+
+  > .container {
+    display: grid;
+    grid-template-columns: 6fr 1fr 5fr;
+    grid-template-areas: "left blank right";
+    grid-gap: rem(20);
+
+    &:has(> div:only-child) {
+      display: block;
+    }
+
+    &.reverse {
+      grid-template-columns: 5fr 1fr 6fr;
+
+      .s-content2-content {
+        grid-area: right;
+      }
+      .s-content2-image {
+        grid-area: left;
+      }
+    }
+
+    @include lessThan($mobile) {
+      @include flex(column, nowrap, center, stretch);
+    }
+  }
+
+  &-content {
+    @include flex(column, nowrap, center, start);
+
+    grid-area: left;
+    gap: rem(24);
+  }
+
+  &-image {
+    grid-area: right;
+    min-width: 0;
+
+    .c-image {
+      height: clamp-calc(400px, 760px);
+      display: block;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .swiper-buttons {
+      @include flex(row, nowrap, center, center);
+
+      z-index: 11;
+      padding-block: rem(30);
+      gap: rem(50);
+
+      .swiper-button-prev, .swiper-button-next {
+        --swiper-navigation-size: rem(50);
+        position: static;
+
+        &:after {
+          content: none;
+        }
+      }
+
+      > div {
+        cursor: pointer;
+      }
+    }
+  }
+}

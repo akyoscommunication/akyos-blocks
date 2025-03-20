@@ -1,0 +1,56 @@
+.s-hero6 {
+  @include flex(column, nowrap, start, start);
+
+  > .container {
+    display: grid;
+    grid-gap: rem(24);
+    align-items: center;
+
+    @include moreThan($mobile) {
+      grid-template-columns: 5fr 7fr;
+    }
+
+    .hero-content {
+      @include column(nowrap, start, start);
+
+      @include lessThan($mobile) {
+        align-items: center;
+        text-align: center;
+      }
+
+      max-width: rem(456);
+      gap: rem(24);
+
+      .buttons {
+        @include row();
+
+        gap: rem(16);
+      }
+    }
+
+    .hero-image {
+      height: clamp-calc(395px, 755px);
+
+      @include lessThan($mobile) {
+        order: -1;
+      }
+
+      @include moreThan($mobile) {
+        padding-top: rem(32);
+      }
+
+      .c-image {
+        height: 100%;
+
+        img {
+          object-fit: cover;
+        }
+      }
+
+      @include lessThan($mobile) {
+        margin: 0 rem(-15);
+      }
+    }
+
+  }
+}

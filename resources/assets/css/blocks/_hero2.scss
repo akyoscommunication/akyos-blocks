@@ -1,0 +1,47 @@
+.s-hero2 {
+  @include flex(column, nowrap, center, start);
+
+  > .container {
+    @include row(nowrap, space-between, center);
+
+    gap: rem(24);
+
+    &:first-child {
+      padding-block: rem(150) rem(85);
+
+      @include lessThan($mobile) {
+        padding-block: rem(80);
+      }
+    }
+
+    .title {
+      @include column(nowrap, start, start);
+
+      gap: rem(24);
+      max-width: rem(400);
+
+      @include lessThan($mobile) {
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .buttons {
+      @include row(nowrap, center, center);
+
+      gap: rem(20);
+
+      @include moreThan($tablet) {
+        margin-right: rem(100);
+      }
+    }
+
+    .c-image {
+      img {
+        height: clamp-calc(405px, 475px);
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+}

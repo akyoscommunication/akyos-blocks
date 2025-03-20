@@ -1,0 +1,93 @@
+.s-team2 {
+  padding: rem(60) 0;
+
+  > .container {
+    @include column();
+
+    gap: rem(24);
+
+    .c-title, > p {
+      text-align: center;
+    }
+
+    > p {
+      max-width: rem(630);
+    }
+  }
+
+  .members {
+    display: grid;
+    padding-bottom: rem(16);
+
+    @include moreThan($mobile) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .member {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+
+      @include lessThan($mobile) {
+        &:nth-child(even) {
+          grid-template-columns: 1.1fr 1fr;
+
+          .c-image {
+            order: 2;
+          }
+        }
+      }
+
+      @include moreThan($mobile) {
+        &:nth-child(3n+3), &:nth-child(3n+4) {
+          grid-template-columns: 1.1fr 1fr;
+
+          .c-image {
+            order: 2;
+          }
+        }
+      }
+
+      .c-image {
+        width: auto;
+
+        img {
+          max-height: rem(233);
+          object-fit: cover;
+        }
+      }
+
+      &-content {
+        @include flex(column, nowrap, center, start);
+
+        background-color: color(primary);
+        padding: rem(30);
+
+        &__job {
+          font-size: rem(12);
+        }
+
+        &-links {
+          @include flex(row, nowrap, start, center);
+
+          gap: rem(8);
+          padding-top: rem(8);
+
+          a, svg {
+            height: rem(14);
+            width: rem(16);
+          }
+
+          &__contact {
+            border-right: rem(1) solid color(dark);
+            padding-right: rem(8);
+          }
+
+          &__socials, &__contact {
+            @include flex(row, nowrap, start, center);
+            gap: rem(4);
+          }
+        }
+      }
+    }
+  }
+}

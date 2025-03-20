@@ -1,0 +1,115 @@
+.s-content8 {
+  padding: rem(60) 0;
+
+  > .container {
+    display: grid;
+    grid-template-columns: 4fr 1fr 7fr;
+    grid-template-areas: "left blank right";
+    grid-gap: rem(20);
+
+    /**
+     * If the container has only one child (no images),
+     * the grid is not necessary
+     */
+    &:has(> div:only-child) {
+      display: block;
+    }
+
+    /***************************************/
+    /************* REVERSE *****************/
+    /***************************************/
+
+    &.reverse {
+      grid-template-columns: 7fr 1fr 4fr;
+
+      .s-content8-content {
+        grid-area: right;
+      }
+
+      .s-content8-image {
+        grid-area: left;
+
+        .c-image {
+          &:first-child {
+            grid-column: 1;
+          }
+
+          &:last-child {
+            grid-column: 2;
+          }
+        }
+      }
+    }
+
+    /***************************************/
+    /***************************************/
+    /***************************************/
+
+    @include lessThan($mobile) {
+      @include flex(column, nowrap, center, stretch);
+    }
+  }
+
+  &-content {
+    @include flex(column, nowrap, center, start);
+
+    grid-area: left;
+    gap: rem(24);
+  }
+
+  &-image {
+    grid-area: right;
+    align-items: end;
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    grid-gap: rem(20);
+
+    @include lessThan($mobileXs) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /*
+     * If the container has only one image,
+     */
+
+    &:has(> .c-image:only-child) {
+      grid-template-columns: 1fr;
+
+      .c-image {
+        max-height: unset;
+        grid-column: 1 !important;
+      }
+    }
+
+    /*******************************/
+
+    .c-image {
+      height: clamp-calc(200px, 600px);
+      display: block;
+
+      /*
+      * If the container has two images,
+      */
+
+      // Large image
+      &:first-child {
+        grid-column: 1;
+      }
+
+      // Small image
+      &:last-child {
+        position: relative;
+        grid-column: 2;
+        max-height: clamp-calc(200px, 450px);
+
+      }
+
+      /******************************/
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

@@ -1,0 +1,176 @@
+.s-pricing3 {
+  padding: rem(60) 0;
+
+  > .container {
+    @include column();
+
+    gap: rem(16);
+
+    > .c-title, > p {
+      text-align: center;
+    }
+
+    > p {
+      max-width: rem(630);
+    }
+  }
+
+  .prices {
+    padding-top: rem(32);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+
+    @include lessThan($mobile) {
+      grid-template-columns: 5fr 7fr;
+    }
+
+    &-aside {
+      @include column(nowrap, start, start);
+
+      gap: rem(50);
+      margin-top: rem(140);
+      padding: rem(50) 0;
+
+      p {
+        height: rem(22);
+        margin: 0;
+        @include lessThan($mobileXs) {
+          font-size: rem(13);
+        }
+      }
+    }
+
+    .swiper {
+      width: 100%;
+      .swiper-wrapper {
+        align-items: stretch;
+
+        .swiper-slide {
+          height: auto;
+        }
+      }
+    }
+
+    .price {
+      @include column(nowrap, start, center);
+
+      height: 100%;
+      text-align: center;
+      overflow: hidden;
+      border: 1px solid color(dark);
+      border-radius: rem(8);
+
+      &__top {
+        @include column(nowrap, start, center);
+
+        width: 100%;
+        position: relative;
+        text-align: center;
+        padding: rem(48) rem(16) 0 rem(16);
+
+        h3 {
+          @extend %fs-16;
+        }
+
+        > span {
+          @extend %fs-13;
+
+          position: absolute;
+          top: rem(10);
+          background-color: color(primary);
+          border-radius: rem(24);
+          color: color(light);
+          padding: rem(4) rem(16);
+        }
+      }
+
+      &-content {
+        @include column(nowrap, start, center);
+
+        height: 100%;
+        padding: 0 rem(32) rem(32);
+
+        @include lessThan($mobileXs) {
+          padding: 0 rem(16) rem(32);
+        }
+
+        &-items {
+          @include column(nowrap, start, start);
+
+          gap: rem(50);
+          padding: rem(50) 0;
+          div {
+            height: rem(22);
+          }
+        }
+
+        &__value {
+          font-size: rem(32);
+
+          p {
+            margin: 0;
+            display: flex;
+            align-items: center;
+          }
+          span {
+            @extend %fs-16;
+          }
+        }
+
+        .btn {
+          margin-top: auto;
+          justify-content: center;
+          width: 100%;
+        }
+      }
+    }
+
+    .swiper-buttons {
+      @include flex(row, nowrap, center, center);
+
+      grid-column: 2;
+      z-index: 11;
+      padding-block: rem(30);
+      gap: rem(24);
+
+      .swiper-button-prev, .swiper-button-next {
+        --swiper-navigation-size: rem(50);
+        position: static;
+
+        &:after {
+          content: none;
+        }
+
+      }
+
+      > div {
+        cursor: pointer;
+      }
+
+    }
+
+    .swiper-pagination {
+      width: auto;
+      position: static;
+
+      .swiper-pagination-bullet {
+        --swiper-pagination-bullet-width: 8px;
+        --swiper-pagination-bullet-height: 8px;
+        --swiper-pagination-bullet-inactive-color: #fff;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        --swiper-pagination-bullet-border-radius: 50px;
+
+        border: 1px solid color(dark);
+        transition: $default-transition;
+      }
+
+      .swiper-pagination-bullet-active {
+        --swiper-pagination-color: #000;
+        border-color: color(dark);
+      }
+
+    }
+
+  }
+}

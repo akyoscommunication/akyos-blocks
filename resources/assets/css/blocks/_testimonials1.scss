@@ -1,0 +1,144 @@
+.s-testimonials1 {
+  padding: rem(60) 0;
+
+  > .container {
+    @include column();
+
+    gap: rem(24);
+
+    .c-title, > p {
+      text-align: center;
+    }
+
+    > p {
+      max-width: rem(630);
+    }
+  }
+
+  .testimonials {
+    width: 100%;
+
+    .swiper {
+      padding: rem(20) rem(10);
+
+      @include lessThan($mobileXs) {
+        padding: 0;
+      }
+
+      &-wrapper {
+        align-items: stretch;
+
+        .swiper-slide {
+          height: auto;
+        }
+      }
+    }
+
+    .testimonial {
+      padding: rem(24);
+      height: 100%;
+      box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.10);
+
+      @include lessThan($mobile) {
+        width: min-content;
+        min-width: clamp-calc(250px, 450px);
+        margin: 0 auto;
+      }
+
+      &-author {
+        @include flex(row, nowrap, start, center);
+
+        gap: clamp-calc(16px, 32px);
+
+        @include lessThan($mobileXs) {
+          align-items: start;
+        }
+
+        .c-image {
+          width: auto;
+
+          img {
+            max-width: rem(100);
+            border-radius: 50%;
+          }
+        }
+
+        &__details {
+          @include column(nowrap, start, start);
+
+          > p {
+            margin: 0;
+          }
+
+          > small {
+            padding-top: rem(8);
+          }
+        }
+
+        &__rating {
+          @include flex(row, nowrap, start, center);
+
+          gap: clamp-calc(6px, 12px);
+          padding-top: clamp-calc(5px, 16px);
+
+          svg {
+            width: clamp-calc(18px, 24px);
+          }
+        }
+      }
+
+      &-content {
+        max-width: rem(300);
+        padding-top: rem(32);
+      }
+    }
+
+    .swiper-buttons {
+      @include flex(row, nowrap, center, center);
+
+      z-index: 11;
+      padding-block: clamp-calc(0px, 30px);
+      gap: rem(50);
+
+      .swiper-button-prev, .swiper-button-next {
+        --swiper-navigation-size: rem(50);
+        position: static;
+
+        &:after {
+          content: none;
+        }
+
+      }
+
+      > div {
+        cursor: pointer;
+      }
+
+    }
+
+    .swiper-pagination {
+      --swiper-pagination-top: 93%;
+
+      width: auto;
+      position: static;
+
+      .swiper-pagination-bullet {
+        --swiper-pagination-bullet-width: 8px;
+        --swiper-pagination-bullet-height: 8px;
+        --swiper-pagination-bullet-inactive-color: $c-primary;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        --swiper-pagination-bullet-border-radius: 50px;
+
+        border: 1px solid color(dark);
+        transition: $default-transition;
+      }
+
+      .swiper-pagination-bullet-active {
+        --swiper-pagination-color: #000;
+      }
+
+    }
+
+  }
+
+}

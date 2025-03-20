@@ -1,0 +1,36 @@
+.s-hero5 {
+  @include flex(column, nowrap, center, start);
+
+  background: var(--bg) no-repeat center center / cover;
+  height: rem(720);
+  position: relative;
+
+  &::before {
+    @extend %imageOverlay;
+
+    background-color: color(dark, 0.3);
+  }
+
+  > .container {
+    @include column(nowrap, start, start);
+
+    gap: rem(24);
+    position: relative;
+    color: color(light);
+    margin-top: rem(-80);
+
+    @include moreThan($mobile) {
+      margin-top: rem(80);
+    }
+
+    p {
+      max-width: rem(620);
+    }
+
+    .buttons {
+      @include row(nowrap, center, center);
+
+      gap: rem(16);
+    }
+  }
+}

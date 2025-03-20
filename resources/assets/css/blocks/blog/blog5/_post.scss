@@ -1,0 +1,45 @@
+.post-5 {
+  position: relative;
+
+  &:hover {
+    .c-image img {
+      transform: scale(1.1);
+    }
+  }
+
+  .c-image {
+    height: clamp-calc(300px, 357px);
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      transition: $default-transition;
+    }
+  }
+
+  &__date {
+    @extend %fs-13;
+
+    padding-top: rem(10);
+  }
+
+  .c-title {
+    margin-bottom: rem(10);
+  }
+
+  &__excerpt {
+    max-width: rem(410);
+  }
+
+  &__category {
+    position: absolute;
+    top: rem(10);
+    left: rem(10);
+    display: inline-block;
+    padding: rem(5) rem(20);
+    background-color: color(light);
+    border-radius: rem(24);
+    margin-bottom: rem(10);
+  }
+
+}

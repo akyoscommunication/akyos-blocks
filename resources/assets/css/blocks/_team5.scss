@@ -1,0 +1,138 @@
+.s-team5 {
+  padding: rem(60) 0;
+  position: relative;
+  overflow: hidden;
+
+  > .container {
+    @include column();
+
+    gap: rem(24);
+
+    .c-title, > p {
+      text-align: center;
+    }
+
+    > p {
+      max-width: rem(630);
+    }
+  }
+
+  .members {
+    width: 100%;
+    gap: rem(24);
+    padding-top: rem(16);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 30%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      background-color: color(primary);
+    }
+
+    .member {
+      @include column();
+
+      color: color(light);
+
+      .c-image {
+        img {
+          height: rem(392);
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+
+      &-content {
+        @include column();
+
+        gap: rem(24);
+        padding: rem(24) 0;
+        width: 100%;
+        text-align: center;
+
+        &__name {
+          @extend %fs-26;
+          margin: 0;
+        }
+
+        &-links {
+          @include flex(row, nowrap, center, center);
+
+          gap: rem(8);
+
+          a, svg {
+            height: rem(14);
+            width: rem(16);
+            path {
+              fill: color(light);
+            }
+          }
+
+          &__contact {
+            border-right: rem(1) solid color(light);
+            padding-right: rem(8);
+          }
+
+          &__socials, &__contact {
+            @include flex(row, nowrap, start, center);
+            gap: rem(4);
+          }
+        }
+      }
+    }
+
+    .swiper-buttons {
+      @include flex(row, nowrap, center, center);
+
+      z-index: 11;
+      padding-block: clamp-calc(20px, 30px);
+      gap: rem(24);
+
+      .swiper-button-prev, .swiper-button-next {
+        --swiper-navigation-size: rem(50);
+        position: static;
+
+        svg path {
+          fill: color(light);
+        }
+
+        &:after {
+          content: none;
+        }
+
+      }
+
+      > div {
+        cursor: pointer;
+      }
+
+    }
+
+    .swiper-pagination {
+      width: auto;
+      position: static;
+
+      .swiper-pagination-bullet {
+        --swiper-pagination-bullet-width: 8px;
+        --swiper-pagination-bullet-height: 8px;
+        --swiper-pagination-bullet-inactive-color: transparent;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        --swiper-pagination-bullet-border-radius: 50px;
+
+        border: 1px solid color(light);
+        transition: $default-transition;
+      }
+
+      .swiper-pagination-bullet-active {
+        --swiper-pagination-color: #fff;
+        border-color: color(light);
+      }
+
+    }
+  }
+
+}

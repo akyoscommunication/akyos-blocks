@@ -1,0 +1,22 @@
+.post-3 {
+  display: grid;
+  grid-gap: rem(20);
+  grid-template-columns: 2fr 5fr;
+
+  &-content {
+    > div {
+      @include flex(row, nowrap, space-between, center);
+
+      padding-bottom: rem(16);
+
+      @include lessThan($mobileXs) {
+        font-size: rem(13);
+      }
+    }
+  }
+
+  &__category {
+    border: 1px solid color(dark);
+    padding: rem(6) rem(12);
+  }
+}

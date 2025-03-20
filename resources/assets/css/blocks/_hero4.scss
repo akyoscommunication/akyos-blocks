@@ -1,0 +1,51 @@
+.s-hero4 {
+  @include flex(column, nowrap, center, start);
+
+  > .container {
+    @include row(nowrap, space-between, start);
+
+    gap: rem(24);
+
+    &:first-child {
+      padding-block: rem(45);
+    }
+
+    @include lessThan($mobile) {
+      align-items: center;
+    }
+
+    .c-title {
+      @include lessThan($mobile) {
+        text-align: center;
+      }
+    }
+
+    .hero-content {
+      @include column(nowrap, start, end);
+      gap: rem(24);
+
+      @include lessThan($mobile) {
+        align-items: center;
+        text-align: center;
+      }
+
+      p {
+        max-width: rem(380);
+      }
+
+      .buttons {
+        @include row(nowrap, end, center);
+
+        gap: rem(16);
+      }
+    }
+
+    .c-image {
+      img {
+        height: clamp-calc(405px, 528px);
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+}

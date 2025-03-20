@@ -1,0 +1,46 @@
+.s-blog3 {
+  .pagination {
+    @include flex(row, nowrap, center, center);
+
+    padding-top: rem(50);
+    gap: rem(8);
+
+    .screen-reader-text {
+      display: none;
+    }
+
+    .prev, .next {
+      position: relative;
+
+      img {
+        vertical-align: middle;
+      }
+    }
+
+    .prev {
+      img {
+        transform: rotate(180deg);
+      }
+    }
+
+    .page-numbers:not(.prev, .next) {
+      @include flex(row, nowrap, center, center);
+
+      width: rem(32);
+      height: rem(32);
+      transition: all 0.3s $cubic-transition;
+
+      &.current {
+        background-color: color(dark);
+        color: color(light);
+      }
+
+      &:not(.current, .prev, .next):hover {
+        background-color: color(dark);
+        color: color(light);
+      }
+    }
+
+  }
+
+}

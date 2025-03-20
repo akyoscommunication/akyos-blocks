@@ -1,0 +1,58 @@
+.s-lasts-posts1 {
+  padding: rem(60) 0;
+
+  > .container {
+    @include column(nowrap, start, start);
+
+    gap: rem(24);
+
+    > p {
+      max-width: rem(630);
+    }
+  }
+
+  .lasts-posts {
+    @include grid(4, 20);
+    @include gridSm(2, 20);
+    @include gridXs(1, 20);
+
+    padding-bottom: rem(32);
+
+    .post-1 {
+
+      &:hover {
+        .c-image img {
+          transform: scale(1.1);
+        }
+      }
+
+      .c-image {
+        height: clamp-calc(300px, 357px);
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          transition: $default-transition;
+        }
+      }
+
+      &__date {
+        @extend %fs-13;
+      }
+
+      .c-title {
+        margin-bottom: rem(10);
+      }
+
+      &__category {
+        display: inline-block;
+        padding: rem(5) rem(20);
+        border: 1px solid color(dark);
+        border-radius: rem(24);
+        margin-bottom: rem(10);
+      }
+
+    }
+  }
+
+}

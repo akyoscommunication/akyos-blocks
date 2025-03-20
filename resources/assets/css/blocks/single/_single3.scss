@@ -1,0 +1,60 @@
+.s-single3 {
+
+  .container--sm {
+    max-width: $container-sm;
+  }
+
+  > .container--sm {
+    padding-block: clamp-calc(40px, 100px);
+  }
+
+  .single {
+
+    &-header {
+      position: relative;
+      overflow: hidden;
+      padding-top: clamp-calc(40px, 70px);
+
+      p {
+        margin: 0;
+        opacity: 0.4;
+      }
+
+      .c-image {
+        margin-top: rem(40);
+        height: clamp-calc(350px, 465px);
+        overflow: hidden;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+    }
+
+    &-text, &-images {
+      padding-bottom: rem(64);
+    }
+
+    &-images {
+      @include flex(row, wrap, center, stretch);
+
+      gap: rem(20);
+
+      .c-image {
+        flex: 1;
+        max-height: rem(497);
+        min-width: rem(250);
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+    }
+  }
+}

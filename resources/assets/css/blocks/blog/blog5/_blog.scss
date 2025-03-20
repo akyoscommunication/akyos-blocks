@@ -1,0 +1,16 @@
+.s-blog5 {
+  padding: rem(60) 0;
+
+  .posts {
+    @include grid(2, 20);
+    @include gridMd(2, 20);
+    @include gridSm(2, 20);
+    @include gridXs(1, 20);
+
+    padding-top: rem(56);
+
+    .post-5 {
+      margin-bottom: rem(40);
+    }
+  }
+}
