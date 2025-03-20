@@ -1,8 +1,9 @@
 {
-  "name": "akyoscommunication/akyos-blocks",
+  "name": "akyos/akyos-blocks",
   "type": "library",
   "license": "MIT",
   "minimum-stability": "stable",
+  "prefer-stable": true,
   "require": {
     "php": ">=8.3",
     "ext-json": "*",
