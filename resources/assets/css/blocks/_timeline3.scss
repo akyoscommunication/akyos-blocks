@@ -1,0 +1,135 @@
+.s-timeline3 {
+  overflow: hidden;
+
+
+  .container {
+    position: relative;
+
+    > .c-title {
+      text-align: center;
+      line-height: rem(53);
+    }
+  }
+
+  &__description {
+    max-width: rem(627);
+    margin-inline: auto;
+    text-align: center;
+    margin-top: rem(25);
+    margin-bottom: rem(50);
+
+
+    @include lessThan(tablet) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__line {
+    height: rem(2);
+    background: color(grey-400);
+    position: absolute;
+    left: rem(150);
+    right: 100%;
+
+    top: 0;
+    bottom: 0;
+    margin-block: auto;
+
+    @include lessThan(tablet) {
+      width: 100%;
+      right: 0 !important;
+      bottom: rem(-11);
+      top: initial !important;
+    }
+  }
+
+  &-pin {
+    @include flex(row, nowrap, start, stretch);
+
+    width: 100%;
+    padding-top: rem(93);
+    padding-bottom: rem(160);
+
+    @include lessThan(tablet) {
+      padding-top: rem(60);
+      padding-bottom: rem(50);
+      overflow-x: scroll;
+      margin-bottom: rem(25);
+    }
+
+    &-wrapper {
+      @include flex(row, nowrap, start, stretch);
+    }
+  }
+
+  .btn {
+    margin-inline: auto;
+  }
+}
+
+.c-timeline3 {
+  min-width: rem(260);
+  text-align: center;
+  position: relative;
+  color: color(primary-500);
+
+  &__number {
+    font-size: rem(24);
+    font-weight: 700;
+    margin-bottom: rem(16);
+    color: color(primary);
+  }
+
+  &__title {
+    color: color(primary-500);
+    margin-bottom: rem(8);
+    font-weight: 700;
+  }
+
+  &:nth-child(even) {
+    &:before {
+      content: "";
+      width: rem(16);
+      height: rem(16);
+      background: color(primary);
+      border-radius: 50%;
+      position: absolute;
+      top: rem(-41);
+      right: 0;
+      left: 0;
+      margin: auto;
+    }
+  }
+
+  &:nth-child(odd) {
+    &:before {
+      content: "";
+      width: rem(16);
+      height: rem(16);
+      background: color(primary);
+      border-radius: 50%;
+      position: absolute;
+      bottom: rem(-41);
+      right: 0;
+      left: 0;
+      margin: auto;
+    }
+  }
+
+  @include lessThan(tablet) {
+    &:before {
+      content: "";
+      width: rem(16);
+      height: rem(16);
+      background: color(light);
+      border-radius: 50%;
+      position: absolute;
+      bottom: rem(-18) !important;
+      right: 0;
+      top: initial !important;
+      left: 0;
+      margin: auto;
+    }
+  }
+}
+

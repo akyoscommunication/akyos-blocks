@@ -1,0 +1,160 @@
+.s-timeline1 {
+  .container {
+    position: relative;
+
+    > .c-title {
+      text-align: center;
+      line-height: rem(53);
+    }
+  }
+
+  &__description {
+    max-width: rem(627);
+    margin-inline: auto;
+    text-align: center;
+    margin-top: rem(25);
+    margin-bottom: rem(37);
+  }
+
+
+  .btn {
+    margin-inline: auto;
+  }
+
+
+  &-pin {
+    position: relative;
+    margin-top: rem(248);
+    margin-bottom: rem(70);
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: rem(-150);
+      left: 0;
+      right: 0;
+      margin: auto;
+      bottom: rem(100);
+      width: 3px;
+      background-color: color(primary-500);
+
+      @include lessThan(tablet) {
+        right: rem(50);
+        left: initial;
+      }
+    }
+
+    .c-timeline1 {
+      @include flex(row, wrap, end, start);
+
+      gap: rem(12);
+      width: rem(650);
+      margin-inline: auto;
+      margin-top: rem(130);
+      position: relative;
+      color: color(primary-500);
+
+      --color-content: #002379;
+      --color-circle: #002379;
+
+      @include lessThan(tablet) {
+        width: 100%;
+        padding-inline: rem(20);
+        justify-content: start;
+        margin-top: rem(75);
+      }
+
+      &__number {
+        @include flex(row, nowrap, center, center);
+
+        position: absolute;
+        top: rem(18);
+        left: 0;
+        right: 0;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9;
+        background: color(light);
+        font-size: rem(48);
+        font-weight: 700;
+        width: rem(88);
+        height: rem(88);
+        margin: auto;
+        text-align: center;
+        color: inherit;
+        border: rem(3) solid color(primary-500);
+        transition: color 0.2s ease-in;
+
+        @include lessThan(tablet) {
+          right: rem(11);
+          left: initial;
+
+          width: rem(50);
+          height: rem(50);
+          font-size: rem(32);
+        }
+      }
+
+      &-infos {
+        max-width: rem(270);
+
+        @include lessThan(tablet) {
+          padding-right: rem(35);
+        }
+
+        &__title {
+          font-size: rem(29);
+          font-weight: 700;
+          margin-bottom: rem(16);
+          transition: color 0.2s ease-in;
+        }
+
+        &__content {
+          color: inherit;
+          flex: 1;
+          max-width: rem(413);
+          transition: color 0.2s ease-in;
+
+          h3 {
+            font-size: rem(29);
+            font-weight: 600;
+          }
+
+          div {
+            color: var(--color-content);
+            transition: color 0.2s ease-in;
+          }
+        }
+      }
+    }
+  }
+
+  &__line {
+    @include flex(row, nowrap, center, start);
+
+    z-index: 1;
+    position: absolute;
+    height: 104%;
+    top: rem(-150);
+    left: 0;
+    right: 0;
+    margin: auto;
+    --height: 0;
+
+    @include lessThan(tablet) {
+      right: rem(50);
+      left: initial;
+    }
+
+    &::before {
+      content: '';
+      position: sticky;
+      top: rem(50);
+      display: block;
+      background: color(secondary);
+      width: 3px;
+      height: var(--height);
+    }
+  }
+}
+

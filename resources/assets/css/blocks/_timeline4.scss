@@ -1,0 +1,97 @@
+.s-timeline4 {
+  overflow: hidden;
+
+
+  .container {
+    position: relative;
+
+    > .c-title {
+      text-align: center;
+      line-height: rem(53);
+    }
+  }
+
+  &__description {
+    max-width: rem(627);
+    margin-inline: auto;
+    text-align: center;
+    margin-top: rem(25);
+    margin-bottom: rem(37);
+
+    @include lessThan(tablet) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__line {
+    height: rem(2);
+    background: color(grey-400);
+    position: absolute;
+    left: rem(150);
+    right: 100%;
+
+    top: 0;
+    bottom: 0;
+    margin-block: auto;
+
+    @include lessThan(tablet) {
+      width: 100%;
+      right: 0 !important;
+      bottom: 0;
+      top: 0 !important;
+    }
+  }
+
+  &-pin {
+    @include flex(row, nowrap, start, stretch);
+
+    width: 100%;
+    padding-top: rem(56);
+    padding-bottom: rem(56);
+
+    @include lessThan(tablet) {
+      padding-top: rem(60);
+      padding-bottom: rem(50);
+      margin-bottom: rem(25);
+      overflow-x: scroll;
+    }
+
+    &-wrapper {
+      @include flex(row, nowrap, start, stretch);
+      gap: rem(71);
+    }
+  }
+
+  .btn {
+    margin-inline: auto;
+  }
+}
+
+.c-timeline4 {
+  @include flex(column, nowrap, center, center);
+  gap: rem(16);
+  min-width: rem(271);
+  text-align: center;
+  position: relative;
+  color: color(primary-500);
+  padding: rem(24);
+  background: color(light);
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.15);
+
+  &__number {
+    font-size: rem(24);
+    margin: auto;
+    font-weight: 700;
+    color: color(primary);
+  }
+
+  &__title {
+    color: color(primary-500);
+    font-weight: 700;
+  }
+
+  &__content {
+    line-height: 22px;
+  }
+}
+

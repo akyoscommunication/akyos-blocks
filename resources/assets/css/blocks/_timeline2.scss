@@ -1,0 +1,116 @@
+.s-timeline2 {
+  overflow: hidden;
+
+
+  .container {
+    position: relative;
+
+    > .c-title {
+      text-align: center;
+      line-height: rem(53);
+    }
+  }
+
+  &__description {
+    max-width: rem(627);
+    margin-inline: auto;
+    text-align: center;
+    margin-top: rem(25);
+    margin-bottom: rem(37);
+
+    @include lessThan(tablet) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__line {
+    height: rem(2);
+    background: color(grey-400);
+    position: absolute;
+    left: rem(150);
+    right: 100%;
+
+    top: rem(-80);
+    bottom: 0;
+    margin-block: auto;
+
+    @include lessThan(tablet) {
+      width: 100%;
+      right: 0 !important;
+      bottom: rem(-11);
+      top: initial !important;
+    }
+  }
+
+  &-pin {
+    @include flex(row, nowrap, start, stretch);
+
+    width: 100%;
+    padding-top: rem(50);
+    padding-bottom: rem(150);
+
+    @include lessThan(tablet) {
+      padding-top: rem(60);
+      padding-bottom: rem(50);
+      margin-bottom: rem(25);
+      overflow-x: scroll;
+
+      .container {
+        padding-bottom: rem(25);
+      }
+    }
+
+    &-wrapper {
+      @include flex(row, nowrap, start, stretch);
+      gap: rem(84);
+    }
+  }
+
+  .btn {
+    margin-inline: auto;
+  }
+}
+
+.c-timeline2 {
+  min-width: rem(260);
+  text-align: center;
+  position: relative;
+  color: color(primary-500);
+
+  &__number {
+    @include flex(row, nowrap, center, center);
+    position: absolute;
+    width: rem(88);
+    height: rem(88);
+    border: rem(3) solid color(primary);
+    background: color(light);
+    border-radius: 50%;
+    top: rem(-112);
+    right: 0;
+    left: 0;
+    font-size: rem(48);
+    margin: auto;
+    font-weight: 700;
+    color: color(primary);
+
+    @include lessThan(tablet) {
+      bottom: rem(-60);
+      top: initial !important;
+      width: rem(50);
+      height: rem(50);
+      font-size: rem(32);
+    }
+  }
+
+  &__title {
+    font-size: rem(24);
+    color: color(primary);
+    margin-bottom: rem(8);
+    font-weight: 700;
+  }
+
+  &__content {
+    line-height: 22px;
+  }
+}
+

@@ -1,0 +1,21 @@
+.s-sur-footer-1 {
+
+  > .container {
+    @include flex(column, nowrap, center, center);
+
+    border-radius: rem(24);
+    gap: rem(56);
+    padding: rem(48) rem(8);
+    background: rgba(0, 0, 0, 0.02);
+  }
+
+  &__title {
+    font-size: rem(26);
+    text-align: center;
+    font-weight: 600;
+
+    @include lessThan(tablet) {
+      font-weight: 400;
+    }
+  }
+}

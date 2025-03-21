@@ -1,0 +1,32 @@
+.s-sur-footer-2 {
+  background: rgba(0, 0, 0, 0.02);
+
+  > .container {
+    @include flex(row, wrap, space-between, start);
+
+    gap: rem(20);
+    padding: rem(45) rem(8);
+    max-width: rem(1044);
+
+    @include lessThan(tablet) {
+      @include flex(column, wrap, center, center);
+    }
+  }
+
+  &__title {
+    @include flex(row, nowrap, start, start);
+
+    font-size: clamp-calc(16px, 33px);
+    position: relative;
+    gap: rem(8);
+
+
+    &:before {
+      content: '';
+      width: rem(36);
+      height: rem(2);
+      background: color(dark);
+      margin-top: rem(23);
+    }
+  }
+}

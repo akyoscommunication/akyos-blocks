@@ -1,0 +1,141 @@
+.s-footer2 {
+  &-container {
+    margin-top: rem(23);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      "n n n n n n n f f f f f"
+      "h h h a a . . . d d d d";
+    grid-gap: rem(20);
+  }
+
+  &-navigation {
+    grid-area: n;
+
+    display: flex;
+    align-items: center;
+
+    .menu {
+      @include undoListStyles;
+      @include flex(row, wrap, start, center);
+      gap: rem(38);
+
+      a {
+        font-weight: 600;
+      }
+    }
+  }
+
+  &-form {
+    grid-area: f;
+
+    form {
+      @include flex(row, nowrap, start, stretch);
+      width: 100%;
+
+      input {
+        border-bottom-left-radius: rem(8);
+        border-top-left-radius: rem(8);
+        border: none;
+        background: rgba(0, 0, 0, 0.05);
+        width: 100%;
+        padding: rem(16);
+        font-size: rem(16);
+
+        &::placeholder {
+          opacity: 0.5;
+          font-size: rem(16);
+        }
+      }
+
+      button {
+        justify-content: center;
+        padding: rem(17) 0;
+        white-space: nowrap;
+        width: rem(135);
+        text-align: center;
+        font-size: rem(18);
+        font-weight: 500;
+
+        &:hover {
+          &:before {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+
+  &-horaires {
+    grid-area: h;
+    margin-top: rem(37);
+  }
+
+  &-address {
+    grid-area: a;
+    margin-top: rem(37);
+  }
+
+  &-description {
+    grid-area: d;
+
+    font-weight: 600;
+    margin-top: rem(37);
+  }
+
+  &-copyright {
+    display: grid;
+    grid-template-columns: 7fr 2fr 3fr;
+    grid-template-areas: "navigation . socials";
+
+    padding-block: rem(24);
+    margin-top: rem(63);
+    border-top: rem(1) solid color(dark);
+
+    &-nav {
+      grid-area: navigation;
+      @include flex(row, wrap, start, center);
+      gap: rem(46);
+    }
+
+    &__socials {
+      grid-area: socials;
+    }
+
+    &__creator {
+      a {
+        font-weight: 600;
+      }
+    }
+
+    &__legal-navigation {
+      .menu {
+        @include undoListStyles;
+
+        @include flex(row, wrap, start, center);
+        gap: rem(46);
+      }
+    }
+
+    &__socials {
+      .social {
+        @include flex(row, wrap, end, center);
+
+        gap: rem(0);
+
+        a {
+          flex: 1;
+          padding-inline: rem(12);
+
+          svg {
+            width: 100%;
+            height: 100%;
+
+            padding: rem(7);
+          }
+        }
+
+      }
+    }
+  }
+}
