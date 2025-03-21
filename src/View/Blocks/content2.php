@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Blocks;
+namespace Akyos\Blocks\View\Blocks;
 
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
@@ -25,7 +25,7 @@ class content2 extends Block
             ->setTitle("CONTENU | 2")
             ->setCategory("content")
             ->setIcon("align-left")
-            ->setPreviewImage(get_template_directory_uri() . '/resources/assets/images/previews/content2.jpg');
+            ->setPreviewImage(get_template_directory_uri() . '/vendor/akyos/akyos-blocks/resources/assets/previews/content2.jpg');
     }
 
     protected static function fields(): array

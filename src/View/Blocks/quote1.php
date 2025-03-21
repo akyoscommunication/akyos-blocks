@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Blocks;
+namespace Akyos\Blocks\View\Blocks;
 
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
@@ -28,7 +28,7 @@ class quote1 extends Block
             ->setTitle("CITATION | 1")
             ->setCategory("quote")
             ->setIcon("format-quote")
-            ->setPreviewImage(get_template_directory_uri() . '/resources/assets/images/previews/quote1.jpg');
+            ->setPreviewImage(get_template_directory_uri() . '/vendor/akyos/akyos-blocks/resources/assets/previews/quote1.jpg');
     }
 
     protected static function fields(): array

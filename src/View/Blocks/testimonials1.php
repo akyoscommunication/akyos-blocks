@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Blocks;
+namespace Akyos\Blocks\View\Blocks;
 
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
@@ -27,7 +27,7 @@ class testimonials1 extends Block
             ->setTitle("TEMOIGNAGES | 1")
             ->setCategory("testimonial")
             ->setIcon("testimonial")
-            ->setPreviewImage(get_template_directory_uri() . '/resources/assets/images/previews/testimonials1.jpg');
+            ->setPreviewImage(get_template_directory_uri() . '/vendor/akyos/akyos-blocks/resources/assets/previews/testimonials1.jpg');
     }
 
     protected static function fields(): array

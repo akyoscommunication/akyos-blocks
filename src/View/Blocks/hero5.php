@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Blocks;
+namespace Akyos\Blocks\View\Blocks;
 
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
@@ -24,7 +24,7 @@ class hero5 extends Block
             ->setTitle("HERO | 5")
             ->setCategory("header")
             ->setIcon("admin-comments")
-            ->setPreviewImage(get_template_directory_uri() . '/resources/assets/images/previews/hero5.jpg');
+            ->setPreviewImage(get_template_directory_uri() . '/vendor/akyos/akyos-blocks/resources/assets/previews/hero5.jpg');
     }
 
     protected static function fields(): array

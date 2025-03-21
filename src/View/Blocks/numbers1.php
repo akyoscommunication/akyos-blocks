@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Blocks;
+namespace Akyos\Blocks\View\Blocks;
 
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
@@ -26,7 +26,7 @@ class numbers1 extends Block
             ->setTitle("CHIFFRES CLES | 1")
             ->setCategory("numbers")
             ->setIcon("editor-ol")
-            ->setPreviewImage(get_template_directory_uri() . '/resources/assets/images/previews/numbers1.jpg');
+            ->setPreviewImage(get_template_directory_uri() . '/vendor/akyos/akyos-blocks/resources/assets/previews/numbers1.jpg');
     }
 
     protected static function fields(): array

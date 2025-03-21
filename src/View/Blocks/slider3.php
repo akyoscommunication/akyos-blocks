@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Blocks;
+namespace Akyos\Blocks\View\Blocks;
 
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
@@ -24,7 +24,7 @@ class slider3 extends Block
             ->setTitle("SLIDER | 3")
             ->setCategory("slider")
             ->setIcon("slides")
-            ->setPreviewImage(get_template_directory_uri() . '/resources/assets/images/previews/slider3.jpg');
+            ->setPreviewImage(get_template_directory_uri() . '/vendor/akyos/akyos-blocks/resources/assets/previews/slider3.jpg');
     }
 
     protected static function fields(): array

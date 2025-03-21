@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Blocks;
+namespace Akyos\Blocks\View\Blocks;
 
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
@@ -24,7 +24,7 @@ class partners2 extends Block
             ->setTitle("PARTENAIRES | 2")
             ->setCategory("partner")
             ->setIcon("groups")
-            ->setPreviewImage(get_template_directory_uri() . '/resources/assets/images/previews/partners2.jpg')
+            ->setPreviewImage(get_template_directory_uri() . '/vendor/akyos/akyos-blocks/resources/assets/previews/partners2.jpg')
             ;
     }
 

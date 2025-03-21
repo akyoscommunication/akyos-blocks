@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Blocks;
+namespace Akyos\Blocks\View\Blocks;
 
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
@@ -24,7 +24,7 @@ class services1 extends Block
             ->setTitle("SERVICES | 1")
             ->setCategory("services")
             ->setIcon("admin-generic")
-            ->setPreviewImage(get_template_directory_uri() . '/resources/assets/images/previews/services1.jpg');
+            ->setPreviewImage(get_template_directory_uri() . '/vendor/akyos/akyos-blocks/resources/assets/previews/services1.jpg');
     }
 
     protected static function fields(): array

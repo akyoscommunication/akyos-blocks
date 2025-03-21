@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Blocks;
+namespace Akyos\Blocks\View\Blocks;
 
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
@@ -21,7 +21,7 @@ class blog4 extends Block
             ->setTitle("BLOG | 4")
             ->setCategory("blog")
             ->setIcon("editor-table")
-            ->setPreviewImage(get_template_directory_uri() . '/resources/assets/images/previews/blog4.jpg');
+            ->setPreviewImage(get_template_directory_uri() . '/vendor/akyos/akyos-blocks/resources/assets/previews/blog4.jpg');
     }
 
     protected static function fields(): array

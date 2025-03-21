@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Blocks;
+namespace Akyos\Blocks\View\Blocks;
 
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
@@ -25,7 +25,7 @@ class lastsPosts3 extends Block
             ->setTitle("DERNIERS POSTS | 3")
             ->setCategory("post")
             ->setIcon("admin-post")
-            ->setPreviewImage(get_template_directory_uri() . '/resources/assets/images/previews/lastsposts3.jpg');
+            ->setPreviewImage(get_template_directory_uri() . '/vendor/akyos/akyos-blocks/resources/assets/previews/lastsposts3.jpg');
     }
 
     protected static function fields(): array

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Blocks;
+namespace Akyos\Blocks\View\Blocks;
 
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
@@ -27,7 +27,7 @@ class team6 extends Block
             ->setTitle("EQUIPE | 6")
             ->setCategory("team")
             ->setIcon("groups")
-            ->setPreviewImage(get_template_directory_uri() . '/resources/assets/images/previews/team6.jpg');
+            ->setPreviewImage(get_template_directory_uri() . '/vendor/akyos/akyos-blocks/resources/assets/previews/team6.jpg');
     }
 
     protected static function fields(): array

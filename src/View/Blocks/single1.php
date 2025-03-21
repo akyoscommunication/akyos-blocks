@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Blocks;
+namespace Akyos\Blocks\View\Blocks;
 
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
@@ -23,7 +23,7 @@ class single1 extends Block
             ->setTitle("ARTICLE | 1")
             ->setCategory("single")
             ->setIcon("media-text")
-            ->setPreviewImage(get_template_directory_uri() . '/resources/assets/images/previews/single1.jpg');
+            ->setPreviewImage(get_template_directory_uri() . '/vendor/akyos/akyos-blocks/resources/assets/previews/single1.jpg');
     }
 
     protected static function fields(): array

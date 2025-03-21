@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Blocks;
+namespace Akyos\Blocks\View\Blocks;
 
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
@@ -25,7 +25,7 @@ class accordion2 extends Block
             ->setTitle("ACCORDEON | 2")
             ->setCategory("accordion")
             ->setIcon("editor-justify")
-            ->setPreviewImage(get_template_directory_uri() . '/resources/assets/images/previews/accordion2.jpg');
+            ->setPreviewImage(get_template_directory_uri() . '/vendor/akyos/akyos-blocks/resources/assets/previews/accordion2.jpg');
     }
 
     protected static function fields(): array

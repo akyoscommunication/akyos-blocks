@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Blocks;
+namespace Akyos\Blocks\View\Blocks;
 
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
@@ -28,7 +28,7 @@ class pricing1 extends Block
             ->setTitle("PRIX | 1")
             ->setCategory("price")
             ->setIcon("money-alt")
-            ->setPreviewImage(get_template_directory_uri() . '/resources/assets/images/previews/pricing1.jpg');
+            ->setPreviewImage(get_template_directory_uri() . '/vendor/akyos/akyos-blocks/resources/assets/previews/pricing1.jpg');
     }
 
     protected static function fields(): array

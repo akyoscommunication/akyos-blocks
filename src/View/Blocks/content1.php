@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Blocks;
+namespace Akyos\Blocks\View\Blocks;
 
 use Akyos\Access\Acf\Fields\ButtonAccess;
 use Akyos\Access\Acf\Fields\TitleAccess;
@@ -27,7 +27,7 @@ class content1 extends Block
             ->setTitle("CONTENU | 1")
             ->setCategory("content")
             ->setIcon("align-left")
-            ->setPreviewImage(get_template_directory_uri() . '/resources/assets/images/previews/content1.jpg');
+            ->setPreviewImage(get_template_directory_uri() . '/vendor/akyos/akyos-blocks/resources/assets/previews/content1.jpg');
     }
 
     protected static function fields(): array
