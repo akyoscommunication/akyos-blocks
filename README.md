@@ -110,69 +110,12 @@ Pour importer des blocs dans votre thème WordPress Sage, vous devez créer un f
 
 ```json
 {
-  "blocks": [
-    {
-      "name": "accordion1",
-      "title": "Accordion 1",
-      "description": "Un bloc d'accordéon simple.",
-      "category": "content",
-      "icon": "list-view",
-      "keywords": ["accordion", "toggle"],
-      "acf": {
-        "fields": [
-          {
-            "key": "field_accordion_title",
-            "label": "Titre de l'accordéon",
-            "name": "accordion_title",
-            "type": "text"
-          },
-          {
-            "key": "field_accordion_content",
-            "label": "Contenu de l'accordéon",
-            "name": "accordion_content",
-            "type": "textarea"
-          }
-        ]
-      }
-    },
-    {
-      "name": "slider1",
-      "title": "Slider 1",
-      "description": "Un slider interactif.",
-      "category": "media",
-      "icon": "images-alt2",
-      "keywords": ["slider", "carousel"],
-      "acf": {
-        "fields": [
-          {
-            "key": "field_slider_images",
-            "label": "Images du slider",
-            "name": "slider_images",
-            "type": "gallery"
-          },
-          {
-            "key": "field_slider_autoplay",
-            "label": "Lecture automatique",
-            "name": "slider_autoplay",
-            "type": "true_false"
-          }
-        ]
-      }
-    }
-  ]
+  "hero": "hero1",
+  "map": "map1",
+  "blog": "blog1"
 }
 ```
 
-### Explication du fichier
-
-- **`blocks`** : Une liste des blocs à enregistrer.
-- **`name`** : Le nom unique du bloc.
-- **`title`** : Le titre du bloc affiché dans l'éditeur Gutenberg.
-- **`description`** : Une brève description du bloc.
-- **`category`** : La catégorie du bloc (e.g., `content`, `media`).
-- **`icon`** : L'icône du bloc dans l'éditeur Gutenberg.
-- **`keywords`** : Des mots-clés pour faciliter la recherche du bloc.
-- **`acf.fields`** : Les champs ACF associés au bloc, définis avec leurs clés, labels, noms et types.
 
 ## Contribution
 
