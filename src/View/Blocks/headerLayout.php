@@ -9,7 +9,7 @@ use Extended\ACF\Fields\Image;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\TrueFalse;
 
-class HeaderLayout extends Block
+class headerLayout extends Block
 {
     protected static function block(): GutenbergBlock
     {

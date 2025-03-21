@@ -9,16 +9,16 @@ use Extended\ACF\Fields\PostObject;
 use Extended\ACF\Fields\Textarea;
 use Extended\ACF\Fields\TrueFalse;
 
-class Footer2 extends Block
+class footer1 extends Block
 {
     protected static function block(): GutenbergBlock
     {
         return (new GutenbergBlock())
-            ->setName('footer2')
-            ->setTitle("FOOTER | 2")
+            ->setName('footer1')
+            ->setTitle("FOOTER | 1")
             ->setCategory("layout")
             ->setIcon("layout")
-            ->setPreviewImage(get_template_directory_uri().'/vendor/akyos/akyos-blocks/resources/assets/previews/footer2.jpg');
+            ->setPreviewImage(get_template_directory_uri().'/vendor/akyos/akyos-blocks/resources/assets/previews/footer1.jpg');
     }
 
     protected static function fields(): array
@@ -35,6 +35,6 @@ class Footer2 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.footer2');
+        return view('akyos-blocks::blocks.footer1');
     }
 }

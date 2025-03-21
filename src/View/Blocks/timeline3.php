@@ -12,16 +12,16 @@ use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\Textarea;
 use Extended\ACF\Fields\WYSIWYGEditor;
 
-class Timeline1 extends Block
+class timeline3 extends Block
 {
     protected static function block(): GutenbergBlock
     {
         return (new GutenbergBlock())
-            ->setName("timeline1")
-            ->setTitle("TIMELINE | 1")
+            ->setName("timeline3")
+            ->setTitle("TIMELINE | 3")
             ->setCategory("timeline")
             ->setIcon("hourglass")
-            ->setPreviewImage(get_template_directory_uri().'/vendor/akyos/akyos-blocks/resources/assets/previews/timeline1.jpg');
+            ->setPreviewImage(get_template_directory_uri().'/vendor/akyos/akyos-blocks/resources/assets/previews/timeline3.jpg');
     }
 
     protected static function fields(): array
@@ -45,6 +45,6 @@ class Timeline1 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.timeline1');
+        return view('akyos-blocks::blocks.timeline3');
     }
 }
