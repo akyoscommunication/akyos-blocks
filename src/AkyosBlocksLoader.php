@@ -79,6 +79,7 @@ use Illuminate\Support\Facades\Blade;
         }
     }
 
+
     public function registerAssets()
     {
         if (file_exists(self::$jsonConfig)) {
