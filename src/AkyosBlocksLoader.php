@@ -84,10 +84,24 @@ use Illuminate\Support\Facades\Blade;
         if (file_exists(self::$jsonConfig)) {
             $blocks = json_decode(file_get_contents(self::$jsonConfig), true, 512, JSON_THROW_ON_ERROR);
             foreach ($blocks as $key => $block) {
-                $sourceFile = __DIR__ . '/../resources/assets/css/blocks/_' . $block . '.scss';
-                $destinationFile = get_template_directory() . '/resources/assets/css/blocks/_' . $block . '.scss';
-                if (file_exists($sourceFile) && !file_exists($destinationFile)) {
-                    copy($sourceFile, $destinationFile);
+
+                if ($key === 'blog') {
+                    $sourceFolder = __DIR__ . '/../resources/assets/css/blocks/blog/' . $block;
+                    $destinationFolder = get_template_directory() . '/resources/assets/css/blocks/' . $block;
+                    if(!is_dir($destinationFolder)) {
+                        mkdir($destinationFolder);
+                        $files = glob($sourceFolder . '/*');
+                        foreach ($files as $file) {
+                            $fileToGo = str_replace($sourceFolder, $destinationFolder, $file);
+                            copy($file, $fileToGo);
+                        }
+                    }
+                } else {
+                    $sourceFile = __DIR__ . '/../resources/assets/css/blocks/_' . $block . '.scss';
+                    $destinationFile = get_template_directory() . '/resources/assets/css/blocks/_' . $block . '.scss';
+                    if (file_exists($sourceFile) && !file_exists($destinationFile)) {
+                        copy($sourceFile, $destinationFile);
+                    }
                 }
 
                 if (isset($this->blocksDependencies[$key])) {
