@@ -1,8 +1,8 @@
 @if($search)
   <div id="search-modal">
   <div class="container">
-      @include('form.searchform')
-      <div id="close-search">
+    {!! get_search_form() !!}
+    <div id="close-search">
         @icon('close')
       </div>
     </div>
@@ -10,7 +10,37 @@
 @endif
 
 <header class="h-wrap">
-  @include('sections.topbar')
+
+  <div class="h-topbar">
+    <div class="container">
+      @if($phone && $options['phone'])
+        <a href="tel:{{ $options['phone'] }}" class="h-topbar__phone">
+          @icon('phone')
+          {{ $options['phone'] }}
+        </a>
+      @endif
+      @if($email && $options['email'])
+        <a href="mailto:{{ $options['email'] }}" class="h-topbar__email">
+          @icon('email')
+          {{ $options['email'] }}
+        </a>
+      @endif
+      @if($address && $options['address'])
+        <span href="{{ $options['address'] }}" class="h-topbar__address">
+            @icon('pin')
+            {!! $options['address'] !!}
+          </span>
+      @endif
+      @if($socials)
+        @include('partials.social')
+      @endif
+      @if($button_topbar && $button_topbar['link'])
+        <x-button :href="$button_topbar['link']['url']" :target="$button_topbar['link']['target']"
+                  :appearance="$button_topbar['color']">{!! $button_topbar['link']['title'] !!}</x-button>
+      @endif
+    </div>
+  </div>
+
   <div class="container h">
 
     <div class="h-brand">
