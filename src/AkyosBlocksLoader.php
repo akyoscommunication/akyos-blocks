@@ -86,7 +86,7 @@ use Illuminate\Support\Facades\Blade;
             $blocks = json_decode(file_get_contents(self::$jsonConfig), true, 512, JSON_THROW_ON_ERROR);
             foreach ($blocks as $key => $block) {
 
-                if ($key === 'blog') {
+                if (str_contains($key, 'blog')) {
                     $sourceFolder = __DIR__ . '/../resources/assets/css/blocks/blog/' . $block;
                     $destinationFolder = get_template_directory() . '/resources/assets/css/blocks/' . $block;
                     if(!is_dir($destinationFolder)) {
