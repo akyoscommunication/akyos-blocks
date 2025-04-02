@@ -11,7 +11,7 @@
     @if($images)
       <div class="s-content7-image">
         @foreach($images as $image)
-          <x-image :lg="$image" animation-wipe animation-stagger/>
+          <x-image :lg="$image"  />
         @endforeach
       </div>
     @endif

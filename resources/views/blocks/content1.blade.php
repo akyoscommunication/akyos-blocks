@@ -21,7 +21,7 @@
         >
           @foreach($images as $image)
             <div class="swiper-slide">
-              <x-image :lg="$image" animation-wipe animation-stagger/>
+              <x-image :lg="$image"/>
             </div>
           @endforeach
         </x-slider>

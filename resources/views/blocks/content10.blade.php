@@ -13,7 +13,7 @@
     </div>
     @if($images)
       <div class="s-content10-image">
-        <x-image :lg="array_shift($images)" animation-wipe animation-stagger/>
+        <x-image :lg="array_shift($images)"  />
       </div>
     @endif
   </div>
