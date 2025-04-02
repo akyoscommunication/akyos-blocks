@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Blade;
 
     public $jsFiles = [
         'map' => 'Map.js',
-        'number' => 'CountNumber.js',
+        'numbers' => 'Numbers.js',
         'slider' => 'Slider.js',
         'timeline' => 'Timeline.js',
         'accordion' => 'Accordion.js',
