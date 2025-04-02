@@ -2,7 +2,7 @@ import {gsap} from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import {CountUp} from "countup.js";
 
-export class CountNumber {
+export class Numbers {
   constructor() {
     this._numbers = document.querySelectorAll('[animation-number]')
 

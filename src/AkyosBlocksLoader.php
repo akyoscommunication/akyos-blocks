@@ -15,8 +15,16 @@ use Illuminate\Support\Facades\Blade;
 
     public $blocksDependencies = [
         'map' => ['leaflet'],
-        'number' => ['countup'],
+        'numbers' => ['countup'],
         'slider' => ['swiper'],
+    ];
+
+    public $jsFiles = [
+        'map' => 'Map.js',
+        'number' => 'CountNumber.js',
+        'slider' => 'Slider.js',
+        'timeline' => 'Timeline.js',
+        'accordion' => 'Accordion.js',
     ];
 
     public function __construct()
@@ -87,7 +95,12 @@ use Illuminate\Support\Facades\Blade;
 
     public function importAssets($block)
     {
-        $blockLog = [];
+        $blockLog = [
+            'Block' => $block,
+            'CSS' => '',
+            'JS' => '',
+            'Dependencies' => '',
+        ];
 
         if (str_contains($block, 'blog')) {
             $sourceFolder = __DIR__ . '/../resources/assets/css/blocks/blog/' . $block;
@@ -101,18 +114,10 @@ use Illuminate\Support\Facades\Blade;
                     copy($file, $fileToGo);
                     \WP_CLI::log("Copie du fichier : " . basename($file));
                     $scssFile = basename($file);
-                    $blockLog = [
-                        'Bloc' => $block,
-                        'CSS' => $scssFile,
-                        'JS' => ''
-                    ];
+                    $blockLog['CSS'] .= $scssFile;
                 }
             } else {
-                $blockLog = [
-                    'Bloc' => $block,
-                    'CSS' => 'already imported',
-                    'JS' => ''
-                ];
+                $blockLog['CSS'] = basename($destinationFolder);
             }
         } else {
             $sourceFile = __DIR__ . '/../resources/assets/css/blocks/_' . $block . '.scss';
@@ -121,37 +126,42 @@ use Illuminate\Support\Facades\Blade;
                 copy($sourceFile, $destinationFile);
                 \WP_CLI::log("Copie du fichier SCSS pour le bloc : " . $block);
                 $scssFile = basename($sourceFile);
-                $blockLog = [
-                    'Bloc' => $block,
-                    'CSS' => $scssFile,
-                    'JS' => ''
-                ];
+                $blockLog['CSS'] = $scssFile;
             } else {
-                $blockLog = [
-                    'Bloc' => $block,
-                    'CSS' => 'already imported',
-                    'JS' => ''
-                ];
+                $blockLog['CSS'] = basename($destinationFile);
             }
         }
 
         $blockCategory = substr($block, 0, -1);
+
+        if (isset($this->jsFiles[$blockCategory])) {
+            $sourceFile = __DIR__ . '/../resources/assets/js/components/' . $this->jsFiles[$blockCategory];
+            $destinationFile = get_template_directory() . '/resources/assets/js/components/' . $this->jsFiles[$blockCategory];
+            if (file_exists($sourceFile) && !file_exists($destinationFile)) {
+                copy($sourceFile, $destinationFile);
+                $jsFile = basename($sourceFile);
+                $blockLog['JS'] = $jsFile;
+            } else {
+                $blockLog['JS'] = basename($destinationFile);
+            }
+        } else {
+            $blockLog['JS'] = 'X';
+        }
+
         if (isset($this->blocksDependencies[$blockCategory])) {
+            // Add dependencies to package.json
             $packageJson = get_template_directory() . '/package.json';
             foreach ($this->blocksDependencies[$blockCategory] as $dependency) {
+                $blockLog['Dependencies'] .= $dependency;
                 $config = json_decode(file_get_contents($packageJson), true, 512, JSON_THROW_ON_ERROR);
                 if (!isset($config['dependencies'][$dependency])) {
                     $config['dependencies'][$dependency] = '*';
                     file_put_contents($packageJson, json_encode($config, JSON_PRETTY_PRINT));
                     \WP_CLI::log("Ajout de la dépendance : " . $dependency . " dans package.json");
-
-                    $blockLog['JS'] = $dependency;
-                } else {
-                    $blockLog['JS'] = 'already imported';
                 }
             }
         } else {
-            $blockLog['JS'] = 'none';
+            $blockLog['Dependencies'] = 'X';
         }
 
         return $blockLog;

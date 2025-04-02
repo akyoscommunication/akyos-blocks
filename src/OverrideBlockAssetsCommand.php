@@ -38,6 +38,12 @@ class OverrideBlockAssetsCommand extends Command
         }
 
         \WP_CLI::line("");
-        \WP_CLI\Utils\format_items('table', $table, ['Bloc', 'CSS', 'JS']);
+        \WP_CLI\Utils\format_items('table', $table, ['Block', 'CSS', 'JS', 'Dependencies']);
+        \WP_CLI::line("");
+        \WP_CLI::success('Assets imported successfully.');
+        \WP_CLI::warning("For JS files : instanciate the class in the main.js");
+
+        $this->output->success('You can run yarn && yarn build to compile the assets.');
+
     }
 }
