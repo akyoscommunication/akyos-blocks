@@ -9,9 +9,20 @@ class OverrideBlockCommand extends Command
     protected $signature = 'override:block';
 
     // Fonction exécutée lors de l'appel de la commande
+
+    /**
+     * @throws \JsonException
+     */
     public function handle()
     {
-        $block = $this->ask('Slug of the block ?', '');
+        $blocks = json_decode(file_get_contents(get_template_directory() . '/akyos-blocks.json'), true, 512, JSON_THROW_ON_ERROR);
+        $choices = [];
+
+        for($index = 0; $index < count($blocks); $index++) {
+            $choices[$index] = array_values($blocks)[$index];
+        }
+
+        $block = $this->choice('Choose the block', $choices);
 
         $sourceFile = __DIR__ . '/../resources/views/blocks/' . $block . '.blade.php';
         $destinationFile = get_template_directory() . '/resources/views/blocks/' . $block . '.blade.php';

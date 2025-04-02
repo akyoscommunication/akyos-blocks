@@ -15,13 +15,22 @@ class OverrideBlockAssetsCommand extends Command
      */
     public function handle()
     {
-        $block = $this->ask('Slug of the block ? (-1 for all)', '');
+        $blocks = json_decode(file_get_contents(get_template_directory() . '/akyos-blocks.json'), true, 512, JSON_THROW_ON_ERROR);
+        $choices = [];
+
+        for($index = 0; $index < count($blocks); $index++) {
+            $choices[$index] = array_values($blocks)[$index];
+        }
+        $choices = ['-1' => 'All'] + $choices;
+
+        $block = $this->choice('Choose the block', $choices, '-1');
+
         $loader = new AkyosBlocksLoader();
 
         $blocks = json_decode(file_get_contents($loader::$jsonConfig), true, 512, JSON_THROW_ON_ERROR);
         $table = [];
 
-        if ($block === '-1') {
+        if ($block === 'All') {
             $this->info('Importing all block assets...');
             $progress = \WP_CLI\Utils\make_progress_bar('Importing assets', count($blocks));
 
@@ -44,6 +53,7 @@ class OverrideBlockAssetsCommand extends Command
         \WP_CLI::warning("For JS files : instanciate the class in the main.js");
 
         $this->output->success('You can run yarn && yarn build to compile the assets.');
+
 
     }
 }

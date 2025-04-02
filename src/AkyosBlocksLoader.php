@@ -128,7 +128,8 @@ use Illuminate\Support\Facades\Blade;
                 $scssFile = basename($sourceFile);
                 $blockLog['CSS'] = $scssFile;
             } else {
-                $blockLog['CSS'] = basename($destinationFile);
+                // add an emoji
+                $blockLog['CSS'] = " ".basename($destinationFile);
             }
         }
 
