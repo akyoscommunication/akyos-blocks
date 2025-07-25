@@ -50,6 +50,22 @@ use Illuminate\Support\Facades\Blade;
         $this->registerLayout();
         $this->registerBlocks();
         $this->installComposer();
+        $this->editSections();
+    }
+
+    public function editSections()
+    {
+        $header = get_template_directory() . '/resources/views/sections/header.blade.php';
+        $footer = get_template_directory() . '/resources/views/sections/footer.blade.php';
+
+        $headerContent = file_get_contents($header);
+        $footerContent = file_get_contents($footer);
+
+        $headerContent = '{!! $layout("header") !!}';
+        $footerContent = '{!! $layout("sub-footer") !!} {!! $layout("footer") !!}';
+
+        file_put_contents($header, $headerContent);
+        file_put_contents($footer, $footerContent);
     }
 
 
