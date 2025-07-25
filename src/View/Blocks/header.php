@@ -9,16 +9,16 @@ use Extended\ACF\Fields\Image;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\TrueFalse;
 
-class headerLayout extends Block
+class header extends Block
 {
     protected static function block(): GutenbergBlock
     {
         return (new GutenbergBlock())
-            ->setName('headerlayout')
+            ->setName('header')
             ->setTitle('Barre de navigation')
             ->setCategory('layout')
             ->setIcon('layout')
-            ->setPreviewImage(get_template_directory_uri().'/vendor/akyos/akyos-blocks/resources/assets/previews/header.jpg');
+            ->setPreviewImage(get_template_directory_uri() . '/vendor/akyos/akyos-blocks/resources/assets/previews/header.jpg');
     }
 
     protected static function fields(): array
@@ -40,6 +40,6 @@ class headerLayout extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.headerlayout');
+        return view('akyos-blocks::blocks.header');
     }
 }

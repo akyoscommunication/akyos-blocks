@@ -1,0 +1,54 @@
+.h-topbar {
+  padding-block: rem(10);
+  background-color: #eee;
+
+  @include lessThan($mobileXs) {
+    display: none;
+  }
+
+  .container {
+    @include flex(row, nowrap, start, center);
+
+    gap: rem(34);
+
+    @include lessThan($tablet) {
+      .h-topbar__address {
+        display: none;
+      }
+    }
+
+    @include lessThan($mobile) {
+      justify-content: space-between;
+      .h-topbar__email, .h-topbar__phone {
+        display: none;
+      }
+    }
+
+    > span, > a {
+      svg {
+        vertical-align: top;
+        margin-right: rem(5);
+        width: rem(17);
+        height: rem(17);
+      }
+    }
+
+    .social {
+      gap: rem(24);
+
+      @include moreThan($mobile) {
+        margin-left: auto;
+      }
+
+      svg {
+        width: rem(21);
+        height: rem(21);
+
+      }
+    }
+
+    .btn {
+      padding: rem(10) rem(22);
+    }
+  }
+}

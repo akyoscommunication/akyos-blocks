@@ -49,7 +49,9 @@ use Illuminate\Support\Facades\Blade;
     {
         $this->registerLayout();
         $this->registerBlocks();
+        $this->installComposer();
     }
+
 
     public function registerLayout()
     {
@@ -69,10 +71,6 @@ use Illuminate\Support\Facades\Blade;
                 Location::where('post_type', '===', 'aky_layout')
             ],
         ]);
-
-        Blade::directive('layoutLocation', static function ($expression) {
-            return "<?php echo $expression ?>";
-        });
     }
 
     /**
@@ -92,6 +90,35 @@ use Illuminate\Support\Facades\Blade;
         }
     }
 
+    /**
+     * Installe le Composer dans le thème avec le bon namespace
+     */
+    private function installComposer()
+    {
+        $themeComposersDir = get_template_directory() . '/app/View/Composers';
+
+        if (!is_dir($themeComposersDir)) {
+            mkdir($themeComposersDir, 0755, true);
+        }
+
+        $sourceComposer = __DIR__ . '/View/Composers/Layout.php';
+        $destinationComposer = $themeComposersDir . '/Layout.php';
+
+        if (file_exists($sourceComposer) && !file_exists($destinationComposer)) {
+            $composerContent = file_get_contents($sourceComposer);
+
+            // Change le namespace pour correspondre au thème
+            $composerContent = str_replace(
+                'namespace Akyos\Blocks\View\Composers;',
+                'namespace App\View\Composers;',
+                $composerContent
+            );
+
+            file_put_contents($destinationComposer, $composerContent);
+        }
+    }
+
+
 
     public function importAssets($block)
     {
@@ -102,7 +129,29 @@ use Illuminate\Support\Facades\Blade;
             'Dependencies' => '',
         ];
 
-        if (str_contains($block, 'blog')) {
+        if ($block === 'header') {
+            $sourceFolder = __DIR__ . '/../resources/assets/css/header';
+            $destinationFolder = get_template_directory() . '/resources/assets/css/blocks/header';
+            $scssFiles = [];
+            if (!is_dir($destinationFolder)) {
+                mkdir($destinationFolder);
+                $files = glob($sourceFolder . '/*');
+                foreach ($files as $file) {
+                    $fileToGo = str_replace($sourceFolder, $destinationFolder, $file);
+                    copy($file, $fileToGo);
+                    \WP_CLI::log("Copie du fichier : " . basename($file));
+                    $scssFile = basename($file);
+                    $scssFiles[] = $scssFile;
+                }
+            } else {
+                $files = glob($sourceFolder . '/*');
+                foreach ($files as $file) {
+                    $scssFile = basename($file);
+                    $scssFiles[] = $scssFile;
+                }
+            }
+            $blockLog['CSS'] = implode(' | ', $scssFiles);
+        } elseif (str_contains($block, 'blog')) {
             $sourceFolder = __DIR__ . '/../resources/assets/css/blocks/blog/' . $block;
             $destinationFolder = get_template_directory() . '/resources/assets/css/blocks/' . $block;
             if (!is_dir($destinationFolder)) {
@@ -129,7 +178,7 @@ use Illuminate\Support\Facades\Blade;
                 $blockLog['CSS'] = $scssFile;
             } else {
                 // add an emoji
-                $blockLog['CSS'] = " ".basename($destinationFile);
+                $blockLog['CSS'] = " " . basename($destinationFile);
             }
         }
 

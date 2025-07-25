@@ -1,0 +1,133 @@
+$dropdown-icon: $assets-path + "/icons/dropdown.svg";
+
+.h-wrap {
+  position: sticky;
+  top: rem(-62);
+  background-color: color(primary, 1);
+  z-index: 999;
+  transition: $default-transition;
+
+  &.scrolled {
+    box-shadow: 0px 0px 20px color(dark, 0.3);
+  }
+
+  .h {
+    @include flex(row, nowrap, space-between, center);
+    gap: rem(20);
+
+    @include lessThan($tablet) {
+      padding-block: rem(10);
+    }
+
+    &-brand {
+      position: relative;
+      z-index: 999;
+    }
+
+    &-nav {
+      @include flex(row, nowrap, flex-end, center);
+      gap: rem(16);
+      margin-left: auto;
+
+      .menu {
+        @include flex(row, nowrap, flex-end, center);
+        @include undoListStyles();
+
+        gap: rem(16);
+
+        &-item {
+          padding: rem(25) 0;
+
+          a {
+            white-space: nowrap;
+            color: color(light);
+          }
+        }
+      }
+
+      &__nav {
+        @include lessThan($tablet) {
+          display: none;
+        }
+      }
+
+      &__nav.active-underline {
+        ul.menu {
+          > li {
+            &.current-menu-item {
+              a {
+                &:after {
+                  width: 100%;
+                }
+              }
+            }
+
+            a {
+              position: relative;
+
+              &:after {
+                @include pseudo();
+
+                height: 2px;
+                bottom: -5px;
+                width: 0%;
+                background-color: color(primary);
+                transition: $default-transition;
+              }
+            }
+
+            &:hover {
+              &:not(.menu-item-has-children) {
+                > a {
+                  &:after {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &__nav.active-color {
+        ul.menu {
+          > li {
+
+            &.current-menu-item {
+              a {
+                color: color(primary);
+              }
+            }
+
+            a {
+              transition: $default-transition;
+
+              &:hover {
+                color: color(primary);
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    &-brand {
+      img {
+        max-width: rem(100);
+      }
+    }
+
+    &-actions {
+      @include flex(row, nowrap, flex-end, center);
+
+      gap: rem(16);
+
+      &-search {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
