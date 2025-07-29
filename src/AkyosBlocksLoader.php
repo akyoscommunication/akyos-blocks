@@ -50,23 +50,61 @@ use Illuminate\Support\Facades\Blade;
     {
         $this->registerLayout();
         $this->registerBlocks();
-        $this->installComposer();
+        //$this->installComposer();
         $this->editSections();
     }
 
     public function editSections()
     {
+        $this->createLayoutDirective();
+        $this->ensureLayoutCalls();
+    }
+
+    private function createLayoutDirective()
+    {
+        add_action('after_setup_theme', function () {
+            \Illuminate\Support\Facades\Blade::directive('layout', function ($expression) {
+                return "<?php 
+                    \$post = new \\WP_Query([
+                        'post_type' => 'aky_layout'
+                    ]);
+                    
+                    \$layout = trim($expression, '\\'\"');
+                    
+                    if (\$post->have_posts()) {
+                        while (\$post->have_posts()) {
+                            \$post->the_post();
+                            if (get_field('location') === \$layout) {
+                                foreach (parse_blocks(get_the_content()) as \$block) {
+                                    echo render_block(\$block);
+                                }
+                            }
+                        }
+                        wp_reset_postdata();
+                    }
+                ?>";
+            });
+        });
+    }
+
+    private function ensureLayoutCalls()
+    {
         $header = get_template_directory() . '/resources/views/sections/header.blade.php';
         $footer = get_template_directory() . '/resources/views/sections/footer.blade.php';
 
-        $headerContent = file_get_contents($header);
-        $footerContent = file_get_contents($footer);
+        // Vérifie si les sections contiennent déjà l'appel aux layouts
+        $headerContent = file_exists($header) ? file_get_contents($header) : '';
+        $footerContent = file_exists($footer) ? file_get_contents($footer) : '';
 
-        $headerContent = '{!! $layout("header") !!}';
-        $footerContent = '{!! $layout("sub-footer") !!} {!! $layout("footer") !!}';
+        if (!str_contains($headerContent, '@layout') && !str_contains($headerContent, '$layout')) {
+            $newHeaderContent = "@layout('header')\n\n" . $headerContent;
+            file_put_contents($header, $newHeaderContent);
+        }
 
-        file_put_contents($header, $headerContent);
-        file_put_contents($footer, $footerContent);
+        if (!str_contains($footerContent, '@layout') && !str_contains($footerContent, '$layout')) {
+            $newFooterContent = "@layout('sub-footer')\n@layout('footer')\n\n" . $footerContent;
+            file_put_contents($footer, $newFooterContent);
+        }
     }
 
 
