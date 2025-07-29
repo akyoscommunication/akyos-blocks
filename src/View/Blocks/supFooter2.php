@@ -29,6 +29,6 @@ class supFooter2 extends Block
 
     public function render()
     {
-        return view('blocks.supFooter2');
+        return view('akyos-blocks::blocks.supFooter2');
     }
 }
