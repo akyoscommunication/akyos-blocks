@@ -2,7 +2,7 @@
   <div class="container">
     <div class="numbers-title">
       <div>
-        <x-title :tag="$title['tag']">{!! $title['value'] !!}</x-title>
+        <x-title :tag="$title['tag']" :position="$title['position']">{!! $title['value'] !!}</x-title>
         {!! $description !!}
       </div>
       @if($button && $button['link'])

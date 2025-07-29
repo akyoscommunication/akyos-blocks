@@ -4,11 +4,11 @@
       <div data-markers='@json($markers)' id="map"></div>
     </div>
     <div class="map-title">
-      <x-title :tag="$title['tag']">{!! $title['value'] !!}</x-title>
+      <x-title :tag="$title['tag']" :position="$title['position']">{!! $title['value'] !!}</x-title>
       {!! $description !!}
       @if($button && $button['link'])
-        <x-button :href="$button['link']['url']" :target="$button['link']['target']"
-                  :appearance="$button['color']">{!! $button['link']['title'] !!}</x-button>
+      <x-button :href="$button['link']['url']" :target="$button['link']['target']"
+        :appearance="$button['color']">{!! $button['link']['title'] !!}</x-button>
       @endif
     </div>
   </div>

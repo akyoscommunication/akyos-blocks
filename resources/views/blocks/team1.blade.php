@@ -1,6 +1,6 @@
 <section style="{{ $styles }}" class="{{ $classes }} s-team1">
   <div class="container">
-    <x-title :tag="$title['tag']">{!! $title['value'] !!}</x-title>
+    <x-title :tag="$title['tag']" :position="$title['position']">{!! $title['value'] !!}</x-title>
     {!! $description !!}
     <div class="members">
       <x-slider name="team-1" :per="count($members) < 6 ? count($members) : 6" perMd="4" perSm="3" perXs="1" :modules="['navigation','pagination']"

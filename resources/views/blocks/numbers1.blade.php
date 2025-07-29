@@ -1,6 +1,6 @@
 <section style="{{ $styles }}" class="{{ $classes }} s-numbers1 bg-color-primary color-light">
   <div class="container">
-    <x-title :tag="$title['tag']">{!! $title['value'] !!}</x-title>
+    <x-title :tag="$title['tag']" :position="$title['position']">{!! $title['value'] !!}</x-title>
     {!! $description !!}
     <div class="numbers">
       <x-slider name="numbers-1" :per="count($numbers) < 4 ? count($numbers) : 4" perMd="3" perSm="2" perXs="1" :modules="['navigation','pagination']"

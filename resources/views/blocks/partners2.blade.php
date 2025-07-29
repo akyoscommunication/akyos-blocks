@@ -1,6 +1,6 @@
 <section style="{{ $styles }}" class="{{ $classes }} s-partners2">
   <div class="container">
-    <x-title :tag="$title['tag']">{!! $title['value'] !!}</x-title>
+    <x-title :tag="$title['tag']" :position="$title['position']">{!! $title['value'] !!}</x-title>
     {!! $description !!}
 
     <div class="partners-logos">
