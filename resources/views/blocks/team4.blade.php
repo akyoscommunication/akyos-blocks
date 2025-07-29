@@ -24,6 +24,7 @@
                   </a>
                   @endif
                 </div>
+                @if($member['socials'])
                 <div class="member-content-links__socials">
                   @foreach($member['socials'] as $social)
                   <a href="{{ $social['link'] }}" target="_blank">
@@ -31,6 +32,7 @@
                   </a>
                   @endforeach
                 </div>
+                @endif
               </div>
             </div>
           </div>
