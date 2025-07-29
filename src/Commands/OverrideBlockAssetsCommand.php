@@ -1,14 +1,13 @@
 <?php
 
-namespace Akyos\Blocks;
+namespace Akyos\Blocks\Commands;
 
+use Akyos\Blocks\AkyosBlocksLoader;
 use Illuminate\Console\Command;
 
 class OverrideBlockAssetsCommand extends Command
 {
     protected $signature = 'import:block:assets';
-
-    // Fonction exécutée lors de l'appel de la commande
 
     /**
      * @throws \JsonException
@@ -18,7 +17,7 @@ class OverrideBlockAssetsCommand extends Command
         $blocks = json_decode(file_get_contents(get_template_directory() . '/akyos-blocks.json'), true, 512, JSON_THROW_ON_ERROR);
         $choices = [];
 
-        for($index = 0; $index < count($blocks); $index++) {
+        for ($index = 0; $index < count($blocks); $index++) {
             $choices[$index] = array_values($blocks)[$index];
         }
         $choices = ['-1' => 'All'] + $choices;
@@ -53,7 +52,5 @@ class OverrideBlockAssetsCommand extends Command
         \WP_CLI::warning("For JS files : instanciate the class in the main.js");
 
         $this->output->success('You can run yarn && yarn build to compile the assets.');
-
-
     }
 }

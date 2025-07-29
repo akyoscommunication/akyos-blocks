@@ -4,6 +4,7 @@ namespace Akyos\Blocks;
 
 use Akyos\Core\Wrappers\PostType;
 use AllowDynamicProperties;
+use Akyos\Blocks\Enum\AkyosBlocksCategory;
 use Extended\ACF\Fields\Select;
 use Extended\ACF\Location;
 use Illuminate\Support\Facades\Blade;
@@ -104,6 +105,10 @@ use Illuminate\Support\Facades\Blade;
                 (new $name())->registerGutenberg();
             }
         }
+
+        add_filter('block_categories_all', function ($categories) {
+            return array_merge($categories, AkyosBlocksCategory::getWordPressCategories());
+        });
     }
 
     /**

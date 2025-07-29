@@ -4,11 +4,11 @@
     {!! $description !!}
 
     <div class="partners-logos">
-      <x-slider name="partners-1" per="6" perMd="4" perSm="3" perXs="2" :modules="['navigation','pagination']">
+      <x-slider name="partners-1" :per="count($partners) < 6 ? count($partners) : 6" perMd="4" perSm="3" perXs="2" :modules="['navigation','pagination']">
         @foreach($partners as $partner)
-          <div class="swiper-slide">
-            <x-image :lg="$partner['image']"/>
-          </div>
+        <div class="swiper-slide">
+          <x-image :lg="$partner['image']" />
+        </div>
         @endforeach
       </x-slider>
       <div class="swiper-buttons">

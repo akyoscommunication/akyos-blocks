@@ -3,18 +3,18 @@
     <x-title :tag="$title['tag']">{!! $title['value'] !!}</x-title>
     {!! $description !!}
     <div class="services">
-      <x-slider name="services-2" per="4" perMd="3" perSm="2" perXs="1" :modules="['navigation','pagination']"
-                :extra="[ 'spaceBetween' => 24 ]">
+      <x-slider name="services-2" :per="count($cards) < 4 ? count($cards) : 4" perMd="3" perSm="2" perXs="1" :modules="['navigation','pagination']"
+        :extra="[ 'spaceBetween' => 24 ]">
         @foreach($cards as $card)
-          <div class="swiper-slide">
-            <div class="service">
-              <x-image :lg="$card['image']"/>
-              <div class="service-content">
-                <x-title :tag="$card['title']['tag']">{!! $card['title']['value'] !!}</x-title>
-                {!! $card['description'] !!}
-              </div>
+        <div class="swiper-slide">
+          <div class="service">
+            <x-image :lg="$card['image']" />
+            <div class="service-content">
+              <x-title :tag="$card['title']['tag']">{!! $card['title']['value'] !!}</x-title>
+              {!! $card['description'] !!}
             </div>
           </div>
+        </div>
         @endforeach
       </x-slider>
       <div class="swiper-buttons">
@@ -28,8 +28,8 @@
       </div>
     </div>
     @if($button && $button['link'])
-      <x-button :href="$button['link']['url']" :target="$button['link']['target']"
-                :appearance="$button['color']">{!! $button['link']['title'] !!}</x-button>
+    <x-button :href="$button['link']['url']" :target="$button['link']['target']"
+      :appearance="$button['color']">{!! $button['link']['title'] !!}</x-button>
     @endif
   </div>
 </section>

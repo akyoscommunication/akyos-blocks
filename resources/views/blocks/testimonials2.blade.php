@@ -3,36 +3,36 @@
     <x-title :tag="$title['tag']">{!! $title['value'] !!}</x-title>
     {!! $description !!}
     <div class="testimonials">
-      <x-slider name="testimonials-2" per="2" perMd="1" perSm="1" :modules="['pagination','navigation']"
-                :extra="['spaceBetween' => 40]">
+      <x-slider name="testimonials-2" :per="count($testimonials) < 2 ? count($testimonials) : 2" perMd="1" perSm="1" perXs="1" :modules="['pagination','navigation']"
+        :extra="['spaceBetween' => 40]">
         @foreach($testimonials as $testimonial)
-          <div class="swiper-slide">
-            <div class="testimonial">
-              <x-image :lg="$testimonial['photo']"/>
-              <div class="testimonial-content">
-                <div class="testimonial-content__name">
-                  <div>
-                    <p>{!! $testimonial['name'] !!}</p>
-                    @if($testimonial['job'])
-                      <small>{!! $testimonial['job'] !!}</small>
-                    @endif
-                  </div>
-                  @if($testimonial['date'])
-                    <small>{!! $testimonial['date'] !!}</small>
+        <div class="swiper-slide">
+          <div class="testimonial">
+            <x-image :lg="$testimonial['photo']" />
+            <div class="testimonial-content">
+              <div class="testimonial-content__name">
+                <div>
+                  <p>{!! $testimonial['name'] !!}</p>
+                  @if($testimonial['job'])
+                  <small>{!! $testimonial['job'] !!}</small>
                   @endif
                 </div>
-                <div class="testimonial-content__rating">
-                  @for($i = 0; $i < 5; $i++)
-                    @if($i < $testimonial['rating'])
-                      @icon('star')
-                    @endif
+                @if($testimonial['date'])
+                <small>{!! $testimonial['date'] !!}</small>
+                @endif
+              </div>
+              <div class="testimonial-content__rating">
+                @for($i = 0; $i < 5; $i++)
+                  @if($i < $testimonial['rating'])
+                  @icon('star')
+                  @endif
                   @endfor
-                </div>
-                {!! $testimonial['content'] !!}
+                  </div>
+                  {!! $testimonial['content'] !!}
               </div>
             </div>
           </div>
-        @endforeach
+          @endforeach
       </x-slider>
 
       <div class="swiper-buttons">
@@ -47,8 +47,8 @@
 
     </div>
     @if($button && $button['link'])
-      <x-button :href="$button['link']['url']" :target="$button['link']['target']"
-                :appearance="$button['color']">{!! $button['link']['title'] !!}</x-button>
+    <x-button :href="$button['link']['url']" :target="$button['link']['target']"
+      :appearance="$button['color']">{!! $button['link']['title'] !!}</x-button>
     @endif
   </div>
 </section>
