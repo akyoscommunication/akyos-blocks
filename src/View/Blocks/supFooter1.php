@@ -7,12 +7,12 @@ use Akyos\Core\Classes\GutenbergBlock;
 use App\Acf\Fields\Button;
 use Extended\ACF\Fields\Textarea;
 
-class surFooter1 extends Block
+class supFooter1 extends Block
 {
     protected static function block(): GutenbergBlock
     {
         return (new GutenbergBlock())
-            ->setName('sur-footer-1')
+            ->setName('sup-footer-1')
             ->setTitle("SUR-FOOTER | 1")
             ->setCategory("layout")
             ->setIcon("layout")
@@ -29,6 +29,6 @@ class surFooter1 extends Block
 
     public function render()
     {
-        return view('blocks.sur-footer-1');
+        return view('blocks.supFooter1');
     }
 }

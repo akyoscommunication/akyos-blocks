@@ -11,9 +11,10 @@ class Layout extends Composer
         'sections.footer'
     ];
 
-    public function with() {
+    public function with()
+    {
         return [
-          'layout' => $this->getLayout(...)
+            'layout' => $this->getLayout(...)
         ];
     }
 
@@ -25,7 +26,6 @@ class Layout extends Composer
         ]);
 
         $layout = trim($layout, '\'"');
-
 
         if ($post->have_posts()) {
             while ($post->have_posts()) {

@@ -197,9 +197,12 @@ use Illuminate\Support\Facades\Blade;
                 \WP_CLI::log("Copie du fichier SCSS pour le bloc : " . $block);
                 $scssFile = basename($sourceFile);
                 $blockLog['CSS'] = $scssFile;
-            } else {
-                // add an emoji
-                $blockLog['CSS'] = " " . basename($destinationFile);
+            } else if (file_exists($sourceFile) && file_exists($destinationFile)) {
+                \WP_CLI::log("Fichier SCSS déjà existant : " . $block);
+                $blockLog['CSS'] = "X";
+            } else if (!file_exists($sourceFile)) {
+                \WP_CLI::log("Fichier SCSS non existant : " . $block);
+                $blockLog['CSS'] = "X";
             }
         }
 
