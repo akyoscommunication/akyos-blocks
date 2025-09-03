@@ -2,14 +2,15 @@
 
 namespace Akyos\Blocks\View\Blocks;
 
-use Akyos\Core\Classes\Block;
-use Akyos\Core\Classes\GutenbergBlock;
-use App\Acf\Fields\Button;
 use App\Acf\Fields\Title;
+use App\Acf\Fields\Button;
 use App\Acf\Fields\Wysiwyg;
+use Extended\ACF\Fields\Tab;
+use Akyos\Core\Classes\Block;
+use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\Image;
 use Extended\ACF\Fields\Repeater;
-use Extended\ACF\Fields\Tab;
+use Akyos\Core\Classes\GutenbergBlock;
 
 class hero1 extends Block
 {
@@ -32,6 +33,7 @@ class hero1 extends Block
         return [
             Tab::make("Contenu"),
             Title::make('Titre', 'title'),
+            Text::make('Noméclature', 'nomclature'),
             Wysiwyg::make('Description', 'description'),
             Repeater::make("Boutons", "buttons")
                 ->fields([

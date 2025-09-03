@@ -5,6 +5,7 @@ namespace Akyos\Blocks;
 use Akyos\Core\Wrappers\PostType;
 use AllowDynamicProperties;
 use Akyos\Blocks\Enum\AkyosBlocksCategory;
+use Akyos\Blocks\Catalog\Catalog;
 use Extended\ACF\Fields\Select;
 use Extended\ACF\Location;
 use Illuminate\Support\Facades\Blade;
@@ -30,6 +31,7 @@ use Illuminate\Support\Facades\Blade;
 
     public function __construct()
     {
+        Catalog::getInstance();
         $this->checkRequirements();
     }
 
@@ -37,7 +39,12 @@ use Illuminate\Support\Facades\Blade;
     {
         $json = get_template_directory() . '/akyos-blocks.json';
         if (!file_exists($json)) {
-            wp_die("Error: unable to find akyos-blocks.json");
+            if (!isset($_GET['page']) || $_GET['page'] !== 'akyos-blocks-catalog') {
+                if (!wp_doing_ajax()) {
+                    wp_redirect(admin_url('admin.php?page=akyos-blocks-catalog'));
+                    exit;
+                }
+            }
         } else {
             self::$jsonConfig = $json;
         }
@@ -50,7 +57,6 @@ use Illuminate\Support\Facades\Blade;
     {
         $this->registerLayout();
         $this->registerBlocks();
-        //$this->installComposer();
         $this->editSections();
     }
 
@@ -148,36 +154,6 @@ use Illuminate\Support\Facades\Blade;
             return array_merge($categories, AkyosBlocksCategory::getWordPressCategories());
         });
     }
-
-    /**
-     * Installe le Composer dans le thème avec le bon namespace
-     */
-    private function installComposer()
-    {
-        $themeComposersDir = get_template_directory() . '/app/View/Composers';
-
-        if (!is_dir($themeComposersDir)) {
-            mkdir($themeComposersDir, 0755, true);
-        }
-
-        $sourceComposer = __DIR__ . '/View/Composers/Layout.php';
-        $destinationComposer = $themeComposersDir . '/Layout.php';
-
-        if (file_exists($sourceComposer) && !file_exists($destinationComposer)) {
-            $composerContent = file_get_contents($sourceComposer);
-
-            // Change le namespace pour correspondre au thème
-            $composerContent = str_replace(
-                'namespace Akyos\Blocks\View\Composers;',
-                'namespace App\View\Composers;',
-                $composerContent
-            );
-
-            file_put_contents($destinationComposer, $composerContent);
-        }
-    }
-
-
 
     public function importAssets($block)
     {

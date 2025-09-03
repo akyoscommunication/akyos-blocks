@@ -23,17 +23,17 @@ class OverrideBlockCommand extends Command
 
         $block = $this->choice('Choose the block', $choices);
 
-        $sourceFile = __DIR__ . '/../resources/views/blocks/' . $block . '.blade.php';
+        $sourceFile = __DIR__ . '/../../resources/views/blocks/' . $block . '.blade.php';
         $destinationFile = get_template_directory() . '/resources/views/blocks/' . $block . '.blade.php';
 
         if (file_exists($sourceFile)) {
             if (copy($sourceFile, $destinationFile)) {
-                $this->info('Le fichier ' . $block . '.php a été copié avec succès dans le thème.');
+                $this->info('Le fichier ' . $block . '.blade.php a été copié avec succès dans le thème.');
             } else {
-                $this->error('Échec de la copie du fichier ' . $block . '.php');
+                $this->error('Échec de la copie du fichier ' . $block . '.blade.php');
             }
         } else {
-            $this->error('Le fichier source ' . $block . '.php  n\'existe pas.');
+            $this->error('Le fichier source ' . $block . '.blade.php  n\'existe pas.');
         }
     }
 }
