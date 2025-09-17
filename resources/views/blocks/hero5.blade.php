@@ -1,4 +1,4 @@
-<section style="{{ $styles }} --bg: url('{{ $image }}')" class="{{ $classes }} s-hero5">
+<section style="{{ $styles }}; --bg: url('{{ $image }}')" class="{{ $classes }} s-hero5">
   <div class="container">
     <x-title :tag="$title['tag']" :position="$title['position']">{!! $title['value'] !!}</x-title>
     {!! $description !!}
