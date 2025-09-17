@@ -7,21 +7,30 @@
       <x-image :lg="$logo"/>
     </div>
 
-    <div class="s-footer1-description">
-      {!! $description !!}
-    </div>
+    @if($description)
+      <div class="s-footer1-description">
+        {!! $description !!}
+      </div>
+    @endif
 
     <div class="s-footer1-navigation">
+      <p class="s-footer1-title-section">Menu</p>
       @menu('footer_navigation')
     </div>
 
-    <div class="s-footer1-horaires">
-      {!! $horaires !!}
-    </div>
+    @if($horaires)
+      <div class="s-footer1-horaires">
+        <p class="s-footer1-title-section">Horaires</p>
+        {!! $horaires !!}
+      </div>
+    @endif
 
-    <div class="s-footer1-address">
-      {!! $address !!}
-    </div>
+    @if($address)
+      <div class="s-footer1-address">
+        <p class="s-footer1-title-section">Contact</p>
+        {!! $address !!}
+      </div>
+    @endif
 
     <div class="s-footer1-form">
       @if($newsletter_form)
@@ -47,7 +56,7 @@
         @include('partials.social')
       @endif
     </div>
-
+    
     <div class="s-footer1-legal-navigation">
       @menu('legal_navigation')
     </div>

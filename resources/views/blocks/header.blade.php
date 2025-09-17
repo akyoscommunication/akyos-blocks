@@ -45,8 +45,13 @@
 
     <div class="h-brand">
       @if ($logo)
-        <a href="{!! home_url() !!}">
+        <a href="{!! home_url() !!}" class="h-brand__logo">
           <x-image :lg="$logo"/>
+        </a>
+      @endif
+      @if (isset($logo_scroll) && $logo_scroll)
+        <a href="{!! home_url() !!}" class="h-brand__scroll">
+          <x-image :lg="$logo_scroll"/>
         </a>
       @endif
     </div>
@@ -69,6 +74,11 @@
         </div>
       </div>
     </div>
+
+    @if($button && $button['link'])
+    <x-button :href="$button['link']['url']" :target="$button['link']['target']"
+              :appearance="$button['color']">{!! $button['link']['title'] !!}</x-button>
+  @endif
 
     @if($search)
       <div class="h-actions">

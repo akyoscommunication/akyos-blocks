@@ -8,6 +8,7 @@ use App\Acf\Fields\Button;
 use App\Acf\Fields\Title;
 use App\Acf\Fields\Wysiwyg;
 use Extended\ACF\Fields\Image;
+use Extended\ACF\Fields\Number;
 use Extended\ACF\Fields\Repeater;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\Text;
@@ -37,6 +38,8 @@ class numbers3 extends Block
             Wysiwyg::make('Description', 'description'),
             Button::make("Bouton", "button"),
             Tab::make("Chiffres clés"),
+            Number::make("Nombre de chiffres clés par slide", "numbers_per_slide"),
+            Number::make("Espacement entre les chiffres clés", "numbers_spacing"),
             Repeater::make("Chiffres clés", "numbers")
                 ->fields([
                     Image::make("Icône", "icon")

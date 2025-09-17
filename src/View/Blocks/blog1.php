@@ -44,6 +44,7 @@ class blog1 extends Block
             'posts_per_page' => 8,
             'orderby' => 'date',
             'order' => 'DESC',
+            'paged' => (int)get_query_var('paged') ? (int)get_query_var('paged') : 1,
         ]);
 
         $this->posts = $query->posts;

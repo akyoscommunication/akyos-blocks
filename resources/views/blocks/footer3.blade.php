@@ -9,18 +9,24 @@
       </div>
 
       <div class="s-footer3-navigation">
+        <p class="s-footer3-title-section">Menu</p>
         @menu('footer_navigation')
       </div>
 
-
       <div class="s-footer3-infos">
-        <div class="s-footer3-horaires">
-          {!! $horaires !!}
-        </div>
+        @if($horaires)
+          <div class="s-footer3-horaires">
+            <p class="s-footer3-title-section">Horaires</p>
+            {!! $horaires !!}
+          </div>
+        @endif
 
-        <div class="s-footer3-address">
-          {!! $address !!}
-        </div>
+        @if($address)
+          <div class="s-footer3-address">
+            <p class="s-footer3-title-section">Contact</p>
+            {!! $address !!}
+          </div>
+        @endif
 
         <div class="s-footer3-form">
           @if($newsletter_form)
@@ -33,9 +39,11 @@
           @endif
         </div>
 
-        <div class="s-footer3-description">
-          {!! $description !!}
-        </div>
+        @if($description)
+          <div class="s-footer3-description">
+            {!! $description !!}
+          </div>
+        @endif
       </div>
     </div>
 

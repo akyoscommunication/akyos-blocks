@@ -18,6 +18,10 @@
           <x-title :tag="$card['title']['tag']">{!! $card['title']['value'] !!}</x-title>
           {!! $card['description'] !!}
         </div>
+        @if($card['button'] && $card['button']['link'])
+        <x-button :href="$card['button']['link']['url']" :target="$card['button']['link']['target']"
+          :appearance="$card['button']['color']">{!! $card['button']['link']['title'] !!}</x-button>
+        @endif
       </div>
       @endforeach
     </div>

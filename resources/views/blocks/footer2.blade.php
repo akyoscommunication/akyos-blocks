@@ -9,6 +9,7 @@
 
     <div class="s-footer2-container">
       <div class="s-footer2-navigation">
+        <p class="s-footer2-title-section">Menu</p>
         @menu('footer_navigation')
       </div>
 
@@ -23,17 +24,25 @@
         @endif
       </div>
 
-      <div class="s-footer2-horaires">
-        {!! $horaires !!}
-      </div>
+      @if($horaires)
+        <div class="s-footer2-horaires">
+          <p class="s-footer2-title-section">Horaires</p>
+          {!! $horaires !!}
+        </div>
+      @endif
 
+      @if($address)
       <div class="s-footer2-address">
+        <p class="s-footer2-title-section">Contact</p>
         {!! $address !!}
       </div>
+      @endif
 
-      <div class="s-footer2-description">
-        {!! $description !!}
-      </div>
+      @if($description)
+        <div class="s-footer2-description">
+          {!! $description !!}
+        </div>
+      @endif
     </div>
 
     <div class="s-footer2-copyright">

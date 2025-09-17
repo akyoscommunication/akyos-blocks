@@ -2,7 +2,9 @@
   <div class="container {{ $position }}">
     <div class="s-content1-content">
       <x-title :tag="$title['tag']" :position="$title['position']">{!! $title['value'] !!}</x-title>
-      {!! $content !!}
+      <div class="c-text">
+        {!! $content !!}
+      </div>
       @if($button && $button['link'])
       <x-button :href="$button['link']['url']" :target="$button['link']['target']"
         :appearance="$button['color']">{!! $button['link']['title'] !!}</x-button>
@@ -24,15 +26,17 @@
         </div>
         @endforeach
       </x-slider>
-      <div class="swiper-buttons">
-        <div class="swiper-button-prev">
-          @icon('arrow-slider-prev')
+      @if(count($images) > 1)
+        <div class="swiper-buttons">
+          <div class="swiper-button-prev">
+            @icon('arrow-slider-prev')
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next">
+            @icon('arrow-slider-next')
+          </div>
         </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next">
-          @icon('arrow-slider-next')
-        </div>
-      </div>
+      @endif
     </div>
     @endif
   </div>

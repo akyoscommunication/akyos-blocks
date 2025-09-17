@@ -27,6 +27,7 @@ class header extends Block
             Tab::make('Menu'),
             TrueFalse::make('Recherche', 'search')->stylized(),
             Image::make('Logo', 'logo')->format('id'),
+            Image::make('Logo au scroll', 'logo_scroll')->format('id'),
             Button::make('Bouton', 'button'),
             Tab::make('Topbar'),
             TrueFalse::make('Téléphone', 'phone')->stylized()->column(25),

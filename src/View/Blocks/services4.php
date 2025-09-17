@@ -42,6 +42,7 @@ class services4 extends Block
                         ->format('id'),
                     Title::make("Titre", "title"),
                     Wysiwyg::make("Description", "description"),
+                    Button::make("Bouton", "button"),
                 ])
         ];
     }

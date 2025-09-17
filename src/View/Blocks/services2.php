@@ -8,6 +8,7 @@ use App\Acf\Fields\Button;
 use App\Acf\Fields\Title;
 use App\Acf\Fields\Wysiwyg;
 use Extended\ACF\Fields\Image;
+use Extended\ACF\Fields\Number;
 use Extended\ACF\Fields\Repeater;
 use Extended\ACF\Fields\Tab;
 
@@ -35,6 +36,8 @@ class services2 extends Block
             Wysiwyg::make('Description', 'description'),
             Button::make("Bouton", "button"),
             Tab::make("Services"),
+            Number::make("Nombre de services par slide", "cards_per_slide"),
+            Number::make("Espacement entre les services", "cards_spacing"),
             Repeater::make("Services", "cards")
                 ->fields([
                     Image::make("Image", "image")
@@ -42,6 +45,7 @@ class services2 extends Block
                         ->format('id'),
                     Title::make("Titre", "title"),
                     Wysiwyg::make("Description", "description"),
+                    Button::make("Bouton", "button"),
                 ])
         ];
     }
