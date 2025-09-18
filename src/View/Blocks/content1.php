@@ -2,17 +2,17 @@
 
 namespace Akyos\Blocks\View\Blocks;
 
-use Akyos\Access\Acf\Fields\ButtonAccess;
-use Akyos\Access\Acf\Fields\TitleAccess;
 use Akyos\Core\Classes\Block;
 use Akyos\Core\Classes\GutenbergBlock;
 use App\Acf\Fields\Button;
 use App\Acf\Fields\Title;
 use Extended\ACF\Fields\ButtonGroup;
-use Extended\ACF\Fields\Gallery;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\WYSIWYGEditor;
+use Extended\ACF\Fields\FlexibleContent;
+use Extended\ACF\Fields\Layout;
+use Extended\ACF\Fields\Image;
 
 class content1 extends Block
 {
@@ -38,8 +38,21 @@ class content1 extends Block
             WYSIWYGEditor::make('Texte', 'content'),
             Button::make('Bouton', 'button'),
             Tab::make('Images', 'images_tab'),
-            Gallery::make('Images', 'images')
-                ->format('id'),
+            FlexibleContent::make('Contenu', 'images')
+                ->button('Ajouter un contenu')
+                ->layouts([
+                    Layout::make('Image', 'image')
+                        ->layout('block')
+                        ->fields([
+                            Image::make('Image', 'image')
+                                ->format('id'),
+                        ]),
+                    Layout::make('Video Youtube', 'video_youtube')
+                        ->layout('block')
+                        ->fields([
+                            Text::make('URL Youtube', 'url'),
+                        ]),
+                ]),
             Tab::make('Options', 'options'),
             Text::make("Classe CSS", 'extra_class'),
             ButtonGroup::make('Position du contenu', 'position')

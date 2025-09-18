@@ -22,7 +22,15 @@
         :extra="['spaceBetween' => 2]">
         @foreach($images as $image)
         <div class="swiper-slide">
+          @if($image['acf_fc_layout'] == 'image')
+          <x-image :lg="$image['image']" />
+          @elseif($image['acf_fc_layout'] == 'video_youtube')
+          <iframe src="{{ $image['url'] }}" frameborder="0"></iframe>
+          @elseif($image['acf_fc_layout'])
+          <x-image :lg="$image['acf_fc_layout']" />
+          @else
           <x-image :lg="$image" />
+          @endif
         </div>
         @endforeach
       </x-slider>
