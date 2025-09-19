@@ -37,7 +37,6 @@ class content8 extends Block
             Button::make('Bouton', 'button'),
             Tab::make('Images', 'images_tab'),
             Gallery::make('Images', 'images')
-                ->maxFiles(2)
                 ->format('id'),
             Tab::make('Options', 'options'),
             Text::make("Classe CSS", 'extra_class'),

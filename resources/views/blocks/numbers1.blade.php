@@ -5,6 +5,7 @@
       {!! $description !!}
     </div>
     <div class="numbers">
+      @if(isset($numbers) && !empty($numbers))
       <x-slider name="numbers-1" :per="count($numbers) < 4 ? count($numbers) : 4" perMd="3" perSm="2" perXs="1" :modules="['navigation','pagination']"
         :extra="[ 'spaceBetween' => 0 ]">
         @foreach($numbers as $number)
@@ -23,8 +24,9 @@
             {!! $number['description'] !!}
           </div>
         </div>
-        @endforeach
-      </x-slider>
+          @endforeach
+        </x-slider>
+      @endif
       <div class="swiper-buttons">
         <div class="swiper-button-prev">
           @icon('arrow-slider-prev')

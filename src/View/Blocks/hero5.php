@@ -10,6 +10,9 @@ use App\Acf\Fields\Wysiwyg;
 use Extended\ACF\Fields\Image;
 use Extended\ACF\Fields\Repeater;
 use Extended\ACF\Fields\Tab;
+use Extended\ACF\Fields\FlexibleContent;
+use Extended\ACF\Fields\Layout;
+use Extended\ACF\Fields\Text;
 
 class hero5 extends Block
 {
@@ -39,9 +42,21 @@ class hero5 extends Block
                 ])
                 ->button("Ajouter un bouton"),
             Tab::make("Images"),
-            Image::make('Image', 'image')
-                ->minWidth(1200)
-                ->format('url'),
+            FlexibleContent::make('Contenu', 'image')
+                ->button('Ajouter un contenu')
+                ->layouts([
+                    Layout::make('Image', 'image')
+                        ->layout('block')
+                        ->fields([
+                            Image::make('Image', 'image')
+                                ->format('id'),
+                        ]),
+                    Layout::make('Video Youtube', 'video_youtube')
+                        ->layout('block')
+                        ->fields([
+                            Text::make('URL Youtube', 'url'),
+                        ]),
+                ])->maxLayouts(1),
         ];
     }
 
