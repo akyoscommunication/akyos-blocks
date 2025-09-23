@@ -111,6 +111,10 @@ class pricing3 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.pricing3');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/pricing3.blade.php')) {
+            return view('blocks.pricing3');
+        } else {
+            return view('akyos-blocks::blocks.pricing3');
+        }
     }
 }

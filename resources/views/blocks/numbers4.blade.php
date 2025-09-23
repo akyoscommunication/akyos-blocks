@@ -1,4 +1,4 @@
-<section style="{{ $styles }}" class="{{ $classes }} s-numbers4 bg-color-primary color-light">
+<section style="{{ $styles }}" class="{{ $classes }} s-numbers4 bg-color-primary color-light @if(isset($block['className'])) {{ $block['className'] }} @endif">
   <div class="container">
     <div class="numbers-title">
       <div>

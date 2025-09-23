@@ -51,6 +51,10 @@ class slider5 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.slider5');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/slider5.blade.php')) {
+            return view('blocks.slider5');
+        } else {
+            return view('akyos-blocks::blocks.slider5');
+        }
     }
 }

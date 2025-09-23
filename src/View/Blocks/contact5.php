@@ -52,6 +52,10 @@ class contact5 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.contact5');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/contact5.blade.php')) {
+            return view('blocks.contact5');
+        } else {
+            return view('akyos-blocks::blocks.contact5');
+        }
     }
 }

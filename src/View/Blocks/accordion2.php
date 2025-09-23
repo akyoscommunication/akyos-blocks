@@ -61,6 +61,10 @@ class accordion2 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.accordion2');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/accordion2.blade.php')) {
+            return view('blocks.accordion2');
+        } else {
+            return view('akyos-blocks::blocks.accordion2');
+        }
     }
 }

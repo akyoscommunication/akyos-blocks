@@ -1,4 +1,4 @@
-<section style="{{ $styles }}" class="{{ $classes }} s-map1">
+<section style="{{ $styles }}" class="{{ $classes }} s-map1 @if(isset($block['className'])) {{ $block['className'] }} @endif">
   <div class="container">
     <div class="map">
       <div data-markers='@json($markers)' id="map"></div>

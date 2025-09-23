@@ -72,6 +72,10 @@ class team4 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.team4');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/team4.blade.php')) {
+            return view('blocks.team4');
+        } else {
+            return view('akyos-blocks::blocks.team4');
+        }
     }
 }

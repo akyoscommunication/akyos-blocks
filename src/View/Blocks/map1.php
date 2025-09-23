@@ -70,6 +70,10 @@ class map1 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.map1');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/map1.blade.php')) {
+            return view('blocks.map1');
+        } else {
+            return view('akyos-blocks::blocks.map1');
+        }
     }
 }

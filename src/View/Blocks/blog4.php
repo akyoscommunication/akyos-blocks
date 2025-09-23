@@ -76,6 +76,10 @@ class blog4 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.blog4');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/blog4.blade.php')) {
+            return view('blocks.blog4');
+        } else {
+            return view('akyos-blocks::blocks.blog4');
+        }
     }
 }

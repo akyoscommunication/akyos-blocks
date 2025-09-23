@@ -69,6 +69,10 @@ class pricing1 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.pricing1');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/pricing1.blade.php')) {
+            return view('blocks.pricing1');
+        } else {
+            return view('akyos-blocks::blocks.pricing1');
+        }
     }
 }

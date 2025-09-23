@@ -41,6 +41,10 @@ class header extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.header');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/header.blade.php')) {
+            return view('blocks.header');
+        } else {
+            return view('akyos-blocks::blocks.header');
+        }
     }
 }

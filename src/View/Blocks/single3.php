@@ -51,6 +51,10 @@ class single3 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.single3');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/single3.blade.php')) {
+            return view('blocks.single3');
+        } else {
+            return view('akyos-blocks::blocks.single3');
+        }
     }
 }

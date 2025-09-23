@@ -64,6 +64,10 @@ class lastsPosts5 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.lasts-posts5');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/lasts-posts5.blade.php')) {
+            return view('blocks.lasts-posts5');
+        } else {
+            return view('akyos-blocks::blocks.lasts-posts5');
+        }
     }
 }

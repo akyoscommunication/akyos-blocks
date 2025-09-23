@@ -45,6 +45,10 @@ class timeline2 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.timeline2');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/timeline2.blade.php')) {
+            return view('blocks.timeline2');
+        } else {
+            return view('akyos-blocks::blocks.timeline2');
+        }
     }
 }

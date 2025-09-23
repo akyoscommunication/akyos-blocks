@@ -14,9 +14,7 @@ use Extended\ACF\Fields\Text;
 
 class accordion1 extends Block
 {
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     protected static function block(): GutenbergBlock
     {
@@ -61,6 +59,10 @@ class accordion1 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.accordion1');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/accordion1.blade.php')) {
+            return view('blocks.accordion1');
+        } else {
+            return view('akyos-blocks::blocks.accordion1');
+        }
     }
 }

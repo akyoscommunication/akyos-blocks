@@ -1,4 +1,4 @@
-<section style="{{ $styles }}" class="{{ $classes }} s-single3">
+<section style="{{ $styles }}" class="{{ $classes }} s-single3 @if(isset($block['className'])) {{ $block['className'] }} @endif">
   <div class="single-header container">
     <p>{!! get_the_date('d/m/Y') !!}</p>
     <x-title tag="h1">{!! get_the_title() !!}</x-title>

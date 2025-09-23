@@ -52,6 +52,10 @@ class hero6 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.hero6');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/hero6.blade.php')) {
+            return view('blocks.hero6');
+        } else {
+            return view('akyos-blocks::blocks.hero6');
+        }
     }
 }

@@ -72,6 +72,10 @@ class team1 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.team1');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/team1.blade.php')) {
+            return view('blocks.team1');
+        } else {
+            return view('akyos-blocks::blocks.team1');
+        }
     }
 }

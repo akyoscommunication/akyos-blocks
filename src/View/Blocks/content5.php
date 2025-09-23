@@ -55,6 +55,10 @@ class content5 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.content5');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/content5.blade.php')) {
+            return view('blocks.content5');
+        } else {
+            return view('akyos-blocks::blocks.content5');
+        }
     }
 }

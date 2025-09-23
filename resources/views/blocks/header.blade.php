@@ -9,7 +9,7 @@
   </div>
 @endif
 
-<header class="h-wrap">
+<header class="h-wrap @if(isset($block['className'])) {{ $block['className'] }} @endif">
 
   <div class="h-topbar">
     <div class="container">

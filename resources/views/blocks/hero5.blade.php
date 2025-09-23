@@ -1,4 +1,4 @@
-<section style="{{ $styles }};" class="{{ $classes }} s-hero5">
+<section style="{{ $styles }};" class="{{ $classes }} s-hero5 @if(isset($block['className'])) {{ $block['className'] }} @endif">
   @if($image && count($image) === 1 && $image = $image[0])
     <div class="s-hero5__bg">
       @if($image['acf_fc_layout'] == 'image')

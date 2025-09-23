@@ -1,4 +1,4 @@
-<section class="s-sur-footer-3 {{ $classes }}" style="{{ $styles }}">
+<section class="s-sur-footer-3 {{ $classes }} @if(isset($block['className'])) {{ $block['className'] }} @endif" style="{{ $styles }}">
   <div class="container">
     <h3 class="s-sur-footer-3__title">{!! $title !!}</h3>
 
