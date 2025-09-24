@@ -51,6 +51,10 @@ class single2 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.single2');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/single2.blade.php')) {
+            return view('blocks.single2');
+        } else {
+            return view('akyos-blocks::blocks.single2');
+        }
     }
 }

@@ -1,4 +1,4 @@
-<section style="{{ $styles }}" class="{{ $classes }} {{ $extra_class ?? '' }} s-content10">
+<section style="{{ $styles }}" class="{{ $classes }} {{ $extra_class ?? '' }} s-content10 @if(isset($block['className'])) {{ $block['className'] }} @endif">
   <div class="container {{ $position }}">
     <div class="s-content10-content">
       @if(count($images) > 1)

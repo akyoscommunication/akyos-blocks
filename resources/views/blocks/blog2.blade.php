@@ -1,4 +1,4 @@
-<section style="{{ $styles }}" class="{{ $classes }} s-blog2">
+<section style="{{ $styles }}" class="{{ $classes }} s-blog2 @if(isset($block['className'])) {{ $block['className'] }} @endif">
   <div class="container">
     <div class="filters">
       <div class="filters-list">

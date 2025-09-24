@@ -35,6 +35,10 @@ class footer4 extends Block
 
     public function render()
     {
-        return view('blocks.footer4');
+        if(file_exists(get_template_directory() . '/resources/views/blocks/footer4.blade.php')) {
+            return view('blocks.footer4');
+        } else {
+            return view('akyos-blocks::blocks.footer4');
+        }
     }
 }

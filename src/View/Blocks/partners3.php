@@ -52,6 +52,10 @@ class partners3 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.partners3');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/partners3.blade.php')) {
+            return view('blocks.partners3');
+        } else {
+            return view('akyos-blocks::blocks.partners3');
+        }
     }
 }

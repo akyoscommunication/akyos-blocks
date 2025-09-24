@@ -46,6 +46,10 @@ class quote2 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.quote2');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/quote2.blade.php')) {
+            return view('blocks.quote2');
+        } else {
+            return view('akyos-blocks::blocks.quote2');
+        }
     }
 }

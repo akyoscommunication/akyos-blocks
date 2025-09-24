@@ -1,4 +1,4 @@
-<section style="{{ $styles }}" class="{{ $classes }} s-services3">
+<section style="{{ $styles }}" class="{{ $classes }} s-services3 @if(isset($block['className'])) {{ $block['className'] }} @endif">
   <div class="container">
     <div class="services">
       <x-slider name="services-3" per="3" perMd="2" perSm="2" perXs="1" :modules="['navigation','pagination']"

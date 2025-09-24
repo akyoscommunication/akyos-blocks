@@ -1,4 +1,4 @@
-<section style="{{ $styles }}" class="{{ $classes }} s-quote4">
+<section style="{{ $styles }}" class="{{ $classes }} s-quote4 @if(isset($block['className'])) {{ $block['className'] }} @endif">
   <div class="container">
     <div class="quote">
       {!! $quote !!}

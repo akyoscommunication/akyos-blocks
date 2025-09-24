@@ -1,4 +1,4 @@
-<section style="{{ $styles }}" class="{{ $classes }} s-contact3">
+<section style="{{ $styles }}" class="{{ $classes }} s-contact3 @if(isset($block['className'])) {{ $block['className'] }} @endif">
   <div class="container">
     <div class="form-image">
       <x-image :lg="$image" />

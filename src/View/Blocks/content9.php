@@ -56,6 +56,10 @@ class content9 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.content9');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/content9.blade.php')) {
+            return view('blocks.content9');
+        } else {
+            return view('akyos-blocks::blocks.content9');
+        }
     }
 }

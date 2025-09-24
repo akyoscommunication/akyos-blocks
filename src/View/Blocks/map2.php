@@ -59,6 +59,10 @@ class map2 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.map2');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/map2.blade.php')) {
+            return view('blocks.map2');
+        } else {
+            return view('akyos-blocks::blocks.map2');
+        }
     }
 }

@@ -1,4 +1,4 @@
-<section style="{{ $styles }}" class="{{ $classes }} s-single2">
+<section style="{{ $styles }}" class="{{ $classes }} s-single2 @if(isset($block['className'])) {{ $block['className'] }} @endif">
   <div class="single-header">
     <x-image :lg="$image ?? get_the_post_thumbnail()"/>
     <div class="container--sm container">

@@ -29,6 +29,10 @@ class supFooter3 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.supFooter3');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/supFooter3.blade.php')) {
+            return view('blocks.supFooter3');
+        } else {
+            return view('akyos-blocks::blocks.supFooter3');
+        }
     }
 }

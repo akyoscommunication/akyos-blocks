@@ -1,4 +1,4 @@
-<section style="{{ $styles }}" class="{{ $classes }} {{ $block['className'] ?? '' }} s-partners2">
+<section style="{{ $styles }}" class="{{ $classes }} s-partners2 {{ $block['className'] ?? '' }}">
   <div class="container">
     {!! \Akyos\Core\Helpers\print_component('title', $title, 'title') !!}
     @if(!empty($description))

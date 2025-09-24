@@ -67,6 +67,10 @@ class hero5 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.hero5');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/hero5.blade.php')) {
+            return view('blocks.hero5');
+        } else {
+            return view('akyos-blocks::blocks.hero5');
+        }
     }
 }

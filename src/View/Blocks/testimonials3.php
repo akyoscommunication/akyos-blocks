@@ -67,6 +67,10 @@ class testimonials3 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.testimonials3');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/testimonials3.blade.php')) {
+            return view('blocks.testimonials3');
+        } else {
+            return view('akyos-blocks::blocks.testimonials3');
+        }
     }
 }

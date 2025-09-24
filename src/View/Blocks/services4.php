@@ -54,6 +54,10 @@ class services4 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.services4');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/services4.blade.php')) {
+            return view('blocks.services4');
+        } else {
+            return view('akyos-blocks::blocks.services4');
+        }
     }
 }

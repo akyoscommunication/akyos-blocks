@@ -1,7 +1,7 @@
 @php $shortcode = "[forminator_form id=".$newsletter_form."]" @endphp
 
 
-<section class="s-footer1">
+<section class="s-footer1 @if(isset($block['className'])) {{ $block['className'] }} @endif">
   <div class="container">
     <div class="s-footer1-brand">
       <x-image :lg="$logo"/>

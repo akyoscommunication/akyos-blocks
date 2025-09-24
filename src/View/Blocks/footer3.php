@@ -35,6 +35,10 @@ class footer3 extends Block
 
     public function render()
     {
-        return view('akyos-blocks::blocks.footer3');
+        if (file_exists(get_template_directory() . '/resources/views/blocks/footer3.blade.php')) {
+            return view('blocks.footer3');
+        } else {
+            return view('akyos-blocks::blocks.footer3');
+        }
     }
 }

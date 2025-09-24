@@ -9,7 +9,7 @@ $extra['initialSlide'] = count($images) -1;
 }
 
 @endphp
-<section style="{{ $styles }}" class="{{ $classes }} {{ $extra_class ?? '' }} s-content4">
+<section style="{{ $styles }}" class="{{ $classes }} {{ $extra_class ?? '' }} s-content4 @if(isset($block['className'])) {{ $block['className'] }} @endif">
     <div class="container {{ $position }}">
         <div class="s-content4-content">
             <x-title :tag="$title['tag']" :position="$title['position']">{!! $title['value'] !!}</x-title>

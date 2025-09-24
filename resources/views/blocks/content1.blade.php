@@ -1,4 +1,4 @@
-<section style="{{ $styles }}" class="{{ $classes }} {{ $extra_class ?? '' }} s-content1">
+<section style="{{ $styles }}" class="{{ $classes }} {{ $extra_class ?? '' }} s-content1 @if(isset($block['className'])) {{ $block['className'] }} @endif">
   <div class="container {{ $position }}">
     <div class="s-content1-content">
       {!! \Akyos\Core\Helpers\print_component('title', $title, 'title') !!}

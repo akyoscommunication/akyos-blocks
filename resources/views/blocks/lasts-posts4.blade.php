@@ -1,4 +1,4 @@
-<section style="{{ $styles }}" class="{{ $classes }} s-lasts-posts4">
+<section style="{{ $styles }}" class="{{ $classes }} s-lasts-posts4 @if(isset($block['className'])) {{ $block['className'] }} @endif">
   <div class="container">
     <div class="lasts-posts">
       <x-slider name="lasts-posts-4" per="3" perMd="2" perSm="2" perXs="1" :modules="['navigation','pagination']"

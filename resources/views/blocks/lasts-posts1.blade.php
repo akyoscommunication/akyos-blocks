@@ -1,4 +1,4 @@
-<section style="{{ $styles }}" class="{{ $classes }} s-lasts-posts1">
+<section style="{{ $styles }}" class="{{ $classes }} s-lasts-posts1 @if(isset($block['className'])) {{ $block['className'] }} @endif">
   <div class="container">
     @if(isset($title))
     <x-title :tag="$title['tag']" :position="$title['position']">{!! $title['value'] !!}</x-title>
