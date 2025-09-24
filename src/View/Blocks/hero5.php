@@ -13,6 +13,7 @@ use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\FlexibleContent;
 use Extended\ACF\Fields\Layout;
 use Extended\ACF\Fields\Text;
+use Extended\ACF\Fields\File;
 
 class hero5 extends Block
 {
@@ -55,6 +56,11 @@ class hero5 extends Block
                         ->layout('block')
                         ->fields([
                             Text::make('URL Youtube', 'url'),
+                        ]),
+                    Layout::make('Video', 'video')
+                        ->layout('block')
+                        ->fields([
+                            File::make('Video', 'video'),
                         ]),
                 ])->maxLayouts(1),
         ];
