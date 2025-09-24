@@ -1,7 +1,11 @@
-<section style="{{ $styles }}" class="{{ $classes }} s-partners2">
+<section style="{{ $styles }}" class="{{ $classes }} {{ $block['className'] ?? '' }} s-partners2">
   <div class="container">
-    <x-title :tag="$title['tag']" :position="$title['position']">{!! $title['value'] !!}</x-title>
-    {!! $description !!}
+    {!! \Akyos\Core\Helpers\print_component('title', $title, 'title') !!}
+    @if(!empty($description))
+      <div class="c-text">
+        {!! $description !!}
+      </div>
+    @endif
 
     <div class="partners-logos">
       <x-slider name="partners-1" :per="count($partners) < 6 ? count($partners) : 6" perMd="4" perSm="3" perXs="2" :modules="['navigation','pagination']">
@@ -11,15 +15,6 @@
         </div>
         @endforeach
       </x-slider>
-      <div class="swiper-buttons">
-        <div class="swiper-button-prev">
-          @icon('arrow-slider-prev')
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next">
-          @icon('arrow-slider-next')
-        </div>
-      </div>
     </div>
 
   </div>

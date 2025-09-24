@@ -1,7 +1,7 @@
 <section style="{{ $styles }}" class="{{ $classes }} {{ $extra_class ?? '' }} s-content1">
   <div class="container {{ $position }}">
     <div class="s-content1-content">
-      <x-title :tag="$title['tag']" :position="$title['position']">{!! $title['value'] !!}</x-title>
+      {!! \Akyos\Core\Helpers\print_component('title', $title, 'title') !!}
       <div class="c-text">
         {!! $content !!}
       </div>
