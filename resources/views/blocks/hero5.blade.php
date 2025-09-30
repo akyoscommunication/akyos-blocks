@@ -6,7 +6,7 @@
       @elseif($image['acf_fc_layout'] == 'video_youtube' && !empty($image['url']))
       <iframe src="{{ $image['url'] }}" frameborder="0"></iframe>
       @elseif($image['acf_fc_layout'] == 'video' && !empty($image['video']['url']))
-      <video src="{{ $image['video']['url'] }}" autoplay muted loop loading="lazy"></video>
+      <video src="{{ $image['video']['url'] }}" autoplay muted loop playsinline loading="lazy"></video>
       @elseif($image['acf_fc_layout'] && !empty($image['acf_fc_layout']))
       <x-image :lg="$image['acf_fc_layout']" />
       @else
