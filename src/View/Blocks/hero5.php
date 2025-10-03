@@ -15,6 +15,7 @@ use Extended\ACF\Fields\Layout;
 use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\File;
 use Extended\ACF\Fields\TrueFalse;
+use Extended\ACF\Fields\Number;
 
 class hero5 extends Block
 {
@@ -80,6 +81,12 @@ class hero5 extends Block
                             TrueFalse::make('Autoplay', 'autoplay'),
                             // loop
                             TrueFalse::make('Loop', 'loop'),
+                            // default volume
+                            Number::make('Default volume (0-100)', 'default_volume')
+                                ->min(0)
+                                ->max(100)
+                                ->default(1)
+                            ,
                         ]),
                 ])->maxLayouts(1),
         ];
