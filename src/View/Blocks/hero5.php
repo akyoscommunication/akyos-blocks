@@ -14,6 +14,7 @@ use Extended\ACF\Fields\FlexibleContent;
 use Extended\ACF\Fields\Layout;
 use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\File;
+use Extended\ACF\Fields\TrueFalse;
 
 class hero5 extends Block
 {
@@ -56,11 +57,29 @@ class hero5 extends Block
                         ->layout('block')
                         ->fields([
                             Text::make('URL Youtube', 'url'),
+                            // mute
+                            TrueFalse::make('Mute', 'mute'),
+                            // show controls
+                            TrueFalse::make('Show controls', 'show_controls'),
+                            // autoplay
+                            TrueFalse::make('Autoplay', 'autoplay'),
+                            // loop
+                            TrueFalse::make('Loop', 'loop'),
+                            // show info
+                            TrueFalse::make('Show info', 'show_info'),
+                            // frameborder
+                            TrueFalse::make('Frameborder', 'frameborder'),
                         ]),
                     Layout::make('Video', 'video')
                         ->layout('block')
                         ->fields([
                             File::make('Video', 'video'),
+                            // mute
+                            TrueFalse::make('Mute', 'mute'),
+                            // autoplay
+                            TrueFalse::make('Autoplay', 'autoplay'),
+                            // loop
+                            TrueFalse::make('Loop', 'loop'),
                         ]),
                 ])->maxLayouts(1),
         ];

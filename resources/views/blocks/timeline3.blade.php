@@ -1,10 +1,14 @@
 <section style="{{ $styles }}" class="{{ $classes }} s-timeline3 @if(isset($block['className'])) {{ $block['className'] }} @endif">
-  <div class="container">
-    <x-title :tag="$title['tag']" :position="$title['position']">{!! $title['value'] !!}</x-title>
-    <div class="s-timeline3__description">
-      {!! $description !!}
+  @if(!empty($title['value']) || !empty($description))
+    <div class="container">
+      {!! \Akyos\Core\Helpers\print_component('title', $title, 'title') !!}
+      @if(!empty($description))
+        <div class="s-timeline3__description">
+          {!! $description !!}
+        </div>
+      @endif
     </div>
-  </div>
+  @endif
   <div class="s-timeline3-pin" timeline-pin timeline-pin-alternate>
     <div class="container">
       <div class="s-timeline3__line" timeline-line></div>
